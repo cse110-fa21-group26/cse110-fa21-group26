@@ -2,8 +2,8 @@
 > *IN DIJKSTRA, WE TRUST. IN ALCOHOLISM, WE (responsibly) TRUST.*
 
 ### Branding Information
-- Colors: (TBD)
-- Logo: (TBD)
+- Colors: (Turquoise and Orange)
+- Logo: ![mascot](/admin/misc/team-images/mascot.png)
 - Mascot: (TBD)
 - Custom Fonts: (TBD)
 - Themes (i.e. PowerPoint): (TBD) 
@@ -67,11 +67,11 @@ Interests/Hobbies: Video games, basketball, hiking, and starting arbitrary cults
 ![arman](/admin/misc/team-images/arman.png)
 
 ### Luca Horwitz
-Year: ... \
-Major: ... \
-GitHub: [...](...) \
-Interests/Hobbies: ... \
-![luca](...)
+Year: Junior \
+Major: Math-CS \
+GitHub: [https://github.com/Glossen](https://github.com/Glossen) \
+Interests/Hobbies: I like to read (sci-fi/fantasy), do amateur math sometimes, and play board games. \
+![luca](/admin/misc/team-images/luca.jpg)
 
 ### Perry Wang
 Year: ... \
