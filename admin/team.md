@@ -76,6 +76,6 @@ Interests/Hobbies: I like to read (sci-fi/fantasy), do amateur math sometimes, a
 ### Perry Wang
 Year: Junior \
 Major: Computer Science \
-GitHub: [...](...) \
-Interests/Hobbies: ... \
+GitHub: [https://github.com/perrywang32](https://github.com/perrywang32) \
+Interests/Hobbies: Valorant, fashion, basketball, baseball, music \
 ![perry](...)
