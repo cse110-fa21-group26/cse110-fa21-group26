@@ -74,8 +74,8 @@ Interests/Hobbies: I like to read (sci-fi/fantasy), do amateur math sometimes, a
 ![luca](/admin/misc/team-images/luca.jpg)
 
 ### Perry Wang
-Year: ... \
-Major: ... \
+Year: Junior \
+Major: Computer Science \
 GitHub: [...](...) \
 Interests/Hobbies: ... \
 ![perry](...)
