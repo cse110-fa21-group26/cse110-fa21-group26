@@ -3,8 +3,8 @@
 
 ### Branding Information
 - Colors: (Turquoise and Orange)
-- Logo: ![mascot](/admin/misc/team-images/mascot.png)
-- Mascot: (TBD)
+- Logo: (TBD)
+- Mascot: ![mascot](/admin/misc/team-images/mascot.png)
 - Custom Fonts: (TBD)
 - Themes (i.e. PowerPoint): (TBD) 
 
