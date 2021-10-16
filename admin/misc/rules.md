@@ -3,7 +3,9 @@
 
 ## Group Identification
 Team number - 26
+
 Instructor – Thomas A. Powell
+
 Team Name – Dijkstra's Alcoholism
 
 ## Team member info:
