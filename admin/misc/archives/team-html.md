@@ -17,9 +17,19 @@
                 <details>
                     <summary><b>Branding Information</b></summary>
                     <ul>
-                        <li>Colors: (TBD)</li>
+                        <li>Colors: Turquoise and Orange</li>
                         <li>Logo: (TBD)</li>
-                        <li>Mascot: (TBD)</li>
+                        <li>
+                            <details>
+                                <summary>Mascot:</summary>
+                                <img 
+                                    src="/admin/misc/team-images/mascot.png"
+                                    alt="mascot"
+                                    width="30%"
+                                    height="auto"
+                                >
+                            </details>
+                        </li>
                         <li>Custom Fonts: (TBD)</li>
                         <li>Themes (i.e. PowerPoint): (TBD) </li>
                     </ul>
@@ -126,12 +136,12 @@
                 </details>
                 <details>
                     <summary><b>Luca Horwitz</b></summary>
-                    Year: ... <br>
-                    Major: ... <br>
-                    GitHub: <a href="...">...</a> <br>
-                    Interests/Hobbies: ... <br>
+                    Year: Junior <br>
+                    Major: Math-CS <br>
+                    GitHub: <a href="https://github.com/Glossen">https://github.com/Glossen</a> <br>
+                    Interests/Hobbies: I like to read (sci-fi/fantasy), do amateur math sometimes, and play board games. <br>
                     <img 
-                        src="..."
+                        src="/admin/misc/team-images/luca.jpg"
                         alt="luca"
                         width="30%"
                         height="auto"
