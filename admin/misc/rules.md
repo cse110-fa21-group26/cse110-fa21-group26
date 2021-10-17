@@ -47,7 +47,7 @@ Resolution Process:
 - 1st level: Meet/resolve within team
 - 2nd level: Bring in TA/prof
 
-## Suggested Statement
+## Statement
 *If a team member fails to live up to this agreement, the situation may be reported to the professor, but the team will still be responsible for submitting a completed assignment.*
 
 
