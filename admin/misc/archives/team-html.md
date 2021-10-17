@@ -9,7 +9,7 @@
     <body>
         <header>
             <h1> Welcome to Dijkstra's Alcoholism </h1>
-            <em>IN DIJKSTRA, WE TRUST.   IN ALCOHOLISM, WE (responsibly) TRUST.</em>
+            <em>IN DIJKSTRA, WE TRUST. IN ALCOHOLISM, WE (responsibly) TRUST.</em>
             <hr>
         </header>
         <main>
@@ -149,10 +149,10 @@
                 </details>
                 <details>
                     <summary><b>Perry Wang</b></summary>
-                    Year: ... <br>
-                    Major: ... <br>
-                    GitHub: <a href="...">...</a> <br>
-                    Interests/Hobbies: ... <br>
+                    Year: Junior <br>
+                    Major: Computer Science <br>
+                    GitHub: <a href="https://github.com/perrywang32">https://github.com/perrywang32</a> <br>
+                    Interests/Hobbies: Valorant, fashion, basketball, baseball, music <br>
                     <img 
                         src="..."
                         alt="perry"
