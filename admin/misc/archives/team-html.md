@@ -18,7 +18,7 @@
                     <summary><b>Branding Information</b></summary>
                     <ul>
                         <li>Colors: Turquoise and Orange</li>
-                        <li>Logo: (TBD)</li>
+                        <li>Logo: Alcoholic Platypus</li>
                         <li>
                             <details>
                                 <summary>Mascot:</summary>
@@ -30,8 +30,8 @@
                                 >
                             </details>
                         </li>
-                        <li>Custom Fonts: (TBD)</li>
-                        <li>Themes (i.e. PowerPoint): (TBD) </li>
+                        <li>Custom Fonts: Cursive Fonts</li>
+                        <li>Themes: Alcoholism, Platypuses, Cultism</li>
                     </ul>
                 </details>
             </section>

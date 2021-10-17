@@ -2,11 +2,11 @@
 > *IN DIJKSTRA, WE TRUST. IN ALCOHOLISM, WE (responsibly) TRUST.*
 
 ### Branding Information
-- Colors: (Turquoise and Orange)
-- Logo: (TBD)
+- Colors: Turquoise and Orange
+- Logo: Alcoholic Platypus
 - Mascot: ![mascot](/admin/misc/team-images/mascot.png)
-- Custom Fonts: (TBD)
-- Themes (i.e. PowerPoint): (TBD) 
+- Custom Fonts: Cursive Fonts 
+- Themes: Alcoholism, Platypuses, Cultism
 
 ### The Values/Commandments of Lord Dijksta the Alcoholic
 1. Thou Shalt Speak to One Another in a Most Cultish Fashion
