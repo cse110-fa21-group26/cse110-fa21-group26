@@ -78,4 +78,4 @@ Year: Junior \
 Major: Computer Science \
 GitHub: [https://github.com/perrywang32](https://github.com/perrywang32) \
 Interests/Hobbies: Valorant, fashion, basketball, baseball, music  \
-![perry](...)
+![perry](/admin/misc/team-images/perry.JPG)

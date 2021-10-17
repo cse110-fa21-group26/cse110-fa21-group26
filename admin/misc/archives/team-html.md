@@ -154,7 +154,7 @@
                     GitHub: <a href="https://github.com/perrywang32">https://github.com/perrywang32</a> <br>
                     Interests/Hobbies: Valorant, fashion, basketball, baseball, music <br>
                     <img 
-                        src="..."
+                        src="/admin/misc/team-images/perry.JPG"
                         alt="perry"
                         width="30%"
                         height="auto"
