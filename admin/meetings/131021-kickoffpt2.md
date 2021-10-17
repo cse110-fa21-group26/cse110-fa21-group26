@@ -7,6 +7,8 @@ Kickoff
 5:00 pm
 13 October 2021 
 
+## Location
+Zoom
 
 ## Atendance:
 
