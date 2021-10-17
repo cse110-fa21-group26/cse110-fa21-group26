@@ -30,19 +30,24 @@ Zoom
 5. Group bonding event
 
 ##  Meeting Notes: 
-
 - Join new organization for team GitHub, invitation sent by email.
 - Team contract will be finished on old GitHub repository by thursday night. Paragraph format or more detailed information in seciton.
-- Team Name: Dijkstra's Alcoholism
-- Team Mascot: More ideas to decide another day.
 - Team Page: Send your picture, year, major, github page link, hobbies/interests, and maybe personal intro video to Arman on slack. (Tonight)
 - Video: Include personal info sent to Arman and if you have extra time anything else.
+- Go to office hours if you can :)! Stand out!
+    - 1:30-3:30 wednesdays
+
+### Decisions:
+
+- Team Name - Dijkstra's Alcoholism: decided by majority vote
+- Meet this weekend, when2meet: need to discuss how to work with repository as a team and start brainstorming 
 - Conventions on how we will be using our repositories.
   - Use branching for meeting minutes or anything similar
   - If you are doing any code, fork the repository, more will be talked about later on.
-  - Meet this weekend, when2meet
-  - Go to office hours if you can :)! Stand out!
-    - 1:30-3:30 wednesdays
+  - Note: decisions on branching made via resources presented on class slides and specifics were voted on by team after debating the use of forks, branches, and direct commit in different scenarios
+
+### Future investigations: 
+1. Team Mascot - More ideas to decide another day.
 
 ## Next Meeting:
 - Group Bonding
