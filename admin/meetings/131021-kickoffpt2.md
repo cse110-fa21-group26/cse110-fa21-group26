@@ -1,14 +1,14 @@
-<h1>Meeting Minutes</h1>
+# Meeting Minutes</h1>
 
-<h3>Topic: </h3>
+## Topic: 
 Kickoff
 
-<h3>Date:</h3> 
+## Date:
 5:00 pm
 13 October 2021 
 
 
-<h3>Atendance:</h3>
+## Atendance:
 
 - Anahi
 - Kyle Nakai
@@ -18,7 +18,7 @@ Kickoff
 - Caitln
 - Perry
 
-<h3>Agenda:</h3>
+##  Agenda:
 
 1. Github Organization 
 2. Contract update
@@ -27,7 +27,7 @@ Kickoff
 4. Team video
 5. Group bonding event
 
-<h3>Meeting Notes: </h3>
+##  Meeting Notes: 
 
 - Join new organization for team GitHub, invitation sent by email.
 - Team contract will be finished on old GitHub repository by thursday night. Paragraph format or more detailed information in seciton.
@@ -42,12 +42,12 @@ Kickoff
   - Go to office hours if you can :)! Stand out!
     - 1:30-3:30 wednesdays
 
-<h3>Next Meeting:</h3>
+## Next Meeting:
 - Group Bonding
 - Discuss project principals
 
 
-<h3>Action Items:</h3>
+## Action Items:
 
 |Name| Task                        | Due Date |
 |-----|----------------------------------------------|-------------------|
@@ -56,4 +56,4 @@ Kickoff
 |Caitlin| Team Logo |October 16, 2021 |
 |All| Personal Info to Arman, Video to Perry | October 13-14, 2021 |
 
-<h3>Meeting Recording: </h3>
+## Meeting Recording:
