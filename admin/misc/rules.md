@@ -2,10 +2,11 @@
 ## Dijkstra's Alcoholism
 
 ## Group Identification
-Lab section # –
-Table # – 
+Team number - 26
+
 Instructor – Thomas A. Powell
-Team Name (Optional) – Dijkstra's Alcoholism
+
+Team Name – Dijkstra's Alcoholism
 
 ## Team member info:
 
@@ -22,11 +23,12 @@ Team Name (Optional) – Dijkstra's Alcoholism
 
 
 ## Primary Means of Communication and Expectations
-  All team members are expected to check the slack group page daily for any announcements made. Any important messages will have a slack announcement and emails sent out. Everyone is expected to respond in no more than 24 hours.
+  All team members are expected to check the slack group page daily for any announcements made. Any important messages will have a slack announcement and emails sent out. Everyone is expected to respond in within 24 hours.
 
 ## Scheduling Meetings
-- Weekly meetings on every Wednesday 5pm via zoom (TBD about in person)
-- Voting when2meet if any more meetings are required or needed
+  - Weekly meetings will take place every wednesday 5:00-6:00pm via zoom
+  - If any more meetings are required, a When2meet will be sent out on the team slack to set meeting day and time. 
+  - Team Leaders are required to attend standup meetings every wednesday 4:00-4:30pm
 
 ## General Responsibilities for All Team Members 
 - Contribute to team goals and meetings
@@ -36,22 +38,16 @@ Team Name (Optional) – Dijkstra's Alcoholism
 - Be present and ready to engage in discussions
 - Have fun!
 
-
-## Specific Team Member Responsibilities/Deadlines (*Optional*)
-- Developer 
-- Team Manager
-- Designer
-- UI/UX Design
-
 ## Conflict Resolution
 Types of Problems:
 - Work Related: Missing multiple deadlines, ignoring responsibilities and job, exceoptionally poor quality
 - Personal: team disagreements, personal/outside issues
+  
 Resolution Process: 
 - 1st level: Meet/resolve within team
 - 2nd level: Bring in TA/prof
 
-## Suggested Statement
+## Statement
 *If a team member fails to live up to this agreement, the situation may be reported to the professor, but the team will still be responsible for submitting a completed assignment.*
 
 
