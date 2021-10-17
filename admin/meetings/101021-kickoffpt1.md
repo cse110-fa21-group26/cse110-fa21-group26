@@ -1,15 +1,17 @@
-<h1>Meeting Minutes</h1>
+# Meeting Minutes
 
-<h3>Topic: </h3>
+## Topic: 
 Kickoff
 
-<h3>Date:</h3> 
+## Date:
 12:00 am
 
 10 October 2021 
 
+## Location:
+Zoom
 
-<h3>Atendance:</h3>
+## Atendance:
 
 - Maryam 
 - Kyle
@@ -20,7 +22,7 @@ Kickoff
 - Perry 
 
 
-<h3>Agenda:</h3>
+## Agenda:
 
 1. Get everyone on a GitHub repo
 2. Plan when/where to meet
@@ -28,12 +30,12 @@ Kickoff
 4. Group contract
 5. Discuss the project
 
-<h3>Meeting Notes: </h3>
+## Meeting Notes: 
 
 - Weekly Meetings (Date TBD using When2Meet)
 - Meeting tuesday 10/12 after class
 
-<h3>Action Items:</h3>
+## Action Items:
 
 |Name| Task                        | Due Date |
 |-----|----------------------------------------------|-------------------|
@@ -43,5 +45,5 @@ Kickoff
 |Caitlin| General Responsibilities for All Team Members | 12 October 2021|
 |Kyle| Contract: Conflict Resolution | 12 October 2021|
 
-<h3>Meeting Recording: </h3>
+## Meeting Recording: 
 <a href="https://drive.google.com/file/d/1z6dsCP6HykhBKZVBXuiZJ_D64yHkttwd/view?usp=sharing">Click here to view meeting recording</a>
