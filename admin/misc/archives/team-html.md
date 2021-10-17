@@ -135,14 +135,14 @@
                     >
                 </details>
                 <details>
-                    <summary><b>Luca Horwitz</b></summary>
+                    <summary><b>Lucas Horwitz</b></summary>
                     Year: Junior <br>
                     Major: Math-CS <br>
                     GitHub: <a href="https://github.com/Glossen">https://github.com/Glossen</a> <br>
                     Interests/Hobbies: I like to read (sci-fi/fantasy), do amateur math sometimes, and play board games. <br>
                     <img 
-                        src="/admin/misc/team-images/luca.jpg"
-                        alt="luca"
+                        src="/admin/misc/team-images/lucas.jpg"
+                        alt="lucas"
                         width="30%"
                         height="auto"
                     >
@@ -154,7 +154,7 @@
                     GitHub: <a href="https://github.com/perrywang32">https://github.com/perrywang32</a> <br>
                     Interests/Hobbies: Valorant, fashion, basketball, baseball, music <br>
                     <img 
-                        src="..."
+                        src="/admin/misc/team-images/perry.JPG"
                         alt="perry"
                         width="30%"
                         height="auto"

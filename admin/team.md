@@ -66,16 +66,16 @@ GitHub: [https://github.com/ArmanOmmid](https://github.com/ArmanOmmid) \
 Interests/Hobbies: Video games, basketball, hiking, and starting arbitrary cults that make no sense \
 ![arman](/admin/misc/team-images/arman.png)
 
-### Luca Horwitz
+### Lucas Horwitz
 Year: Junior \
 Major: Math-CS \
 GitHub: [https://github.com/Glossen](https://github.com/Glossen) \
 Interests/Hobbies: I like to read (sci-fi/fantasy), do amateur math sometimes, and play board games. \
-![luca](/admin/misc/team-images/luca.jpg)
+![lucas](/admin/misc/team-images/lucas.jpg)
 
 ### Perry Wang
 Year: Junior \
 Major: Computer Science \
 GitHub: [https://github.com/perrywang32](https://github.com/perrywang32) \
 Interests/Hobbies: Valorant, fashion, basketball, baseball, music  \
-![perry](...)
+![perry](/admin/misc/team-images/perry.JPG)
