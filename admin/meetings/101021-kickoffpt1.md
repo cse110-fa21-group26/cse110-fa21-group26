@@ -30,10 +30,13 @@ Zoom
 4. Group contract
 5. Discuss the project
 
-## Meeting Notes: 
+## Meeting Notes:
+### Decisions: 
+- Weekly Meetings (Date TBD using When2Meet): weekly meetings will keep us steady, updated, and on schedule
+- Meeting tuesday 10/12 after class: need to be on the same page for management projects
 
-- Weekly Meetings (Date TBD using When2Meet)
-- Meeting tuesday 10/12 after class
+### Future items: 
+1. Complete management tasks
 
 ## Action Items:
 
