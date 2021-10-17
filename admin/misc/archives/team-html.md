@@ -23,7 +23,7 @@
                             <details>
                                 <summary>Mascot:</summary>
                                 <img 
-                                    src="/admin/misc/team-images/mascot.png"
+                                    src="/admin/branding/mascot.png"
                                     alt="mascot"
                                     width="30%"
                                     height="auto"

@@ -4,7 +4,7 @@
 ### Branding Information
 - Colors: Turquoise and Orange
 - Logo: Alcoholic Platypus
-- Mascot: ![mascot](/admin/misc/team-images/mascot.png)
+- Mascot: ![mascot](/admin/branding/mascot.png)
 - Custom Fonts: Cursive Fonts 
 - Themes: Alcoholism, Platypuses, Cultism
 
