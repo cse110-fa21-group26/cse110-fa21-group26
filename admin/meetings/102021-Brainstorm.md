@@ -7,8 +7,8 @@ Brainstrom
 5:00 pm
 20 October 2021 
 
-## Location
-Zoom/ Giesel
+## Location/Tools
+Zoom/ Giesel, Miro
 
 ## Atendance:
 - Anahi
