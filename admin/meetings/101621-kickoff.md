@@ -50,3 +50,4 @@ Refer to Miro:
 |Everyone| Watch Miro tutorials
 
 ## Meeting Recording:
+[click here to view meeting recording](https://drive.google.com/file/d/1Iyso_Psno_Fx-U3MtwUUBEU1-9OGaArP/view?usp=sharing)
