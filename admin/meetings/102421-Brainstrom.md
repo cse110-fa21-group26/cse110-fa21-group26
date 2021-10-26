@@ -45,3 +45,4 @@ Zoom, Miro
 |-----|----------------------------------------------|
 
 ## Meeting Recording:
+[Click here to view meeting recording](https://drive.google.com/file/d/1-FGV-iRLmf6OldAIyzEZOla95voPuQLg/view?usp=sharing)
