@@ -52,3 +52,4 @@ Zoom/ Giesel, Miro
 |Everyone| Research client servers | Next Meeting |
 
 ## Meeting Recording:
+[Click here to view meeting recording](https://drive.google.com/file/d/1cemH5LqBSEFgAC8TegcCRxWtGqzVeUvX/view?usp=sharing)
