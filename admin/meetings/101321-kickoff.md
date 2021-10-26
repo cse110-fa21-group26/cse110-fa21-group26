@@ -64,3 +64,4 @@ Zoom
 |All| Personal Info to Arman, Video to Perry | October 13-14, 2021 |
 
 ## Meeting Recording:
+[Click here to view meeting recording](https://drive.google.com/file/d/1nhqmyCkpkfE7jdir3OobTNNoCNnpdEbl/view?usp=sharing)
