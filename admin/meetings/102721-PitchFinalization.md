@@ -14,7 +14,7 @@ Zoom/Biomed Library
 
 ##  Agenda:
 1. Look at vegitarian apps 
-2. Lay out the features
+2. Wireframe
 3. Talk about work distribution 
 
 ##  Meeting Notes: 
