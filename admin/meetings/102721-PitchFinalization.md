@@ -1,34 +1,25 @@
 # Meeting Minutes</h1>
 
 ## Topic: 
-Brainstrom
+Pitch Finalization
 
 ## Date:
 5:00 pm
-24 October 2021 
+27 October 2021 
 
 ## Location
-Zoom
+Zoom/Biomed Library
 
 ## Atendance:
 
-
 ##  Agenda:
-
-1. fat marker design 
+1. Look at vegitarian apps 
+2. Wireframe
+3. Talk about work distribution 
 
 ##  Meeting Notes: 
 
-
-### Decisions:
-
-
-### Future investigations: 
-
-  
 ## Next Meeting:
-
-
 
 ## Action Items:
 
@@ -37,3 +28,4 @@ Zoom
 
 
 ## Meeting Recording:
+[click here to view meeting recording]()

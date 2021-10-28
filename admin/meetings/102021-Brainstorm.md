@@ -7,8 +7,8 @@ Brainstrom
 5:00 pm
 20 October 2021 
 
-## Location
-Zoom/ Giesel
+## Location/Tools
+Zoom/ Giesel, Miro
 
 ## Atendance:
 - Anahi
@@ -52,3 +52,4 @@ Zoom/ Giesel
 |Everyone| Research client servers | Next Meeting |
 
 ## Meeting Recording:
+[Click here to view meeting recording](https://drive.google.com/file/d/1cemH5LqBSEFgAC8TegcCRxWtGqzVeUvX/view?usp=sharing)
