@@ -28,7 +28,9 @@ Harry
 
 ##  Meeting Notes: 
 Part sharing for pitch 
+
 Application name suggestion
+
 Meeting foramt/time : Tues, Thurs after class (Optional meeting for coding, can't make it is ok),
 
 Wednesday meeting is fixed. We can have multiple time slot for the meeting(TBD)
