@@ -35,7 +35,9 @@ Meeting foramt/time : Tues, Thurs after class (Optional meeting for coding, can'
 Wednesday meeting is fixed. We can have multiple time slot for the meeting(TBD)
 
 Want to start coding after Friday
+
 Suggestion: paired up with person who can after Tues, Thurs.
+
 Tues/Thurs: Arman, Harry, Maryam, Anahi, Kyle, Caitln(Tues), (Perry), (Lucas) at CSE Building Basement
 
 Spliting up tasks : 
