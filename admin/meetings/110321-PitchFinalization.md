@@ -20,7 +20,6 @@ Arman
 Lucas
 Harry
 
-
 ##  Agenda:
 1. Pitch Finalization
 2. Meeting format/time update
@@ -45,6 +44,9 @@ Spoonacular + Web Scrapping : Caitln Perry, Lucas
 Reciepe Page : 5 people from Tues/Thurs.
 Main + Category(create object) page :
 Create Page + Research delete + update : 
+
+![IMG_0642](https://user-images.githubusercontent.com/50159012/140245848-5b138e77-577f-4aaf-8a23-6d4afa1a61d0.jpg)
+
 
 Speak UP!!! 
 If need any help, don't be SHY!
