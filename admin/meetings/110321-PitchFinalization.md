@@ -43,8 +43,11 @@ Tues/Thurs: Arman, Harry, Maryam, Anahi, Kyle, Caitln(Tues), (Perry), (Lucas) at
 Spliting up tasks : 
 
 Spoonacular + Web Scrapping : Caitln Perry, Lucas 
+
 Reciepe Page : 5 people from Tues/Thurs.
+
 Main + Category(create object) page :
+
 Create Page + Research delete + update : 
 
 ![IMG_0642](https://user-images.githubusercontent.com/50159012/140245848-5b138e77-577f-4aaf-8a23-6d4afa1a61d0.jpg)
@@ -52,7 +55,9 @@ Create Page + Research delete + update :
 
 Speak UP!!! 
 If need any help, don't be SHY!
+
 Keep us UPDATE!!
+
 *Update channel gonna made on SLACK
 
   
