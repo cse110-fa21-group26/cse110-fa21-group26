@@ -1,4 +1,4 @@
-# ADR (Architectural Decisison Records
+# ADR (Architectural Decisison Records)
 
 ### Change theme to Breakfast: 
 We initially wanted to design a vegetarian recipe app, but we pivoted to a breakfast recipes app. We felt that it was an easier scope to cover, as the ingredients of breakfast recipes are simpler and more consistent. It would allow for us to have easier defined categories and more consistent recipe formatting.
