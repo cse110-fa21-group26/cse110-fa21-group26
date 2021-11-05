@@ -1,21 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <style>
+    </style>
         <title id="id1">Group 26 Project</title>
         <meta charset = "utf-8">
         <meta name="author" content="Group 26">
         <meta name="description" content="CSE 110 Project">
+        <link rel="stylesheet" href="source/menustyle.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
         <link 
             rel="icon"
             type="image/png"
             href="/specs/researchmaterial/veganlogo.png"
         >
     </head>
-    <body>
-        <header>
+    <body id="main">
+        <header class="side-menu">
+            <div id="mySidebar" class="sidebar" open="true">
+                <a href="#">Login</a>
+                <a href="#">Custom Recipes</a>
+                <a href="#">Saved Recipes</a>
+                <button class="dropdown-btn">Dropdown 
+                    <b class="fa fa-caret-down">&#9660</b>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <a href="#">Contact</a>
+            </div>
+            <button class="openbtn" onclick="toggleNav()">☰</button>  
+            <script>
+                function toggleNav() {
+                    if(document.getElementById("mySidebar").getAttribute("open") == "true"){
+                        document.getElementById("mySidebar").style.width = "250px";
+                        document.getElementById("main").style.marginLeft = "250px";
+                        document.getElementById("mySidebar").setAttribute("open", "false")
+                    }
+                    else{
+                        document.getElementById("mySidebar").style.width = "0";
+                        document.getElementById("main").style.marginLeft= "0";
+                        document.getElementById("mySidebar").setAttribute("open", "true")
+                    }
+                }
+                var dropdown = document.getElementsByClassName("dropdown-btn");
+                var i;
+                for (i = 0; i < dropdown.length; i++) {
+                    dropdown[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var dropdownContent = this.nextElementSibling;
+                        if (dropdownContent.style.display === "block") {
+                            dropdownContent.style.display = "none";
+                        } 
+                        else {
+                            dropdownContent.style.display = "block";
+                        }
+                    });
+                }
+            </script>
         </header>
-        <main>
-        </main>
+        <header>
+            <h1>Breakfast App</h1>
+        </header>
+        <main class = "container"></main>
+        <script>
+            for(var i = 0; i < 100; i++){
+                var card = document.createElement('button');
+                card.setAttribute('class', 'recipes');
+                card.setAttribute('onclick', "window.location.href='https://w3docs.com';");
+                card.innerHTML = 'Recipes';
+                console.log("hello");
+                document.querySelector('body main').appendChild(card);
+            }
+        </script>
         <footer>
         </footer>
     </body>
