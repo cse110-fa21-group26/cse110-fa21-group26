@@ -9,7 +9,7 @@
     "rewrites": [
       {
         "source": "source",
-        "destination": "source/index2.html"
+        "destination": "source/index.html"
       }
     ]
   }
