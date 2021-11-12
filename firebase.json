@@ -8,8 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "source/index.html"
+        "source": "source",
+        "destination": "source/index2.html"
       }
     ]
   }
