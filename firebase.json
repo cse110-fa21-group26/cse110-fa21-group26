@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "~/Code/CSE/CSE110/Group26/source",
+    "public": "/source",
     "ignore": [
       "firebase.json",
       "**/.*",
