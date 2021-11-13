@@ -3,4 +3,3 @@ For the fall 2021 quarter of CSE 110, Team 26, Dijkstra's Alcoholism, is creatin
 
 # Dijkstra's Alcoholism Team Page Link
 https://github.com/cse110-fa21-group26/cse110-fa21-group26/blob/main/admin/team.md
-
