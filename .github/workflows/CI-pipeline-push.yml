@@ -58,7 +58,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: echo exit pipe
-      - run: exit 1
+      - run: exit 0
 
   finished:
     needs: exit
