@@ -11,57 +11,46 @@ on:
   workflow_dispatch:
 
 jobs:
-  start:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo start pipe
 
   html:
-    needs: start
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: echo html pipe
 
   css:
-    needs: html
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: echo css pipe
 
   javascript:
-    needs: css
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: echo javascript pipe
 
   media:
-    needs: javascript
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: echo media pipe
       
   backend:
-    needs: media
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: echo backend pipe
 
-  exit:
-    needs: backend
+  success:
+    needs: [ html, css, javascript, media, backend ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo exit pipe
       - run: exit 0
 
   finished:
-    needs: exit
+    needs: exit-status
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
