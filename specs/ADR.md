@@ -27,4 +27,5 @@ Again, to allow accessibilty for new cooks... but the toggle being very accessib
 ### Filter / Categories based on Personas
 Because we want to be able to make certain recipes instantly accessible to our personas (whom are our target users generally), we want to make filtering for them instantly accessible. For example, filter by: vegetarian, vegan, quick time, high protein, difficulty level, nutrition level.
 
-### 
+### Firebase Hosting instead of GitHub Pages...
+TBD
