@@ -6,38 +6,7 @@ name: Stage Preview to Firebase Hosting on PR
 
 jobs:
 
-  html:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo html pipe
-
-  css:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo css pipe
-
-  javascript:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo javascript pipe
-
-  media:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo media pipe
-      
-  backend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo backend pipe
-
   build_and_preview:
-    needs: [html, css, javascript, media, backend]
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
