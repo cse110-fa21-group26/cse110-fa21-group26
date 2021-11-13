@@ -37,7 +37,7 @@ jobs:
       - run: echo backend pipe
 
   build_and_preview:
-  needs: [ html, css, javascript, media, backend ]
+  needs: [html, css, javascript, media, backend]
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
