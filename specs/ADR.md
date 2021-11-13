@@ -50,3 +50,12 @@ When designing our app, we need to decide who to cater to. If you are a chef, yo
 ### Decision Outcome 
 To cater to users that have more experience, the sidebar (which itself is very acessble) will have many options for filtering, creating custom recipes, favouriting, creating an account, etc... all tools for the more expeienced. So these features will exist but they will not take from the spotlight of very accessible recipes / interfaces for those who are not as familiar. 
 
+## Difficulty filter toggle accessible on "easy by default" and accessible at the category page level 
+Again, to allow accessibilty for new cooks... but the toggle being very accessible makes it easy for experienced cooks to quickly dive into all possible recipes ratehr than beginner ones.
+
+## Filter / Categories based on Personas
+Because we want to be able to make certain recipes instantly accessible to our personas (whom are our target users generally), we want to make filtering for them instantly accessible. For example, filter by: vegetarian, vegan, quick time, high protein, difficulty level, nutrition level.
+
+## Firebase Hosting instead of GitHub Pages...
+TBD
+
