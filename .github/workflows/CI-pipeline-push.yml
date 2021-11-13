@@ -50,7 +50,7 @@ jobs:
       - run: exit 0
 
   finished:
-    needs: exit-status
+    needs: success
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
