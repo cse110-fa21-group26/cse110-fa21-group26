@@ -12,6 +12,13 @@ on:
 
 jobs:
 
+  exit-success:
+    needs: [ html, css, javascript, media, backend ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: exit 0
+
   html:
     runs-on: ubuntu-latest
     steps:
@@ -41,17 +48,3 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: echo backend pipe
-
-  success:
-    needs: [ html, css, javascript, media, backend ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: exit 0
-
-  finished:
-    needs: success
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo final pipe
