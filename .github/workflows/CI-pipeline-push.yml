@@ -45,12 +45,12 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo backend pipe
 
-  fail:
+  exit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo fail pipe
-      - run: exit 1
+      - run: echo exit pipe
+      - run: exit 0
 
   default:
     runs-on: ubuntu-latest
