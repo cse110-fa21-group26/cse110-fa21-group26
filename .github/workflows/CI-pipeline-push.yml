@@ -12,10 +12,10 @@ on:
 
 jobs:
   start:
-  runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo start pipe
+    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - run: echo start pipe
 
   html:
     needs: start
