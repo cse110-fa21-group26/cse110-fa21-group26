@@ -18,3 +18,12 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GROUP26_CSE110F21 }}'
           channelId: live
           projectId: group26-cse110f21
+  test: 
+    needs: build_and_deploy
+    runs-on: [ ubuntu-latest, macOS-latest ]
+    steps:
+      - uses: actions/checkout@v2
+      - run: (npm ci && npm run build)
+      - run: echo "Testing 1 2 3"
+      - run: npm run test
+    
