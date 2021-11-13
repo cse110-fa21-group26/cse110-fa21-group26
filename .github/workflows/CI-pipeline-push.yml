@@ -2,11 +2,12 @@
 name: Continuous Integration Pipeline
 
 on:
-  pull_request
   push:
     branches: 
       - "*"
       - "!main"
+  pull_request:
+      - "*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
