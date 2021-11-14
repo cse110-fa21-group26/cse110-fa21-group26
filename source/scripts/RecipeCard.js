@@ -29,6 +29,7 @@ class RecipeCard extends HTMLElement {
       `;
     styleElem.innerHTML = styles;
 
+    
     // Here's the root element that you'll want to attach all of your other elements to
     const card = document.createElement('article');
 
