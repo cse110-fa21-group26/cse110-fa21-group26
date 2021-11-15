@@ -32,7 +32,6 @@ class RecipeCard extends HTMLElement {
     
     // Here's the root element that you'll want to attach all of your other elements to
     const card = document.createElement('article');
-
     let img = document.createElement("img");
 
     img.setAttribute('src', searchForKey(data, 'thumbnailUrl'));
