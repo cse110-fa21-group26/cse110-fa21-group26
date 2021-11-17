@@ -1,4 +1,4 @@
-#github-action genshdoc
+//#github-action genshdoc
 
 class RecipeCard extends HTMLElement {
   constructor() {
