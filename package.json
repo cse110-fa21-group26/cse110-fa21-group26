@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ArmanOmmid/cse110-fa21-group26#readme",
   "devDependencies": {
-    "eslint": "^8.2.0"
+    "eslint": "^8.2.0",
+    "eslint-config-google": "^0.14.0"
   }
 }
