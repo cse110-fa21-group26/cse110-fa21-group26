@@ -13,13 +13,20 @@ on:
 jobs:
 
   exit-success:
-    needs: [ html, css, javascript, media, backend ]
+    needs: [ html, css, javascript, media, backend, eslint ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: exit 0
 
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: stefanoeb/eslint-action@1.0.2
+
   lint:
+    needs: eslint
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
