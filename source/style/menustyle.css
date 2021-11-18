@@ -1,7 +1,6 @@
 .category{
     background-color: lightgrey;
     margin: 30px;
-    
     text-align: center;
     padding: 1%;
     border-width: 5px;
@@ -18,5 +17,4 @@
     height: auto;
     width: 100%;
     justify-content: space-evenly;
-    
 }
