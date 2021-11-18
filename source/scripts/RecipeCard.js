@@ -1,4 +1,5 @@
-#github-action genshdoc
+
+export { RecipeCard }
 
 class RecipeCard extends HTMLElement {
   constructor() {
@@ -11,55 +12,153 @@ class RecipeCard extends HTMLElement {
     const styleElem = document.createElement('style');
     let shadow = this.shadowRoot;
     const styles = `
-        * {
-          font-family: sans-serif;
-          margin: 0;
-          padding: 0;
-        }
-        article img{
-          width: 90%; 
-          height: 175px; 
-          object-fit: cover;
-        }
-        
-        p {
-          font-size: 15px;
-        }
+      * {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
       
-      `;
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+      
+      article {
+        align-items: center;
+        border: 1px solid rgb(223, 225, 229);
+        border-radius: 8px;
+        display: grid;
+        grid-template-rows: 118px 56px 14px 18px 15px 36px;
+        height: auto;
+        row-gap: 5px;
+        padding: 0 16px 16px 16px;
+        width: 178px;
+      
+      }
+
+      div.rating {
+        align-items: center;
+        column-gap: 5px;
+        display: flex;
+      }
+      
+      div.rating > img {
+        height: auto;
+        display: inline-block;
+        object-fit: scale-down;
+        width: 78px;
+      }
+
+      article > img {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        height: 118px;
+        object-fit: cover;
+        margin-left: -16px;
+        width: calc(100% + 32px);
+      }
+
+      p.ingredients {
+        height: 32px;
+        line-height: 16px;
+        padding-top: 4px;
+        overflow: hidden;
+      }
+      
+      p.organization {
+        color: black !important;
+      }
+
+      p.title {
+        display: -webkit-box;
+        font-size: 16px;
+        height: 36px;
+        line-height: 18px;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      p:not(.title), span, time {
+        color: #70757A;
+        font-size: 12px;
+      }
+    `;
     styleElem.innerHTML = styles;
 
-    
     // Here's the root element that you'll want to attach all of your other elements to
     const card = document.createElement('article');
-    let img = document.createElement("img");
 
-    img.setAttribute('src', searchForKey(data, 'thumbnailUrl'));
-    img.setAttribute('alt', searchForKey(data, 'headline'));
+    // Create/append img element
+    const img = document.createElement("img");
+    let imgSrc = getImageUrl(data);
+    let imgAlt = getTitle(data);
+    img.setAttribute("src", imgSrc);
+    img.setAttribute("alt", imgAlt);
     card.appendChild(img);
+    
+    // Create/append p element ; class title
+    const title = document.createElement("p");
+    title.setAttribute("class", "title");
+    const titleLink = document.createElement("a");
+    let titleLinkHref = getUrl(data);
+    titleLink.textContent = imgAlt;
+    //titleLink.setAttribute("href", titleLinkHref);
+    title.appendChild(titleLink);
+    card.appendChild(title);
 
-    let p = document.createElement('p');
-    p.setAttribute('class', 'title');
-    let a = document.createElement('a');
-    a.innerHTML = searchForKey(data, 'headline');
-    a.setAttribute('href', searchForKey(data, 'url'))
-    p.append(a);
-    card.appendChild(p);
+    // Create/append p element ; class organization
+    const organization = document.createElement("p");
+    let organizationName = getOrganization(data);
+    organization.setAttribute("class", "organization");
+    organization.textContent = organizationName;
+    card.appendChild(organization);
 
-    shadow.append(styleElem);
-    shadow.appendChild(card);
-    // Some functions that will be helpful here:
-    //    document.createElement()
-    //    document.querySelector()
-    //    element.classList.add()
-    //    element.setAttribute()
-    //    element.appendChild()
-    //    & All of the helper functions below
+    // Create/append div element ; class rating
+    const rating = document.createElement("div");
+    rating.setAttribute("class", "rating");
+    let ratingList = getRatings(data);
+    if(ratingList){
+      let value = Math.round(ratingList[0]*100)/100;
+      let count = ratingList[1];
+      // Create/append span element ; average score
+      const ratingValue = document.createElement("span");
+      ratingValue.textContent = value;
+      rating.appendChild(ratingValue);
+      // Create/append img element ; stars
+      const stars = document.createElement("img");
+      let starSrc = "icons/" + Math.round(value) + "-star.svg";
+      let starAlt = value + " stars";
+      stars.setAttribute("src", starSrc);
+      stars.setAttribute("alt", starAlt);
+      rating.appendChild(stars);
+      // Create/append span element ; average score
+      const ratingCount = document.createElement("span");
+      ratingCount.textContent = "(" + count + ")";
+      rating.appendChild(ratingCount);
+    }
+    else{
+      // Create/append span element ; no reviews
+      const noReviews = document.createElement("span");
+      noReviews.textContent = "No Reviews";
+      rating.appendChild(noReviews);
+    }
+    card.appendChild(rating);
 
-    // Make sure to attach your root element and styles to the shadow DOM you
-    // created in the constructor()
+    // Create/append time element
+    const time = document.createElement("time");
+    let timeContent = getTime(data);
+    time.textContent = convertTime(timeContent);
+    card.appendChild(time);
 
-    // Part 1 Expose - TODO
+    // Create/append p element ; class ingredients
+   
+    this.shadowRoot.appendChild(styleElem);
+    this.shadowRoot.appendChild(card);
+
   }
 }
 
@@ -92,6 +191,103 @@ function searchForKey(object, key) {
 }
 
 /**
+ * Custom Function
+ */
+ function getImageUrl(data) {
+  if(data.image){
+    if(data.image.url){
+      return data.image.url;
+    }
+    if(typeof(data.image) == "object"){
+      return data.image[0];
+    }
+  }
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'ImageObject') return data['@graph'][i].url;
+    }
+  };
+  return null;
+}
+
+/**
+ * Custom Function
+ */
+function getTitle(data) {
+  if (data.name) return data.name;
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'Article') return data['@graph'][i].headline;
+    }
+  };
+  return null;
+}
+
+/**
+ * Custom Function
+ */
+ function getRatings(data) {
+  let ratings = [];
+  let valueSFK = searchForKey(data, "ratingValue");
+  let countSFK = searchForKey(data, "ratingCount");
+  if(!valueSFK) valueSFK = searchForKey(data, "reviewValue");
+  if(!countSFK) countSFK = searchForKey(data, "reviewCount");
+  if(valueSFK && countSFK){
+    ratings.push(valueSFK);
+    ratings.push(countSFK);
+    return ratings;
+  }
+  // Rest Not Needed
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'Recipe'){
+        if(data['@graph'][i].aggregateRating){
+          let value = data['@graph'][i].aggregateRating.ratingValue;
+          let count = data['@graph'][i].aggregateRating.ratingCount;
+          ratings.push(value);
+          ratings.push(count);
+        }
+      }
+    }
+  };
+  if(ratings.length) return ratings;
+  return null;
+}
+
+/**
+ * Custom Function
+ */
+ function getTime(data) {
+  if(data.totalTime) return data.totalTime;
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'Recipe'){
+        return data['@graph'][i].totalTime;
+      }
+    }
+  };
+  return null;
+}
+
+/**
+ * Custom Function
+ */
+ function getIngredients(data) {
+  if(data.recipeIngredient) return data.recipeIngredient;
+  let sfk = searchForKey(data, "recipeIngredient");
+  if(sfk) return sfk;
+  // Rest Not Needed;
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'Recipe'){
+        return data['@graph'][i].recipeIngredient;
+      }
+    }
+  };
+  return null;
+}
+
+/**
  * Extract the URL from the given recipe schema JSON object
  * @param {Object} data Raw recipe JSON to find the URL of
  * @returns {String} If found, it returns the URL as a string, otherwise null
@@ -114,13 +310,28 @@ function getUrl(data) {
  */
 function getOrganization(data) {
   if (data.publisher?.name) return data.publisher?.name;
+  let publisher = searchForKey(data, "publisher");
+  if(typeof(publisher) == String) return publisher;
   if (data['@graph']) {
     for (let i = 0; i < data['@graph'].length; i++) {
       if (data['@graph'][i]['@type'] == 'Organization') {
         return data['@graph'][i].name;
       }
+      if (data['@graph'][i]['@type'] == 'WebSite') {
+        return data['@graph'][i].name;
+      }
     }
   };
+  let websiteName = getUrl(data);
+  if(websiteName){
+    let end = websiteName.indexOf(".com");
+    websiteName = websiteName.slice(0, end);
+    let start = websiteName.indexOf("//");
+    websiteName = websiteName.slice(start+2);
+    let start2 = websiteName.indexOf(".");
+    if(start2) websiteName = websiteName.slice(start2+1);
+    return websiteName;
+  }
   return null;
 }
 
