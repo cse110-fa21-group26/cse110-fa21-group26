@@ -1,44 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <style>
-    </style>
-        <title id="id1">Group 26 Project</title>
-        <meta charset = "utf-8">
-        <meta name="author" content="Group 26">
-        <meta name="description" content="CSE 110 Project">
-        <link rel="stylesheet" href="style/menustyle.css">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-        <link 
-            rel="icon"
-            type="image/png"
-            href="/specs/researchmaterial/veganlogo.png"
-        >
-    </head>
-    <body id="main">
-        <header class="side-menu">
-            <div id="mySidebar" class="sidebar" open="true">
-                <a href="#">Login</a>
-                <a href="#">Custom Recipes</a>
-                <a href="#">Saved Recipes</a>
-                <button class="dropdown-btn">Dropdown 
-                    <b class="fa fa-caret-down">&#9660</b>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-                <a href="#">Contact</a>
-            </div>
-            <button class="openbtn" onclick="toggleNav()">☰</button>  
-            <script src="scripts/main.js" type="module"></script>
-        </header>
-        <header>
-            <h1>Breakfast App</h1>
-        </header>
-        <main class = "container"></main>
-        <footer>
-        </footer>
-    </body>
+
+<head>
+  <style>
+  </style>
+  <title id="id1">Group 26 Project</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Group 26">
+  <meta name="description" content="CSE 110 Project">
+  <link rel="stylesheet" href="style/menustyle.css">
+  <link rel="stylesheet" href="style/sidebarstyle.css">
+  <link rel="stylesheet" href="style/recipestyle.css">
+  <link rel="stylesheet" href="style/recipepage.style.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="icon" type="image/png" href="/specs/researchmaterial/veganlogo.png">
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 7 - SPA vs. PWA</title>
+
+  <!-- Web Components -->
+  <script src="scripts/RecipeCard.js" type="module"></script>
+
+
+  <!-- Service Worker -->
+  <script src="scripts/sw.js" type="module"></script>
+
+  <!-- Router -->
+  <script src="scripts/Router.js" type="module"></script>
+
+  <!-- Main Stylesheet & Scripts -->
+  <link rel="stylesheet" href="style/menustyle.css" />
+  <script src="scripts/main.js" type="module"></script>
+
+
+</head>
+<header class="side-menu">
+  <div id="mySidebar" class="sidebar" open="true">
+    <a href="#">Login</a>
+    <a href="#">Custom Recipes</a>
+    <a href="#">Saved Recipes</a>
+    <button class="dropdown-btn">Dropdown
+      <b class="fa fa-caret-down">&#9660</b>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+    <a href="#">Contact</a>
+  </div>
+  <button class="openbtn" onclick="toggleNav()">☰</button>
+  <script src="scripts/main.js" type="module"></script>
+  <h1>Brecipi App</h1>
+</header>
+
+<body id="main">
+    <div class="placeholder"></div>
+    <main class="container"></main>
+    <main>
+        <section class="section--recipe-cards shown">
+        <div class="recipe-cards--wrapper">
+            <!-- Recipes Added Here -->
+        </div>
+        </section>
+        <section class="section--recipe-expand">
+        <recipe-expand></recipe-expand>
+        </section>
+    </main>
+</body>
+<footer>
+</footer>
+
+</html>
+
 </html>

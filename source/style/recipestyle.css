@@ -1,0 +1,44 @@
+
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+    background-color: gray;
+    width: 75%;
+    margin: auto;
+    height: 500px;
+}
+
+.float-child {
+    float: left;
+    height: 500px;
+    width: 49%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#left-child {
+    background-color: ivory;
+}
+
+#right-child {
+    background-color: ivory;
+    margin-left: 15px;
+}
+
+#image-button {
+    float: left;
+    width: 50%;
+}
+
+#ingredients-button {
+    width: 50%;
+}
+
+#ingredients {
+    display: none;
+}
+
+#recipe-img {
+    max-width: 99%;
+    max-height: 99%;
+}

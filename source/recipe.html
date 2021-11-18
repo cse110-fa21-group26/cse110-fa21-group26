@@ -1,62 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+
+<head>
     <style>
     </style>
-        <title id="id1">Group 26 Project</title>
-        <meta charset = "utf-8">
-        <meta name="author" content="Group 26">
-        <meta name="description" content="CSE 110 Project">
-        <link rel="stylesheet" href="style/menustyle.css">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-        <link 
-            rel="icon"
-            type="image/png"
-            href="/specs/researchmaterial/veganlogo.png"
-        >
-    </head>
-    <body id="main">
-        <header class="side-menu">
-            <div id="mySidebar" class="sidebar" open="true">
-                <a href="#">Login</a>
-                <a href="#">Custom Recipes</a>
-                <a href="#">Saved Recipes</a>
-                <button class="dropdown-btn">Dropdown 
-                    <b class="fa fa-caret-down">&#9660</b>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-                <a href="#">Contact</a>
-            </div>
-            <button class="openbtn">☰</button>  
-            <script src="scripts/recipe.js" type="module"></script>
-        </header>
-        <header>
-            <h1>Breakfast App</h1>
-        </header>
-        <main class = "container"></main>
-        <div class="float-container" id="recipe-template">
-            <div class="float-child" id="left-child">
-                <button id="image-button">
-                    Image
-                </button>
-                <button id="ingredients-button">
-                    Ingredients
-                </button>
-                <img src="https://images-gmi-pmc.edge-generalmills.com/df109202-f5dd-45a1-99b4-f10939afd509.jpg" id="recipe-img"></img>
-                <div id="ingredients">
-                    Ingredients
-                </div>
-            </div>
+    <title id="id1">Group 26 Project</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Group 26">
+    <meta name="description" content="CSE 110 Project">
+    <link rel="stylesheet" href="style/menustyle.css">
+    <link rel="stylesheet" href="style/sidebarstyle.css">
+    <link rel="stylesheet" href="style/recipestyle.css">
+    <link rel="stylesheet" href="style/recipepage.style.css">
+    <link rel="icon" type="image/png" href="../specs/brainstorm/researchmaterial/veganlogo.png">
+</head>
 
-            <div class="float-child" id="right-child">
-                <div>Recipe Steps</div>
+
+<header class="side-menu">
+    <div id="mySidebar" class="sidebar" open="true">
+        <a href="#">Login</a>
+        <a href="#">Custom Recipes</a>
+        <a href="#">Saved Recipes</a>
+        <button class="dropdown-btn">Dropdown
+            <b class="fa fa-caret-down">&#9660</b>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        <a href="#">Contact</a>
+    </div>
+    <button class="openbtn">☰</button>
+    <script src="scripts/recipe.js" type="module"></script>
+</header>
+
+<body id="main">
+    <div class="float-container" id="recipe-template">
+        <div class="float-child" id="left-child">
+            <button id="image-button">
+                Image
+            </button>
+            <button id="ingredients-button">
+                Ingredients
+            </button>
+            <img src="https://images-gmi-pmc.edge-generalmills.com/df109202-f5dd-45a1-99b4-f10939afd509.jpg"
+                id="recipe-img"></img>
+            <div id="ingredients">
+                Ingredients
             </div>
         </div>
-        <footer>
-        </footer>
-    </body>
+
+    </div>
+</body>
+
 </html>
