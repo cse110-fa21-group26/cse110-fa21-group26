@@ -104,10 +104,10 @@ class RecipeCard extends HTMLElement {
     const title = document.createElement("p");
     title.setAttribute("class", "title");
     const titleLink = document.createElement("a");
-    let titleLinkHref = getUrl(data);
-    titleLink.textContent = imgAlt;
+    //let titleLinkHref = getUrl(data);
+    title.textContent = imgAlt;
     //titleLink.setAttribute("href", titleLinkHref);
-    title.appendChild(titleLink);
+    //title.appendChild(titleLink);
     card.appendChild(title);
 
     // Create/append p element ; class organization
