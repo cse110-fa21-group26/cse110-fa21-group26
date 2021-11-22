@@ -76,8 +76,9 @@ recipeForm.addEventListener('submit', (event) => {
     //localRecipes.push(newRecipe);
     //localStorage.setItem('user-recipes', userRecipes);
 
-    localStorage.setItem('newCustomRecipe', newRecipe);
+    localStorage.setItem(name, newRecipe);
 
     console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
     //recipeForm.submit();
 });
+
