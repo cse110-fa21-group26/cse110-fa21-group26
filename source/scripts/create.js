@@ -32,14 +32,15 @@ for (i = 0; i < dropdown.length; i++) {
 
 document.querySelector('.openbtn').onclick = toggleNav;
 
-const userRecipes = [];
+
+/*
 //window.localStorage.setItem('user-recipes', JSON.stringify(userRecipes));
 
 function createCustomRecipe () {
     const recipeForm= document.querySelector('.recipe-form');
-    let name = document.getElementById['recipe-name'].value;
-    let ingredients = document.getElementById['recipe-ingredients'].value;
-    let steps = document.getElementById['recipe-steps'].value;
+    let name = document.getElementById('recipe-name').value;
+    let ingredients = document.getElementById('recipe-ingredients').value;
+    let steps = document.getElementById('recipe-steps').value;
 
     console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
 
@@ -56,3 +57,27 @@ function createCustomRecipe () {
 //document.querySelector('.form-submit').onclick = createCustomRecipe();
 
 console.log(localStorage.getItem('user-recipes').length);
+*/
+
+const userRecipes = [];
+//localStorage.setItem('user-recipes', userRecipes);
+const recipeForm = document.querySelector('.recipe-form');
+
+recipeForm.addEventListener('submit', (event) => {
+    //event.preventDefault();
+    console.log("hi");
+    let name = document.getElementById('recipe-name').value;
+    let ingredients = document.getElementById('recipe-ingredients').value;
+    let steps = document.getElementById('recipe-steps').value;
+
+    let newRecipe = new customRecipe(name, ingredients, steps);
+
+    //let localRecipes = localStorage.getItem('user-recipes');
+    //localRecipes.push(newRecipe);
+    //localStorage.setItem('user-recipes', userRecipes);
+
+    localStorage.setItem('newCustomRecipe', newRecipe);
+
+    console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
+    //recipeForm.submit();
+});
