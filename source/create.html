@@ -29,6 +29,7 @@
 
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="style/menustyle.css" />
+  <link rel="stylesheet" href="style/createstyle.css" />
 
 
 </head>
@@ -65,13 +66,18 @@
         <recipe-expand></recipe-expand>
         </section>
 
-        <form action="scripts/create.js">
+        <form class="recipe-form" onsubmit="createCustomRecipe()">
+          <div></div>
             <label for="recipe-name">Recipe Name</label><br>
             <input type="text" id="recipe-name" name="recipe-name"><br>
             <label for="recipe-ingredients">Ingredients</label><br>
             <input type="text" id="recipe-ingredients" name="recipe-ingredients"><br>
             <label for="recipe-steps">Recipe Steps</label><br>
             <input type="text" id="recipe-steps" name="recipe-steps"><br>
+          </div> 
+          <div>
+            <button class="form-submit" type="submit">Save</button>
+          </div>
         </form>
     </main>
 </body>

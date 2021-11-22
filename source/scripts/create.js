@@ -1,8 +1,8 @@
-
 import { Router, bindRecipeCard, bindEscKey,bindPopstate } from './Router.js';
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
-/**/
+import { customRecipe } from './customRecipe.js';
+
 function toggleNav() {
     if(document.getElementById("mySidebar").getAttribute("open") == "true"){
         document.getElementById("mySidebar").style.width = "250px";
@@ -32,9 +32,27 @@ for (i = 0; i < dropdown.length; i++) {
 
 document.querySelector('.openbtn').onclick = toggleNav;
 
-/* Placeholder to view the recipe card thing */
-var category = document.createElement('button');
-category.setAttribute('class', 'category');
-category.setAttribute('onclick', "window.location.href='recipe.html';");
-category.innerHTML = 'Link to Recipe';
-document.querySelector('.placeholder').appendChild(category);
+const userRecipes = [];
+//window.localStorage.setItem('user-recipes', JSON.stringify(userRecipes));
+
+function createCustomRecipe () {
+    const recipeForm= document.querySelector('.recipe-form');
+    let name = document.getElementById['recipe-name'].value;
+    let ingredients = document.getElementById['recipe-ingredients'].value;
+    let steps = document.getElementById['recipe-steps'].value;
+
+    console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
+
+    let newRecipe = new customRecipe(name, ingredients, steps);
+    
+    let localRecipes = JSON.parse(localStorage.getItem('user-recipes'));
+    localRecipes.push(newRecipe);
+    window.localStorage.setItem('user-recipes', JSON.stringify(localRecipes));
+
+    console.log(userRecipes.length);
+    console.log('Name: ', newRecipe.name)
+}
+
+//document.querySelector('.form-submit').onclick = createCustomRecipe();
+
+console.log(localStorage.getItem('user-recipes').length);
