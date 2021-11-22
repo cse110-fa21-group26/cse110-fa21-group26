@@ -24,15 +24,12 @@
   <script src="scripts/RecipeCard.js" type="module"></script>
 
 
-  <!-- Service Worker -->
-  <script src="scripts/sw.js" type="module"></script>
-
   <!-- Router -->
   <script src="scripts/Router.js" type="module"></script>
 
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="style/menustyle.css" />
-  <script src="scripts/main.js" type="module"></script>
+  <link rel="stylesheet" href="style/createstyle.css" />
 
 
 </head>
@@ -53,7 +50,7 @@
     <a href="./create.html">Create New Recipe</a>
   </div>
   <button class="openbtn" onclick="toggleNav()">☰</button>
-  <script src="scripts/main.js" type="module"></script>
+  <script src="scripts/create.js" type="module"></script>
   <h1>Brecipi App</h1>
 </header>
 
@@ -69,6 +66,22 @@
         <section class="section--recipe-expand">
         <recipe-expand></recipe-expand>
         </section>
+
+        <form class="recipe-form">
+          <div>
+            <label for="recipe-name">Recipe Name</label><br>
+            <input type="text" id="recipe-name" name="recipe-name"><br>
+
+            <label for="recipe-ingredients">Ingredients</label><br>
+            <input type="text" id="recipe-ingredients" name="recipe-ingredients"><br>
+
+            <label for="recipe-steps">Recipe Steps</label><br>
+            <input type="text" id="recipe-steps" name="recipe-steps"><br>
+          </div> 
+          <div>
+            <button class="form-submit" type="submit">Save</button>
+          </div>
+        </form>
     </main>
 </body>
 <footer>
