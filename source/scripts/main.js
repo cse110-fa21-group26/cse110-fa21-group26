@@ -1,7 +1,7 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
-// import { transferData } from './recipe.js';
+// import { transferData } from './transfer.js';
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 
