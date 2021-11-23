@@ -1,16 +1,21 @@
 
-import { Router, bindRecipeCard, bindEscKey,bindPopstate } from './Router.js';
+import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
+// import { transferData } from './transfer.js';
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 
 const recipes = [
-  'https://introweb.tech/assets/json/ghostCookies.json',
-  'https://introweb.tech/assets/json/birthdayCake.json',
-  'https://introweb.tech/assets/json/chocolateChip.json',
-  'https://introweb.tech/assets/json/stuffing.json',
-  'https://introweb.tech/assets/json/turkey.json',
-  'https://introweb.tech/assets/json/pumpkinPie.json'
+  [
+    'https://introweb.tech/assets/json/ghostCookies.json',
+    'https://introweb.tech/assets/json/birthdayCake.json',
+    'https://introweb.tech/assets/json/chocolateChip.json'
+  ],
+  [
+    'https://introweb.tech/assets/json/stuffing.json',
+    'https://introweb.tech/assets/json/turkey.json',
+    'https://introweb.tech/assets/json/pumpkinPie.json'
+  ]
 ];
 const recipeData = {} // You can access all of the Recipe Data from the JSON files in this variable
 
@@ -24,18 +29,20 @@ window.addEventListener('DOMContentLoaded', init);
 // Initialize function, begins all of the JS code in this file
 async function init() {
     initializeServiceWorker();
-    try {
-        await fetchRecipes();
-    } catch (err) {
-        console.log(`Error fetching recipes: ${err}`);
-        return;
+    for(let i = 0; i < recipes.length; i++){
+      try {
+          await fetchRecipes(i);
+      } catch (err) {
+          console.log(`Error fetching recipes: ${err}`);
+          return;
+      }
     }
-    createRecipeCards();
+    //createRecipeCards();
     bindEscKey();
     bindPopstate();
 }
 
-/**/
+/* Dropdown Functionality */
 function toggleNav() {
     if(document.getElementById("mySidebar").getAttribute("open") == "true"){
         document.getElementById("mySidebar").style.width = "250px";
@@ -62,23 +69,23 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
-
 document.querySelector('.openbtn').onclick = toggleNav;
+/* Dropdown Functionality End */
 
-for(var i = 0; i < recipes.length; i++){
-    var category = document.createElement('button');
+/* Create Category Buttons with functionality to create recipe cards on click */
+for(let i = 0; i < recipes.length; i++){
+    let category = document.createElement('button');
     category.setAttribute('class', 'category');
-    category.setAttribute('onclick', "no link");
+    //category.setAttribute('onclick', "window.location.href='category.html';");
+    category.addEventListener('click', (event) => {
+      while(document.querySelector('.recipe-cards--wrapper').firstChild){
+        document.querySelector('.recipe-cards--wrapper').removeChild(document.querySelector('.recipe-cards--wrapper').firstChild);
+      }
+      createRecipeCards(i);
+    });
     category.innerHTML = 'Category';
     document.querySelector('body main').appendChild(category);
 }
-
-/* Placeholder to view the recipe card thing */
-var category = document.createElement('button');
-category.setAttribute('class', 'category');
-category.setAttribute('onclick', "window.location.href='recipe.html';");
-category.innerHTML = 'Link to Recipe';
-document.querySelector('.placeholder').appendChild(category);
 
 /**/
 
@@ -87,9 +94,9 @@ document.querySelector('.placeholder').appendChild(category);
  * I built a function to load in the JSON files for you. It places all of the recipe data
  * inside the object recipeData like so: recipeData{ 'ghostcookies': ..., 'birthdayCake': ..., etc }
  */
-async function fetchRecipes() {
+async function fetchRecipes(categoryIndex) {
   return new Promise((resolve, reject) => {
-    recipes.forEach(recipe => {
+    recipes[categoryIndex].forEach(recipe => {
       fetch(recipe)
         .then(response => response.json())
         .then(data => {
@@ -112,35 +119,43 @@ async function fetchRecipes() {
  * Generates the <recipe-card> elements from the fetched recipes and
  * appends them to the page
  */
-function createRecipeCards() {
+function createRecipeCards(categoryIndex) {
 
-  for(let i = 0; i < recipes.length; i++){
+  for(let i = 0; i < recipes[categoryIndex].length; i++){
     const recipeCard = document.createElement('recipe-card');
-    recipeCard.data = recipeData[recipes[i]];
+    recipeCard.data = recipeData[recipes[categoryIndex][i]];
 
-    const page = recipeData[recipes[i]]['page-name'];
+    const page = recipeData[recipes[categoryIndex][i]]['page-name'];
     router.addPage(page, function() {
-    //   document.querySelector('.section--recipe-cards').classList.remove('shown');
-    //   document.querySelector('.section--recipe-expand').classList.add('shown');
-    //   document.querySelector('recipe-expand').data = recipeData[recipes[i]];
+       document.querySelector('.section--recipe-cards').classList.remove('shown');
+       document.querySelector('.section--recipe-expand').classList.add('shown');
+       document.querySelector('recipe-expand').data = recipeData[recipes[categoryIndex][i]];
     });
 
     bindRecipeCard(recipeCard, page);
-
     document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
     }
 }
 
-function createCategories() {
+function bindPopstate() {
+  window.addEventListener("popstate", (event) => {
+    if(event.state != null && event.state.state_page != null) router.navigate(event.state.state_page, true);
+    else router.navigate("home", true);
+  })
+}
 
-    for(let i = 0; i < recipes.length; i++){
-      const category = document.createElement('category');
-      category.data = recipeData[recipes[i]];
-  
-      const page = recipeData[recipes[i]]['page-name'];
-      router.addCategory(page, function() {});
-  
-      bindCategory(recipeCard, page);
-      document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
-      }
-  }
+function bindRecipeCard(recipeCard, pageName) {
+  recipeCard.addEventListener('click', e => {
+    // if (e.path[0].nodeName == 'A') return;
+    // router.navigate(pageName, false);
+    window.location.href='recipe.html';
+    transferData(recipeCard.data);
+  });
+}
+
+
+function bindEscKey() {
+  document.addEventListener("keydown", (event) => {
+    if(event.key == "Escape") router.navigate("home", false);
+  });
+}
