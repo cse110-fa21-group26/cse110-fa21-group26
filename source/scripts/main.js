@@ -68,7 +68,7 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
-document.querySelector('.openbtn').onclick = toggleNav;
+document.querySelector('#openbtn').onclick = toggleNav;
 /* Dropdown Functionality End */
 
 /* Create Category Buttons with functionality to create recipe cards on click */
