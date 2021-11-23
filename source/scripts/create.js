@@ -1,7 +1,9 @@
-import { Router, bindRecipeCard, bindEscKey,bindPopstate } from './Router.js';
+//import { Router, bindRecipeCard, bindEscKey,bindPopstate } from './Router.js';
+import { Router } from './Router.js';
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 import { customRecipe } from './customRecipe.js';
+//mport { jsxAttribute } from '@babel/types';
 
 function toggleNav() {
     if(document.getElementById("mySidebar").getAttribute("open") == "true"){
@@ -63,22 +65,50 @@ const userRecipes = [];
 //localStorage.setItem('user-recipes', userRecipes);
 const recipeForm = document.querySelector('.recipe-form');
 
+
 recipeForm.addEventListener('submit', (event) => {
-    //event.preventDefault();
+    event.preventDefault();
     console.log("hi");
     let name = document.getElementById('recipe-name').value;
     let ingredients = document.getElementById('recipe-ingredients').value;
     let steps = document.getElementById('recipe-steps').value;
 
     let newRecipe = new customRecipe(name, ingredients, steps);
-
+    //console.log(newRecipe);
     //let localRecipes = localStorage.getItem('user-recipes');
     //localRecipes.push(newRecipe);
     //localStorage.setItem('user-recipes', userRecipes);
+    var data = {name: name, ingredients: ingredients, steps: steps};
+    
+    // var getData =
+    // {
+    //     "firstdata":name,
+    //     "seconddata":ingredients,
+    //     "thirddata":steps
+    // }
+    //localStorage.setItem(name, newRecipe);
+    localStorage.setItem('Data', JSON.stringify(data));
+    //var result = localStorage.getItem('getData');
 
-    localStorage.setItem(name, newRecipe);
-
-    console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
+    //console.log(JSON.stringify(data));
+    //var array = JSON.parse(localStorage.getItem('Data') || '[]');
+    var array = [];
+    array.push(name,ingredients,steps);
+    //console.log(array);
+    localStorage.setItem(name, JSON.stringify(array));
+    console.log(localStorage);
+    //console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
     //recipeForm.submit();
 });
+
+// function setRecipes(){
+//     var currentName = localStorage.getItem('recipe-name');
+//     var currentIngredients = localStorage.getItem('recipe-ingredients');
+//     var currentSteps = localStorage.getItem('recipe-steps');
+
+//     document.getElementById('recipe-name').value = currentName;
+//     document.getElementById('recipe-ingredients').value = currentIngredients;
+//     document.getElementById('recipe-steps').value = currentSteps;
+     
+// }
 
