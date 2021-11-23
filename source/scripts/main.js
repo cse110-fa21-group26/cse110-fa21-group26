@@ -1,6 +1,7 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
+import * as json from "./json.js";
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 
@@ -36,7 +37,6 @@ async function init() {
           return;
       }
     }
-    //createRecipeCards();
     bindEscKey();
     bindPopstate();
 }
@@ -119,10 +119,10 @@ async function fetchRecipes(categoryIndex) {
  * appends them to the page
  */
 function createRecipeCards(categoryIndex) {
-
   for(let i = 0; i < recipes[categoryIndex].length; i++){
     const recipeCard = document.createElement('recipe-card');
-    recipeCard.data = recipeData[recipes[categoryIndex][i]];
+    let json = recipeData[recipes[categoryIndex][i]];
+    recipeCard.data = json; // Note, recipeCard.data is "abstract", use recipe_data
 
     const page = recipeData[recipes[categoryIndex][i]]['page-name'];
     router.addPage(page, function() {
@@ -131,7 +131,7 @@ function createRecipeCards(categoryIndex) {
        document.querySelector('recipe-expand').data = recipeData[recipes[categoryIndex][i]];
     });
 
-    bindRecipeCard(recipeCard, page);
+    bindRecipeCard(recipeCard, page, json);
     document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
     }
 }
@@ -143,28 +143,40 @@ function bindPopstate() {
   })
 }
 
-function bindRecipeCard(recipeCard, pageName) {
+function bindRecipeCard(recipeCard, pageName, jsonData) {
   recipeCard.addEventListener('click', e => {
     // if (e.path[0].nodeName == 'A') return;
     // router.navigate(pageName, false);
-    openRecipe(recipeCard);
+    openRecipe(jsonData);
   });
 }
 
-function openRecipe(recipe){
+function openRecipe(jsonData){
     let body = document.getElementById("body");
-    let main = document.getElementById("main");
+    let priorState = document.getElementById("main");
 
-    // Remove Current Main
-    body.removeChild(main);
+    // Prune Current Main
+    body.removeChild(priorState);
 
     let recipePage = document.createElement("main");
 
-        let recipeScript = document.createElement("script");
-        recipeScript.setAttribute("src", "scripts/recipe.js");
-        recipeScript.setAttribute("type", "module");
+        let backButton = document.createElement("button");
+        backButton.setAttribute('class', 'category');
+        backButton.setAttribute('id', 'back-button');
+        backButton.innerHTML = "Return";
+        backButton.onclick = (closeRecipe) => {
+            // Remove Current State
+            body.removeChild(recipePage);
+            // Return to Previous State
+            body.appendChild(priorState);
+        };
+        recipePage.appendChild(backButton);
 
-        recipePage.appendChild(recipeScript);
+        // REUSING SCRIPT LEADS TO ISSUES, FUNCTIONS ARE DEFINE AT BOTTOM
+        // let recipeScript = document.createElement("script");
+        // recipeScript.setAttribute("src", "scripts/recipe.js");
+        // recipeScript.setAttribute("type", "module");
+        // recipePage.appendChild(recipeScript);
 
         let container = document.createElement("div");
         container.setAttribute("class", "float-container");
@@ -183,12 +195,12 @@ function openRecipe(recipe){
                 ingredientsButton.innerHTML = "Ingredients";
                 
                 let img = document.createElement("img");
-                img.setAttribute("src", "https://images-gmi-pmc.edge-generalmills.com/df109202-f5dd-45a1-99b4-f10939afd509.jpg");
+                img.setAttribute("src", json.getImage(jsonData));
                 img.setAttribute("id", "recipe-img");
                 
                 let ingredients = document.createElement("div");
                 ingredients.setAttribute("id", "ingredients");
-                ingredients.innerHTML = "Ingredients";
+                ingredients.innerHTML = json.getIngredients(jsonData);
 
             leftChild.appendChild(imgButton);
             leftChild.appendChild(ingredientsButton);
@@ -197,6 +209,7 @@ function openRecipe(recipe){
             
             let data = document.createElement("div");
             data.setAttribute("class", "data");
+            data.innerHTML = json.getInstructions(jsonData);
 
         container.appendChild(leftChild);
         container.appendChild(data);
@@ -205,9 +218,43 @@ function openRecipe(recipe){
 
     body.appendChild(recipePage);
 
-}
+    /* Recipe.js Start */
+    
+    // THESE ARE ALREADY DEFINED ABOVE
+    // let imgButton = document.querySelector('#image-button');
+    // let ingredients = document.querySelector('#ingredients');              
+    // let ingredientsButton = document.querySelector('#ingredients-button');
+    // let img = document.querySelector('img');
 
-function closeRecipe(recipe){
+    imgButton.onclick = function() {
+        if (ingredients.style.display !== 'none') {
+            ingredients.style.display = 'none'; 
+            img.style.display = 'block';
+        }
+    };
+
+    ingredientsButton.onclick = function() {
+        if (img.style.display !== 'none') {
+            img.style.display = 'none';
+            ingredients.style.display = 'block';
+        }
+    };
+
+    let dropdown = document.getElementsByClassName("dropdown-btn");
+    let i;
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            let dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } 
+            else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+    /* Recipe.js End */
 
 }
 
