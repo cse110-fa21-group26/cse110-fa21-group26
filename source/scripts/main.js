@@ -1,7 +1,6 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
-// import { transferData } from './transfer.js';
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 
@@ -46,12 +45,12 @@ async function init() {
 function toggleNav() {
     if(document.getElementById("mySidebar").getAttribute("open") == "true"){
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("body").style.marginLeft = "250px";
         document.getElementById("mySidebar").setAttribute("open", "false")
     }
     else{
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("body").style.marginLeft= "0";
         document.getElementById("mySidebar").setAttribute("open", "true")
     }
 }
@@ -84,7 +83,7 @@ for(let i = 0; i < recipes.length; i++){
       createRecipeCards(i);
     });
     category.innerHTML = 'Category';
-    document.querySelector('body main').appendChild(category);
+    document.querySelector("#category-wrapper").appendChild(category);
 }
 
 /**/
@@ -149,10 +148,16 @@ function bindRecipeCard(recipeCard, pageName) {
     // if (e.path[0].nodeName == 'A') return;
     // router.navigate(pageName, false);
     window.location.href='recipe.html';
-    transferData(recipeCard.data);
   });
 }
 
+function openRecipe(recipe){
+
+}
+
+function closeRecipe(recipe){
+
+}
 
 function bindEscKey() {
   document.addEventListener("keydown", (event) => {

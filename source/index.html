@@ -32,35 +32,30 @@
   <link rel="stylesheet" href="style/menustyle.css" />
   <script src="scripts/main.js" type="module"></script>
 
-
 </head>
-<header class="side-menu">
-  <div id="mySidebar" class="sidebar" open="true">
-    <a href="#">Login</a>
-    <a href="#">Custom Recipes</a>
-    <a href="#">Saved Recipes</a>
-    <button class="dropdown-btn">Dropdown
-      <b class="fa fa-caret-down">&#9660</b>
-    </button>
-    <div class="dropdown-container">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    <a href="#">Contact</a>
-    <a href="./create.html">Create New Recipe</a>
-  </div>
-  <button class="openbtn" onclick="toggleNav()">☰</button>
-  <script src="scripts/main.js" type="module"></script>
-  <h1>Brecipi App</h1>
-</header>
-
-<body id="main">
-    <div class="placeholder"></div>
-    <main class="container"></main>
+<body id="body">
+    <header class="side-menu">
+        <div id="mySidebar" class="sidebar" open="true">
+            <a href="#">Login</a>
+            <a href="#">Custom Recipes</a>
+            <a href="#">Saved Recipes</a>
+            <button class="dropdown-btn">Dropdown
+            <b class="fa fa-caret-down">&#9660</b>
+            </button>
+            <div class="dropdown-container">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </div>
+            <a href="#">Contact</a>
+            <a href="./create.html">Create New Recipe</a>
+        </div>
+        <button class="openbtn">☰</button>
+    </header>
+    <h1>Brecipi App</h1>
     <main>
-      
-      <div class="recipe-cards--wrapper">
+        <div id="category-wrapper"></div>
+        <div class="recipe-cards--wrapper">
             <!-- Categories Added Here -->
         </div>
     </main>
