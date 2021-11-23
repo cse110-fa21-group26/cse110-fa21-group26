@@ -48,7 +48,7 @@
     margin-left: 50px;
 }
 
-.openbtn {
+#openbtn {
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
@@ -57,7 +57,7 @@
     border: none;
 }
 
-.openbtn:hover {
+#openbtn:hover {
     background-color: #444;
 }
 
@@ -89,4 +89,16 @@
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+}
+
+#siderbar-header {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem;
+}
+
+.sidebar-item {
+    display: inline-block;
+    padding: 1rem;
+    vertical-align: middle;
 }

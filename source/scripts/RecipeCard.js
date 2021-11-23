@@ -4,13 +4,13 @@ export { RecipeCard }
 class RecipeCard extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({mode: 'open'});
+    // You'll want to attach the shadow DOM here
   }
 
   set data(data) {
     // This is the CSS that you'll use for your recipe cards
     const styleElem = document.createElement('style');
-    let shadow = this.shadowRoot;
     const styles = `
       * {
         font-family: sans-serif;
@@ -36,20 +36,12 @@ class RecipeCard extends HTMLElement {
         row-gap: 5px;
         padding: 0 16px 16px 16px;
         width: 178px;
-      
       }
 
       div.rating {
         align-items: center;
         column-gap: 5px;
         display: flex;
-      }
-      
-      div.rating > img {
-        height: auto;
-        display: inline-block;
-        object-fit: scale-down;
-        width: 78px;
       }
 
       article > img {
@@ -91,7 +83,7 @@ class RecipeCard extends HTMLElement {
 
     // Here's the root element that you'll want to attach all of your other elements to
     const card = document.createElement('article');
-
+    
     // Create/append img element
     const img = document.createElement("img");
     let imgSrc = getImageUrl(data);
@@ -104,10 +96,10 @@ class RecipeCard extends HTMLElement {
     const title = document.createElement("p");
     title.setAttribute("class", "title");
     const titleLink = document.createElement("a");
-    //let titleLinkHref = getUrl(data);
-    title.textContent = imgAlt;
-    //titleLink.setAttribute("href", titleLinkHref);
-    //title.appendChild(titleLink);
+    let titleLinkHref = getUrl(data);
+    titleLink.textContent = imgAlt;
+    titleLink.setAttribute("href", titleLinkHref);
+    title.appendChild(titleLink);
     card.appendChild(title);
 
     // Create/append p element ; class organization
@@ -128,13 +120,6 @@ class RecipeCard extends HTMLElement {
       const ratingValue = document.createElement("span");
       ratingValue.textContent = value;
       rating.appendChild(ratingValue);
-      // Create/append img element ; stars
-      const stars = document.createElement("img");
-      let starSrc = "icons/" + Math.round(value) + "-star.svg";
-      let starAlt = value + " stars";
-      stars.setAttribute("src", starSrc);
-      stars.setAttribute("alt", starAlt);
-      rating.appendChild(stars);
       // Create/append span element ; average score
       const ratingCount = document.createElement("span");
       ratingCount.textContent = "(" + count + ")";
@@ -155,10 +140,31 @@ class RecipeCard extends HTMLElement {
     card.appendChild(time);
 
     // Create/append p element ; class ingredients
-   
+    const ingredients = document.createElement("p");
+    ingredients.setAttribute("class", "ingredients");
+    let ingredientsArray = getIngredients(data);
+    let ingredientsCSV = createIngredientList(ingredientsArray);
+    ingredients.textContent = ingredientsCSV;
+    card.appendChild(ingredients);
+
+
     this.shadowRoot.appendChild(styleElem);
     this.shadowRoot.appendChild(card);
 
+
+
+    // Some functions that will be helpful here:
+    //    document.createElement()
+    //    document.querySelector()
+    //    element.classList.add()
+    //    element.setAttribute()
+    //    element.appendChild()
+    //    & All of the helper functions below
+
+    // Make sure to attach your root element and styles to the shadow DOM you
+    // created in the constructor()
+
+    // Part 1 Expose - TODO
   }
 }
 
