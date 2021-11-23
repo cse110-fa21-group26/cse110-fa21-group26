@@ -1,7 +1,6 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
-// import { transferData } from './transfer.js';
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 
@@ -46,12 +45,12 @@ async function init() {
 function toggleNav() {
     if(document.getElementById("mySidebar").getAttribute("open") == "true"){
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("body").style.marginLeft = "250px";
         document.getElementById("mySidebar").setAttribute("open", "false")
     }
     else{
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("body").style.marginLeft= "0";
         document.getElementById("mySidebar").setAttribute("open", "true")
     }
 }
@@ -84,7 +83,7 @@ for(let i = 0; i < recipes.length; i++){
       createRecipeCards(i);
     });
     category.innerHTML = 'Category';
-    document.querySelector('body main').appendChild(category);
+    document.querySelector("#category-wrapper").appendChild(category);
 }
 
 /**/
@@ -148,11 +147,69 @@ function bindRecipeCard(recipeCard, pageName) {
   recipeCard.addEventListener('click', e => {
     // if (e.path[0].nodeName == 'A') return;
     // router.navigate(pageName, false);
-    window.location.href='recipe.html';
-    transferData(recipeCard.data);
+    openRecipe(recipeCard);
   });
 }
 
+function openRecipe(recipe){
+    let body = document.getElementById("body");
+    let main = document.getElementById("main");
+
+    // Remove Current Main
+    body.removeChild(main);
+
+    let recipePage = document.createElement("main");
+
+        let recipeScript = document.createElement("script");
+        recipeScript.setAttribute("src", "scripts/recipe.js");
+        recipeScript.setAttribute("type", "module");
+
+        recipePage.appendChild(recipeScript);
+
+        let container = document.createElement("div");
+        container.setAttribute("class", "float-container");
+        container.setAttribute("id", "recipe-template");
+
+            let leftChild = document.createElement("div");
+            leftChild.setAttribute("class", "float-child");
+            leftChild.setAttribute("id", "left-child");
+
+                let imgButton = document.createElement("button");
+                imgButton.setAttribute("id", "image-button");
+                imgButton.innerHTML = "Image";
+
+                let ingredientsButton = document.createElement("button");
+                ingredientsButton.setAttribute("id", "ingredients-button");
+                ingredientsButton.innerHTML = "Ingredients";
+                
+                let img = document.createElement("img");
+                img.setAttribute("src", "https://images-gmi-pmc.edge-generalmills.com/df109202-f5dd-45a1-99b4-f10939afd509.jpg");
+                img.setAttribute("id", "recipe-img");
+                
+                let ingredients = document.createElement("div");
+                ingredients.setAttribute("id", "ingredients");
+                ingredients.innerHTML = "Ingredients";
+
+            leftChild.appendChild(imgButton);
+            leftChild.appendChild(ingredientsButton);
+            leftChild.appendChild(img);
+            leftChild.appendChild(ingredients);
+            
+            let data = document.createElement("div");
+            data.setAttribute("class", "data");
+
+        container.appendChild(leftChild);
+        container.appendChild(data);
+
+    recipePage.appendChild(container);
+
+    body.appendChild(recipePage);
+
+}
+
+function closeRecipe(recipe){
+
+}
 
 function bindEscKey() {
   document.addEventListener("keydown", (event) => {

@@ -10,10 +10,6 @@ console.log(ingredients);
 console.log(ingredientsButton);
 console.log(img);
 
-export function transferData(data){
-    document.querySelector(".data") = data;
-}
-
 imgButton.onclick = function() {
     if (ingredients.style.display !== 'none') {
         ingredients.style.display = 'none'; 
