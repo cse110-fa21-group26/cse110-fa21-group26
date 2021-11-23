@@ -147,11 +147,63 @@ function bindRecipeCard(recipeCard, pageName) {
   recipeCard.addEventListener('click', e => {
     // if (e.path[0].nodeName == 'A') return;
     // router.navigate(pageName, false);
-    window.location.href='recipe.html';
+    openRecipe(recipeCard);
   });
 }
 
 function openRecipe(recipe){
+    let body = document.getElementById("body");
+    let main = document.getElementById("main");
+
+    // Remove Current Main
+    body.removeChild(main);
+
+    let recipePage = document.createElement("main");
+
+        let recipeScript = document.createElement("script");
+        recipeScript.setAttribute("src", "scripts/recipe.js");
+        recipeScript.setAttribute("type", "module");
+
+        recipePage.appendChild(recipeScript);
+
+        let container = document.createElement("div");
+        container.setAttribute("class", "float-container");
+        container.setAttribute("id", "recipe-template");
+
+            let leftChild = document.createElement("div");
+            leftChild.setAttribute("class", "float-child");
+            leftChild.setAttribute("id", "left-child");
+
+                let imgButton = document.createElement("button");
+                imgButton.setAttribute("id", "image-button");
+                imgButton.innerHTML = "Image";
+
+                let ingredientsButton = document.createElement("button");
+                ingredientsButton.setAttribute("id", "ingredients-button");
+                ingredientsButton.innerHTML = "Ingredients";
+                
+                let img = document.createElement("img");
+                img.setAttribute("src", "https://images-gmi-pmc.edge-generalmills.com/df109202-f5dd-45a1-99b4-f10939afd509.jpg");
+                img.setAttribute("id", "recipe-img");
+                
+                let ingredients = document.createElement("div");
+                ingredients.setAttribute("id", "ingredients");
+                ingredients.innerHTML = "Ingredients";
+
+            leftChild.appendChild(imgButton);
+            leftChild.appendChild(ingredientsButton);
+            leftChild.appendChild(img);
+            leftChild.appendChild(ingredients);
+            
+            let data = document.createElement("div");
+            data.setAttribute("class", "data");
+
+        container.appendChild(leftChild);
+        container.appendChild(data);
+
+    recipePage.appendChild(container);
+
+    body.appendChild(recipePage);
 
 }
 
