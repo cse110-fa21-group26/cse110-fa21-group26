@@ -1,6 +1,7 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
+// import { transferData } from './recipe.js';
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 
@@ -86,13 +87,6 @@ for(let i = 0; i < recipes.length; i++){
     document.querySelector('body main').appendChild(category);
 }
 
-/* Placeholder to view the recipe card thing */
-var recipe = document.createElement('button');
-recipe.setAttribute('class', 'category');
-recipe.setAttribute('onclick', "window.location.href='recipe.html';");
-recipe.innerHTML = 'Link to Recipe';
-document.querySelector('.placeholder').appendChild(recipe);
-
 /**/
 
 /**
@@ -143,20 +137,6 @@ function createRecipeCards(categoryIndex) {
     }
 }
 
-function createCategories() {
-
-    for(let i = 0; i < recipes.length; i++){
-      const category = document.createElement('category');
-      category.data = recipeData[recipes[i]];
-  
-      const page = recipeData[recipes[i]]['page-name'];
-      router.addCategory(page, function() {});
-  
-      bindCategory(recipeCard, page);
-      document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
-      }
-  }
-
 function bindPopstate() {
   window.addEventListener("popstate", (event) => {
     if(event.state != null && event.state.state_page != null) router.navigate(event.state.state_page, true);
@@ -166,8 +146,10 @@ function bindPopstate() {
 
 function bindRecipeCard(recipeCard, pageName) {
   recipeCard.addEventListener('click', e => {
-    //if (e.path[0].nodeName == 'A') return;
-    //router.navigate(pageName, false);
+    // if (e.path[0].nodeName == 'A') return;
+    // router.navigate(pageName, false);
+    window.location.href='recipe.html';
+    transferData(recipeCard.data);
   });
 }
 

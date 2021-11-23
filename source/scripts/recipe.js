@@ -1,7 +1,18 @@
+
+
 let imgButton = document.querySelector('#image-button');
 let ingredients = document.querySelector('#ingredients');              
 let ingredientsButton = document.querySelector('#ingredients-button');
 let img = document.querySelector('img');
+
+console.log(imgButton);
+console.log(ingredients);
+console.log(ingredientsButton);
+console.log(img);
+
+export function transferData(data){
+    document.querySelector(".data") = data;
+}
 
 imgButton.onclick = function() {
     if (ingredients.style.display !== 'none') {
