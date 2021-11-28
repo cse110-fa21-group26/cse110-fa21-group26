@@ -68,7 +68,7 @@ const recipeForm = document.querySelector('.recipe-form');
 
 recipeForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log("hi");
+    //console.log("hi");
     let name = document.getElementById('recipe-name').value;
     let ingredients = document.getElementById('recipe-ingredients').value;
     let steps = document.getElementById('recipe-steps').value;
@@ -87,7 +87,9 @@ recipeForm.addEventListener('submit', (event) => {
     //     "thirddata":steps
     // }
     //localStorage.setItem(name, newRecipe);
-    localStorage.setItem('Data', JSON.stringify(data));
+
+    //localStorage.setItem('Data', JSON.stringify(data));
+
     //var result = localStorage.getItem('getData');
 
     //console.log(JSON.stringify(data));
@@ -99,6 +101,7 @@ recipeForm.addEventListener('submit', (event) => {
     console.log(localStorage);
     //console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
     //recipeForm.submit();
+    location.reload();
 });
 
 // function setRecipes(){
@@ -111,4 +114,3 @@ recipeForm.addEventListener('submit', (event) => {
 //     document.getElementById('recipe-steps').value = currentSteps;
      
 // }
-

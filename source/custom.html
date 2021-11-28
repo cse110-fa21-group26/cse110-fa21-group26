@@ -50,14 +50,14 @@
     <a href="./create.html">Create New Recipe</a>
   </div>
   <button class="openbtn" onclick="toggleNav()">☰</button>
-  <script src="scripts/create.js" type="module"></script>
+  <script src="scripts/custom.js" type="module"></script>
   <h1>Brecipi App</h1>
 </header>
 
-<body id="main">
+<body id="body">
     <div class="placeholder"></div>
     <main class="container"></main>
-    <main>
+    <main id="main">
         <section class="section--recipe-cards shown">
         <div class="recipe-cards--wrapper">
             <!-- Recipes Added Here -->
@@ -66,24 +66,6 @@
         <section class="section--recipe-expand">
         <recipe-expand></recipe-expand>
         </section>
-
-        <form class="recipe-form">
-          <div>
-            <label for="recipe-name">Recipe Name</label><br>
-            <input type="text" id="recipe-name" name="recipe-name"><br>
-
-            <label for="recipe-ingredients">Ingredients</label><br>
-            <input type="text" id="recipe-ingredients" name="recipe-ingredients" multiple ><br>
-            <!--<button class="ingredients-submit" type="submit1">Add Ingredients</button><br> -->
-
-            <label for="recipe-steps"> Steps </label><br>
-            <input style="height:20px; width:300px; font-size:12pt;"type="text" id="recipe-steps" name="recipe-steps" multiple><br>
-            <button class="steps-submit" type="submit">Save</button><br>
-            <!--<label for="recipe-steps">Recipe Steps</label><br>
-            <input type="text" id="recipe-steps" name="recipe-steps"><br> -->
-          </div> 
-
-        </form>
     </main>
 </body>
 <footer>
