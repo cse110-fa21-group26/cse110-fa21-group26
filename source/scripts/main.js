@@ -4,20 +4,18 @@ import { initializeServiceWorker } from './ServiceWorker.js';
 import * as json from "./json.js";
 import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
+import { recipeData } from './AllRecipes.js';
 
 const recipes = [
-  [
     'https://introweb.tech/assets/json/ghostCookies.json',
     'https://introweb.tech/assets/json/birthdayCake.json',
-    'https://introweb.tech/assets/json/chocolateChip.json'
-  ],
-  [
+    'https://introweb.tech/assets/json/chocolateChip.json',
     'https://introweb.tech/assets/json/stuffing.json',
     'https://introweb.tech/assets/json/turkey.json',
     'https://introweb.tech/assets/json/pumpkinPie.json'
-  ]
 ];
-const recipeData = {} // You can access all of the Recipe Data from the JSON files in this variable
+
+//const recipeData = {} // You can access all of the Recipe Data from the JSON files in this variable
 
 const router = new Router(function() {
     document.querySelector("section.section--recipe-cards").classList.add("shown");
@@ -29,14 +27,7 @@ window.addEventListener('DOMContentLoaded', init);
 // Initialize function, begins all of the JS code in this file
 async function init() {
     initializeServiceWorker();
-    for(let i = 0; i < recipes.length; i++){
-      try {
-          await fetchRecipes(i);
-      } catch (err) {
-          console.log(`Error fetching recipes: ${err}`);
-          return;
-      }
-    }
+    createRecipeCards();
     bindEscKey();
     bindPopstate();
 }
@@ -80,7 +71,7 @@ for(let i = 0; i < recipes.length; i++){
       while(document.querySelector('.recipe-cards--wrapper').firstChild){
         document.querySelector('.recipe-cards--wrapper').removeChild(document.querySelector('.recipe-cards--wrapper').firstChild);
       }
-      createRecipeCards(i);
+      createRecipeCards(category.innerHTML)
     });
     category.innerHTML = 'Category';
     document.querySelector("#category-wrapper").appendChild(category);
@@ -89,46 +80,21 @@ for(let i = 0; i < recipes.length; i++){
 /**/
 
 /**
- * Loading JSON into a JS file is oddly not super straightforward (for now), so
- * I built a function to load in the JSON files for you. It places all of the recipe data
- * inside the object recipeData like so: recipeData{ 'ghostcookies': ..., 'birthdayCake': ..., etc }
- */
-async function fetchRecipes(categoryIndex) {
-  return new Promise((resolve, reject) => {
-    recipes[categoryIndex].forEach(recipe => {
-      fetch(recipe)
-        .then(response => response.json())
-        .then(data => {
-          // This grabs the page name from the URL in the array above
-          data['page-name'] = recipe.split('/').pop().split('.')[0];
-          recipeData[recipe] = data;
-          if (Object.keys(recipeData).length == recipes.length) {
-            resolve();
-          }
-        })
-        .catch(err => {
-          console.log(`Error loading the ${recipe} recipe`);
-          reject(err);
-        });
-    });
-  });
-}
-
-/**
  * Generates the <recipe-card> elements from the fetched recipes and
  * appends them to the page
  */
-function createRecipeCards(categoryIndex) {
-  for(let i = 0; i < recipes[categoryIndex].length; i++){
+function createRecipeCards() {
+  for(let i = 0; i < recipeData.length; i++){
     const recipeCard = document.createElement('recipe-card');
-    let json = recipeData[recipes[categoryIndex][i]];
+    let json = recipeData[i];
+    console.log(json);
     recipeCard.data = json; // Note, recipeCard.data is "abstract", use recipe_data
 
-    const page = recipeData[recipes[categoryIndex][i]]['page-name'];
+    const page = recipeData[i]['page-name'];
     router.addPage(page, function() {
        document.querySelector('.section--recipe-cards').classList.remove('shown');
        document.querySelector('.section--recipe-expand').classList.add('shown');
-       document.querySelector('recipe-expand').data = recipeData[recipes[categoryIndex][i]];
+       document.querySelector('recipe-expand').data = recipeData[i];
     });
 
     bindRecipeCard(recipeCard, page, json);
