@@ -93,9 +93,6 @@ for (let i = 0; i < categories.length; i++) {
  */
 function createRecipeCards(category) {
     for (let i = 0; i < recipeData.length; i++) {
-        console.log(category)
-        console.log(categoryJson[category])
-        console.log(recipeData[i])
         console.log( recipeData[i][categoryJson[category]]);
         if (category == 0 || recipeData[i][categoryJson[category]]) {
             let recipeCard = document.createElement('recipe-card');
