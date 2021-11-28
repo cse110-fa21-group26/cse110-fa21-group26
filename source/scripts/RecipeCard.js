@@ -31,7 +31,7 @@ class RecipeCard extends HTMLElement {
       border: 1px solid rgb(223, 225, 229);
       border-radius: 8px;
       display: grid;
-      grid-template-rows: 118px 56px 14px 18px 15px 36px;
+      grid-template-rows: 118px 56px 14px -10px 15px 36px;
       height: auto;
       row-gap: 5px;
       padding: 0 16px 16px 16px;
@@ -42,104 +42,15 @@ class RecipeCard extends HTMLElement {
       align-items: center;
       column-gap: 5px;
       display: flex;
-      
     }
     
     div.rating > img {
       height: auto;
       display: inline-block;
       object-fit: scale-down;
-      width: 150px;
-      padding: 10px; 
+      width: 78px;
     }
 
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      width: calc(100% + 32px);
-    }
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      width: calc(100% + 32px);
-    }
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      width: calc(100% + 32px);
-    }
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      width: calc(100% + 32px);
-    }
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      width: calc(100% + 32px);
-    }
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      article > img {
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        height: 118px;
-        object-fit: cover;
-        margin-left: -16px;
-        width: calc(100% + 32px);
-      }
-          border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        height: 118px;
-        object-fit: cover;
-        margin-left: -16px;
-        width: calc(100% + 32px);
-      }
-   > img {
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        height: 118px;
-        object-fit: cover;
-        margin-left: -16px;
-        width: calc(100% + 32px);
-      }
-  00% + 32px);
-    }
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      width: calc(100% + 32px);
-    }
-    article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      height: 118px;
-      object-fit: cover;
-      margin-left: -16px;
-      width: calc(100% + 32px);
-    }
     article > img {
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
@@ -172,8 +83,7 @@ class RecipeCard extends HTMLElement {
 
     p:not(.title), span, time {
       color: #70757A;
-      font-size: 24px;
-      padding-top: 10px; 
+      font-size: 12px;
     }
   `;
     styleElem.innerHTML = styles;
@@ -216,7 +126,7 @@ class RecipeCard extends HTMLElement {
 
     // Create/append time element
     const time = document.createElement("time");
-    let timeContent = data['preparationMinutes'];
+    let timeContent = data['readyInMinutes'];
     time.innerHTML = timeContent + "  Minutes"; 
     card.appendChild(time);
 
