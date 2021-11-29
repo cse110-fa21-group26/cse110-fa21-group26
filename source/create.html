@@ -33,32 +33,26 @@
 
 
 </head>
-<header class="side-menu">
-  <div id="mySidebar" class="sidebar" open="true">
-    <a href="./index.html">Home</a>
-    <a href="./library.html">Custom Recipes</a>
-    <a href="">Saved Recipes</a>
-    <a href="./create.html">Create New Recipe</a>
-  </div>
-  <button class="openbtn" onclick="toggleNav()">☰</button>
-  <script src="scripts/create.js" type="module"></script>
-  <h1>Brecipi App</h1>
-  <p>Here you can add your own custome recipes!</p>
-</header>
 
-<body id="main">
-    <div class="placeholder"></div>
-    <main class="container"></main>
-    <main>
-        <section class="section--recipe-cards shown">
-        <div class="recipe-cards--wrapper">
-            <!-- Recipes Added Here -->
-        </div>
-        </section>
-        <section class="section--recipe-expand">
-        <recipe-expand></recipe-expand>
-        </section>
-
+<body id="body">
+  <header class="side-menu">
+      <div id="mySidebar" class="sidebar" open="true">
+          <a href="./index.html">Home</a>
+          <a href="./library.html">Custom Recipes</a>
+          <a href="">Saved Recipes</a>
+          <a href="./create.html">Create New Recipe</a>
+      </div>
+      <div id="sidebar-header">
+          <button id="openbtn" class="sidebar-item">☰</button>
+          <h1 class="sidebar-item">Brecipi App</h1>
+          <h3>Custom Recipe Creator</h3>
+      </div>
+  </header>
+  <main id="main">
+      <div id="category-wrapper"></div>
+      <div class="recipe-cards--wrapper">
+          <!-- Categories Added Here -->
+      </div>
         <form class="recipe-form">
           <div>
             <label for="recipe-name">Recipe Name</label><br>
@@ -75,13 +69,10 @@
             <!--<label for="recipe-steps">Recipe Steps</label><br>
             <input type="text" id="recipe-steps" name="recipe-steps"><br> -->
           </div> 
-
         </form>
     </main>
 </body>
+
 <footer>
 </footer>
-
-</html>
-
 </html>
