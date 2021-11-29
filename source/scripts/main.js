@@ -5,6 +5,7 @@ import * as json from "./json.js";
 import { RecipeCard } from './RecipeCard.js';
 import { recipeData } from './AllRecipes.js';
 import { RecipeProfile } from './RecipeProfile.js';
+import { CreatePage } from './CreatePage.js';
 
 const categories = [
     'All Recipes', 'Popular', 'Healthy', 'Vegetarian', 'Vegan', 'Dairy Free', 'Gluten Free'
@@ -126,7 +127,7 @@ function openRecipe(jsonData){
     // Prune Current Main
     body.removeChild(priorState);
 
-    let recipePage = document.createElement("main");
+    let wrapper = document.createElement("main");
 
     let backButton = document.createElement("button");
     backButton.setAttribute('class', 'category');
@@ -134,19 +135,55 @@ function openRecipe(jsonData){
     backButton.innerHTML = "Return";
     backButton.onclick = (closeRecipe) => {
         // Remove Current State
-        body.removeChild(recipePage);
+        body.removeChild(wrapper);
         // Return to Previous State
         body.appendChild(priorState);
     };
-    recipePage.appendChild(backButton);
+    wrapper.appendChild(backButton);
 
-    let element = document.createElement("recipe-profile");
-    element.data = jsonData;
-    recipePage.appendChild(element);
+    let recipeProfile = document.createElement("recipe-profile");
+    recipeProfile.data = jsonData;
+    wrapper.appendChild(recipeProfile);
 
-    body.appendChild(recipePage);
+    body.appendChild(wrapper);
 
 }
+
+let createNewRecipe = document.getElementById("create-new-recipe");
+createNewRecipe.addEventListener('click', event => {
+
+    let body = document.getElementById("body");
+    let priorState = document.getElementById("main");
+    // Prune Current Main
+    body.removeChild(priorState);
+
+    let wrapper = document.createElement("main");
+
+    let backButton = document.createElement("button");
+    backButton.setAttribute('class', 'category');
+    backButton.setAttribute('id', 'back-button');
+    backButton.innerHTML = "Return";
+    backButton.onclick = (closeRecipe) => {
+        // Remove Current State
+        body.removeChild(wrapper);
+        // Return to Previous State
+        body.appendChild(priorState);
+        //Return background color
+        document.body.style.backgroundColor = "white";
+    };
+    wrapper.appendChild(backButton);
+
+    let createPage = document.createElement("recipe-create");
+    wrapper.appendChild(createPage);
+    createPage.data = ""; //Done just to setup create page...
+
+    body.appendChild(wrapper);
+
+    document.body.style.backgroundColor = "thistle";
+
+    toggleNav();
+
+});
 
 function bindEscKey() {
     document.addEventListener("keydown", (event) => {
