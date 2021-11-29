@@ -73,9 +73,9 @@ class CreatePage extends HTMLElement {
         wrapper.appendChild(document.createElement("br"));
 
         let inputName = document.createElement("input");
-        labelName.setAttribute("type", "text");
-        labelName.setAttribute("id", "recipe-name");
-        labelName.setAttribute("name", "recipe-name");
+        inputName.setAttribute("type", "text");
+        inputName.setAttribute("id", "recipe-name");
+        inputName.setAttribute("name", "recipe-name");
         wrapper.appendChild(inputName);
         wrapper.appendChild(document.createElement("br"));
 
@@ -119,12 +119,12 @@ class CreatePage extends HTMLElement {
 
         this.shadowRoot.appendChild(document.createElement("div"));
 
-        form.addEventListener('submit', (event) => {
+        saveButton.addEventListener('click', (event) => {
             event.preventDefault();
             //console.log("hi");
-            let name = document.getElementById('recipe-name').value;
-            let ingredients = document.getElementById('recipe-ingredients').value;
-            let steps = document.getElementById('recipe-steps').value;
+            let name = inputName.value;
+            let ingredients = inputIngredients.value;
+            let steps = inputSteps.value;
         
             let newRecipe = new customRecipe(name, ingredients, steps);
             //console.log(newRecipe);
@@ -153,9 +153,11 @@ class CreatePage extends HTMLElement {
             localStorage.setItem(name, JSON.stringify(array));
             console.log(localStorage);
             //console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
-            //recipeForm.submit();
-        
-            location.reload();
+            //form.submit();
+
+            inputName.value = "";
+            inputIngredients.value  = "";
+            inputSteps.value  = "";
         
         });
 
