@@ -9,7 +9,10 @@ export {
     getOrganization,
     convertTime,
     getIngredients,
-    getInstructions
+    getInstructions,
+    createIngredientList,
+    getRatings,
+    getTime
 }
 
 /**
@@ -254,3 +257,101 @@ export {
     }
     return null;
   }
+
+  /**
+ * Takes in a list of ingredients raw from imported data and returns a neatly
+ * formatted comma separated list.
+ * @param {Array} ingredientArr The raw unprocessed array of ingredients from the
+ *                              imported data
+ * @return {String} the string comma separate list of ingredients from the array
+ */
+function createIngredientList(ingredientArr) {
+  let finalIngredientList = '';
+
+  /**
+   * Removes the quantity and measurement from an ingredient string.
+   * This isn't perfect, it makes the assumption that there will always be a quantity
+   * (sometimes there isn't, so this would fail on something like '2 apples' or 'Some olive oil').
+   * For the purposes of this lab you don't have to worry about those cases.
+   * @param {String} ingredient the raw ingredient string you'd like to process
+   * @return {String} the ingredient without the measurement & quantity 
+   * (e.g. '1 cup flour' returns 'flour')
+   */
+  function _removeQtyAndMeasurement(ingredient) {
+    return ingredient.split(' ').splice(2).join(' ');
+  }
+
+  ingredientArr.forEach(ingredient => {
+    ingredient = _removeQtyAndMeasurement(ingredient);
+    finalIngredientList += `${ingredient}, `;
+  });
+
+  // The .slice(0,-2) here gets ride of the extra ', ' added to the last ingredient
+  return finalIngredientList.slice(0, -2);
+}
+
+/**
+ * Custom Function
+ */
+ function getImageUrl(data) {
+  if(data.image){
+    if(data.image.url){
+      return data.image.url;
+    }
+    if(typeof(data.image) == "object"){
+      return data.image[0];
+    }
+  }
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'ImageObject') return data['@graph'][i].url;
+    }
+  };
+  return null;
+}
+
+/**
+ * Custom Function
+ */
+ function getRatings(data) {
+  let ratings = [];
+  let valueSFK = searchForKey(data, "ratingValue");
+  let countSFK = searchForKey(data, "ratingCount");
+  if(!valueSFK) valueSFK = searchForKey(data, "reviewValue");
+  if(!countSFK) countSFK = searchForKey(data, "reviewCount");
+  if(valueSFK && countSFK){
+    ratings.push(valueSFK);
+    ratings.push(countSFK);
+    return ratings;
+  }
+  // Rest Not Needed
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'Recipe'){
+        if(data['@graph'][i].aggregateRating){
+          let value = data['@graph'][i].aggregateRating.ratingValue;
+          let count = data['@graph'][i].aggregateRating.ratingCount;
+          ratings.push(value);
+          ratings.push(count);
+        }
+      }
+    }
+  };
+  if(ratings.length) return ratings;
+  return null;
+}
+
+/**
+ * Custom Function
+ */
+ function getTime(data) {
+  if(data.totalTime) return data.totalTime;
+  if (data['@graph']) {
+    for (let i = 0; i < data['@graph'].length; i++) {
+      if (data['@graph'][i]['@type'] == 'Recipe'){
+        return data['@graph'][i].totalTime;
+      }
+    }
+  };
+  return null;
+}

@@ -2,7 +2,6 @@
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
 import * as json from "./json.js";
-import { Category } from './Category.js';
 import { RecipeCard } from './RecipeCard.js';
 
 const recipes = [
