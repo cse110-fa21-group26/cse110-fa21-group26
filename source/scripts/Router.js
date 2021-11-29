@@ -7,7 +7,6 @@ export class Router {
   }
 
   addPage(page, pageFunc) {
-
     this[page] = pageFunc;
   }
 
