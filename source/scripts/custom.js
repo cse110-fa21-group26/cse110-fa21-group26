@@ -8,12 +8,12 @@ import { customRecipe } from './customRecipe.js';
 function toggleNav() {
     if(document.getElementById("mySidebar").getAttribute("open") == "true"){
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("body").style.marginLeft = "250px";
         document.getElementById("mySidebar").setAttribute("open", "false")
     }
     else{
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("body").style.marginLeft= "0";
         document.getElementById("mySidebar").setAttribute("open", "true")
     }
 }
@@ -73,6 +73,7 @@ function createCustomRecipeCards() {
         console.log('name: ', name, ' ingredients: ', ingredients, ' steps: ', steps);
 
         //recipe.data = ingredients + steps;
+        recipeCard.setAttribute('id', name);
         recipeCard.innerHTML = name;
 
         document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
@@ -103,6 +104,30 @@ function openCustomRecipe(name, ingredients, steps){
             body.appendChild(priorState);
         };
         recipePage.appendChild(backButton);
+
+        let deleteButton = document.createElement('button');
+        deleteButton.setAttribute('id', 'delete-button');
+        deleteButton.setAttribute('class', 'category');
+        deleteButton.innerHTML = "Delete";
+        deleteButton.onclick = () => {
+            body.removeChild(recipePage);
+            body.appendChild(priorState);
+            let cardToDelete = document.getElementById(name);
+            cardToDelete.remove();
+            localStorage.removeItem(name);
+        };
+        recipePage.appendChild(deleteButton);
+
+        let editButton = document.createElement('a');
+        editButton.setAttribute('id', 'edit-button');
+        editButton.setAttribute('class', 'category');
+        editButton.setAttribute('href', './create.html');
+        editButton.innerHTML = "Edit";
+
+        recipePage.appendChild(editButton);
+
+        
+
 
 
         // REUSING SCRIPT LEADS TO ISSUES, FUNCTIONS ARE DEFINE AT BOTTOM
