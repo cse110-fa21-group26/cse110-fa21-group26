@@ -1,18 +1,40 @@
+body main{
+    background-color: white; 
+    margin: auto;
+    width: 325px;
+    border: 5px solid purple;
+    padding: 50px;
+
+}
+
+.openbtn{
+    margin: 10px; 
+    font-size: 36px;
+    color: purple
+}
+
 html {
     background-color: thistle;
 }
 
 #recipe-name {
     height: 20px;
-    width: 200px;
+    width: 300px;
 }
 
-#recipe-name {
+#recipe-ingredients {
     height: 20px;
-    width: 200px;
+    width: 300px;
 }
+
 
 #recipe-steps {
     height: 200px;
     width: 300px;
+}
+
+
+main{
+    
+    width: 400px; 
 }
