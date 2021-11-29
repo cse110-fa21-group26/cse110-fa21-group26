@@ -35,23 +35,15 @@
 </head>
 <header class="side-menu">
   <div id="mySidebar" class="sidebar" open="true">
-    <a href="#">Login</a>
-    <a href="#">Custom Recipes</a>
-    <a href="#">Saved Recipes</a>
-    <button class="dropdown-btn">Dropdown
-      <b class="fa fa-caret-down">&#9660</b>
-    </button>
-    <div class="dropdown-container">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    <a href="#">Contact</a>
+    <a href="./index.html">Home</a>
+    <a href="./library.html">Custom Recipes</a>
+    <a href="">Saved Recipes</a>
     <a href="./create.html">Create New Recipe</a>
   </div>
   <button class="openbtn" onclick="toggleNav()">☰</button>
   <script src="scripts/create.js" type="module"></script>
   <h1>Brecipi App</h1>
+  <p>Here you can add your own custome recipes!</p>
 </header>
 
 <body id="main">
@@ -77,7 +69,8 @@
             <!--<button class="ingredients-submit" type="submit1">Add Ingredients</button><br> -->
 
             <label for="recipe-steps"> Steps </label><br>
-            <input style="height:20px; width:300px; font-size:12pt;"type="text" id="recipe-steps" name="recipe-steps" multiple><br>
+            <input type="text" id="recipe-steps" name="recipe-steps" multiple><br>
+            
             <button class="steps-submit" type="submit">Save</button><br>
             <!--<label for="recipe-steps">Recipe Steps</label><br>
             <input type="text" id="recipe-steps" name="recipe-steps"><br> -->
