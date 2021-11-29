@@ -9,29 +9,28 @@ class customRecipe {
         this.steps = steps;
     }
 
-    /*
+    
     get name () {
-        return this.name;
+        return this._name;
     }
 
     get ingredients () {
-        return this.ingredients;
+        return this._ingredients;
     }
 
     get steps () {
-        return this.steps  ;
+        return this._steps  ;
     }
 
     set name(n) {
-        this.name = n;
+        this._name = n;
     }
 
     set ingredients(i) {
-        this.ingredients = i;
+        this._ingredients = i;
     }
 
     set steps(s) {
-        this.steps = s;
+        this._steps = s;
     }
-    */
 }

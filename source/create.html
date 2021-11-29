@@ -33,32 +33,25 @@
 
 
 </head>
-<button class="openbtn" onclick="toggleNav()">☰</button>
-<header class="side-menu">
-  <div id="mySidebar" class="sidebar" open="true">
-    <a href="./index.html">Home</a>
-    <a href="./library.html">Custom Recipes</a>
-    <a href="">Saved Recipes</a>
-    <a href="./create.html">Create New Recipe</a>
-  </div>
-  
-  <script src="scripts/create.js" type="module"></script>
-</header>
-
-<body id="main">
-  
-    <main>
-      <h1>Create Your Own Recipe</h1>
-      <p>Fill out the form below to create and save your own recipes!</p>
-        <section class="section--recipe-cards shown">
-        <div class="recipe-cards--wrapper">
-            <!-- Recipes Added Here -->
-        </div>
-        </section>
-        <section class="section--recipe-expand">
-        <recipe-expand></recipe-expand>
-        </section>
-
+<body id="body">
+  <header class="side-menu">
+      <div id="mySidebar" class="sidebar" open="true">
+          <a href="./index.html">Home</a>
+          <a href="./library.html">Custom Recipes</a>
+          <a href="">Saved Recipes</a>
+          <a href="./create.html">Create New Recipe</a>
+      </div>
+      <div id="sidebar-header">
+          <button id="openbtn" class="sidebar-item">☰</button>
+          <h1 class="sidebar-item">Brecipi App</h1>
+          <h3>Custom Recipe Creator</h3>
+      </div>
+  </header>
+  <main id="main">
+      <div id="category-wrapper"></div>
+      <div class="recipe-cards--wrapper">
+          <!-- Categories Added Here -->
+      </div>
         <form class="recipe-form">
           <div>
             <label for="recipe-name">Recipe Name</label><br>
@@ -75,13 +68,10 @@
             <!--<label for="recipe-steps">Recipe Steps</label><br>
             <input type="text" id="recipe-steps" name="recipe-steps"><br> -->
           </div> 
-
         </form>
     </main>
 </body>
+
 <footer>
 </footer>
-
-</html>
-
 </html>
