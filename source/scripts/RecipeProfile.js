@@ -12,11 +12,12 @@ class RecipeProfile extends HTMLElement {
         const styleElem = document.createElement('style');
         const styles = `
 
+
         .float-container {
             border-radius: 8px;
             padding: 20px;
             background-color: gray;
-            width: 75%;
+            width: 70%;
             margin: auto;
             height: 500px;
         }
@@ -62,14 +63,22 @@ class RecipeProfile extends HTMLElement {
         
         #ingredients {
             display: none;
+            
         }
         
         #recipe-img {
             border-radius: 8px;
             margin-left: auto;
             margin-right: auto;
+            
             max-width: 100%;
             max-height: 95%;
+        
+        
+            height: 500px; 
+            object-fit: cover;
+            width: calc(100% + 32px);
+        
         }
       `;
         styleElem.innerHTML = styles;
