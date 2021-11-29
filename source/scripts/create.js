@@ -99,6 +99,7 @@ recipeForm.addEventListener('submit', (event) => {
     console.log(localStorage);
     //console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
     //recipeForm.submit();
+    window.location.href = "library.html";
 });
 
 // function setRecipes(){
