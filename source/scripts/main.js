@@ -98,7 +98,6 @@ function createRecipeCards(category) {
                 document.querySelector('recipe-expand').data = recipeData[i];
             });
             bindRecipeCard(recipeCard, page, json);
-            console.log(json)
             document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
         }
     }
@@ -141,7 +140,6 @@ function openRecipe(jsonData) {
       body.appendChild(priorState);
   };
   recipePage.appendChild(backButton);
-  console.log("bye")
   // REUSING SCRIPT LEADS TO ISSUES, FUNCTIONS ARE DEFINE AT BOTTOM
   // let recipeScript = document.createElement("script");
   // recipeScript.setAttribute("src", "scripts/recipe.js");
@@ -155,7 +153,6 @@ function openRecipe(jsonData) {
   let leftChild = document.createElement("div");
   leftChild.setAttribute("class", "float-child");
   leftChild.setAttribute("id", "left-child");
-  console.log("hi2")
   let imgButton = document.createElement("button");
   imgButton.setAttribute("id", "image-button");
   imgButton.innerHTML = "Image";
@@ -167,7 +164,6 @@ function openRecipe(jsonData) {
   let img = document.createElement("img");
   img.setAttribute("src", jsonData['image']);
   img.setAttribute("id", "recipe-img");
-  console.log("hi")
   let ingredients = document.createElement("div");
   ingredients.setAttribute("id", "ingredients");
   for(let i = 0; i < jsonData['extendedIngredients'].length; i++){
@@ -179,7 +175,6 @@ function openRecipe(jsonData) {
   leftChild.appendChild(ingredientsButton);
   leftChild.appendChild(img);
   leftChild.appendChild(ingredients);
-  console.log("hi3")
   let data = document.createElement("div");
   data.setAttribute("class", "data");
   data.innerHTML = jsonData['instructions'];
@@ -190,7 +185,6 @@ function openRecipe(jsonData) {
   recipePage.appendChild(container);
 
   body.appendChild(recipePage);
-  console.log("hi5")
   /* Recipe.js Start */
 
   // THESE ARE ALREADY DEFINED ABOVE
@@ -212,11 +206,9 @@ function openRecipe(jsonData) {
           ingredients.style.display = 'block';
       }
   };
-  console.log("hi")
   let dropdown = document.getElementsByClassName("dropdown-btn");
-  console.log(dropdown.length)
+
   for (let i = 0; i < dropdown.length; i++) {
-    console.log("aaa")
       dropdown[i].addEventListener("click", function () {
           this.classList.toggle("active");
           let dropdownContent = this.nextElementSibling;
