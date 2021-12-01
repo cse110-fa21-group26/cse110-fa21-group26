@@ -73,6 +73,8 @@ recipeForm.addEventListener('submit', (event) => {
     let name = document.getElementById('recipe-name').value;
     let ingredients = document.getElementById('recipe-ingredients').value;
     let steps = document.getElementById('recipe-steps').value;
+    let time = document.getElementById('recipe-time').value;
+    let img = document.getElementById('img').value;
 
     let newRecipe = new customRecipe(name, ingredients, steps);
     //console.log(newRecipe);
@@ -96,7 +98,7 @@ recipeForm.addEventListener('submit', (event) => {
     //console.log(JSON.stringify(data));
     //var array = JSON.parse(localStorage.getItem('Data') || '[]');
     var array = [];
-    array.push(name,ingredients,steps);
+    array.push(name,ingredients,steps, time, img);
     //console.log(array);
     localStorage.setItem(name, JSON.stringify(array));
     console.log(localStorage);
