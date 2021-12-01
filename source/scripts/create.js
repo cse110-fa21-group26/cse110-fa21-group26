@@ -5,34 +5,35 @@ import { RecipeCard } from './RecipeCard.js';
 import { customRecipe } from './customRecipe.js';
 //mport { jsxAttribute } from '@babel/types';
 
+/* Dropdown Functionality */
 function toggleNav() {
-    if(document.getElementById("mySidebar").getAttribute("open") == "true"){
+    if (document.getElementById("mySidebar").getAttribute("open") == "true") {
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("body").style.marginLeft = "250px";
         document.getElementById("mySidebar").setAttribute("open", "false")
     }
-    else{
+    else {
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("body").style.marginLeft = "0";
         document.getElementById("mySidebar").setAttribute("open", "true")
     }
 }
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function() {
+    dropdown[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var dropdownContent = this.nextElementSibling;
         if (dropdownContent.style.display === "block") {
             dropdownContent.style.display = "none";
-        } 
+        }
         else {
             dropdownContent.style.display = "block";
         }
     });
 }
-
-document.querySelector('.openbtn').onclick = toggleNav;
+document.querySelector('#openbtn').onclick = toggleNav;
+/* Dropdown Functionality End */
 
 
 /*
@@ -101,7 +102,9 @@ recipeForm.addEventListener('submit', (event) => {
     console.log(localStorage);
     //console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
     //recipeForm.submit();
+
     location.reload();
+
 });
 
 // function setRecipes(){
