@@ -1,10 +1,12 @@
 .category{
     background-color: lightgrey;
-    margin: 30px;
+    margin: 20px;
     text-align: center;
     padding: 1%;
-    border-width: 5px;
+    border-width: 0px;      /*Gets rid of border. Clunky solution, but functional :D*/
     font-size: 24px; 
+    border-radius: 10px;
+    border-style: solid;
 }
 
 .recipe-cards--wrapper {
@@ -17,4 +19,7 @@
     height: auto;
     width: 100%;
     justify-content: space-evenly;
+}
+a { 
+    text-decoration: none; 
 }
