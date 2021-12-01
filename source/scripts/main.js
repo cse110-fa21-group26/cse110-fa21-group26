@@ -1,11 +1,9 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
-import * as json from "./json.js";
 import { RecipeCard } from './RecipeCard.js';
 import { recipeData } from './AllRecipes.js';
 import { RecipeProfile } from './RecipeProfile.js';
-import { CreatePage } from './CreatePage.js';
 
 const categories = [
     'All Recipes', 'Popular', 'Healthy', 'Vegetarian', 'Vegan', 'Dairy Free', 'Gluten Free'

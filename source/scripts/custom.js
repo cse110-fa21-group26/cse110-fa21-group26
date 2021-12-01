@@ -1,9 +1,7 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
-import * as json from "./json.js";
 import { CustomRecipeCard } from './CustomRecipeCard.js';
-import { recipeData } from './AllRecipes.js';
 import { CustomRecipeProfile } from './CustomRecipeProfile.js';
 import { CreatePage } from './CreatePage.js';
 
