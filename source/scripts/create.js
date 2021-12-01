@@ -78,7 +78,7 @@ recipeForm.addEventListener('submit', (event) => {
     //let localRecipes = localStorage.getItem('user-recipes');
     //localRecipes.push(newRecipe);
     //localStorage.setItem('user-recipes', userRecipes);
-    var data = {name: name, ingredients: ingredients, steps: steps};
+    //var data = {name: name, ingredients: ingredients, steps: steps};
     
     // var getData =
     // {
