@@ -4,8 +4,13 @@
   "description": "Brecipi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": ""
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -16,7 +21,10 @@
   "bugs": {
     "url": "https://github.com/ArmanOmmid/cse110-fa21-group26/issues"
   },
-  "homepage": "https://github.com/ArmanOmmid/cse110-fa21-group26#readme"
+  "homepage": "https://github.com/ArmanOmmid/cse110-fa21-group26#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.2",
+    "jest": "^27.4.2"
+  }
 }
-
-
