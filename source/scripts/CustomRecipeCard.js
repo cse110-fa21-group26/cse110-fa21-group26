@@ -1,7 +1,7 @@
 
-export { RecipeCard }
+export { CustomRecipeCard }
 
-class RecipeCard extends HTMLElement {
+class CustomRecipeCard extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({mode: 'open'});
@@ -93,8 +93,8 @@ class RecipeCard extends HTMLElement {
  
     // Create/append img element
     let img = document.createElement("img");
-    let imgSrc = data[];
-    let imgAlt = data['title'];
+    let imgSrc = "icons/krabby-patty-secret-formula.jpg"//data[4];
+    let imgAlt = data[0];
     img.setAttribute("src", imgSrc);
     img.setAttribute("alt", imgAlt);
     card.appendChild(img);
@@ -105,28 +105,9 @@ class RecipeCard extends HTMLElement {
     title.innerHTML = imgAlt;
     card.appendChild(title);
 
-    let rating = document.createElement('div');
-    rating.setAttribute('class', 'rating');
-    let span = document.createElement('span');
-    let rate = data['spoonacularScore']
-    if (rate == null) {
-      span.innerHTML = "No Reviews";
-      rating.appendChild(span);
-    }
-    else {
-      span.innerHTML = rate;
-      rating.appendChild(span);
-      img = document.createElement("img");
-      let stars = Math.round(5 * rate/100);
-      img.setAttribute('src', "icons/" + stars + "-star.svg");
-      img.setAttribute('alt', stars + ' stars');
-      rating.appendChild(img);
-    }
-    card.append(rating);
-
     // Create/append time element
     const time = document.createElement("time");
-    let timeContent = data['readyInMinutes'];
+    let timeContent = data[3];
     time.innerHTML = timeContent + "  Minutes"; 
     card.appendChild(time);
 
@@ -139,4 +120,4 @@ class RecipeCard extends HTMLElement {
 
 // Define the Class so you can use it as a custom element.
 // This is critical, leave this here and don't touch it
-customElements.define('recipe-card', RecipeCard);
+customElements.define('custom-recipe-card', CustomRecipeCard);
