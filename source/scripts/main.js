@@ -125,6 +125,7 @@ async function searchQuery(strictSearch = true){
     let query = searchField.value;
     console.log("Search:", query);
     searchField.value = "";
+    if(query == "") return;
     let search = generic + "complexSearch?" + apiKey + "&query=breakfast+" + query + "&number=100";
     let searchResults = await fetch(search)
         .then(response => response.json())
