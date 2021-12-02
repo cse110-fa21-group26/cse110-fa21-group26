@@ -115,10 +115,10 @@ async function init() {
 }
 
 /* Search Bar Script */
-var searchForm = document.getElementById("search-form");
+var searchForm = document.getElementById("search-form"); // NOTE this is note actually a "form" element, but a "label" element
 var searchField = document.getElementById("search-field");
 var searchButton = document.getElementById("search-submit");
-searchButton.addEventListener("click", async event => {
+async function searchQuery(){
     let query = searchField.value;
     console.log("Search:", query);
     searchField.value = "";
@@ -129,7 +129,18 @@ searchButton.addEventListener("click", async event => {
             return data;
         });
     forceCloseNav();
-    searchFilter(searchResults);
+    try{
+        searchFilter(searchResults);
+    }
+    catch(e){
+       console.log("Error: Daily Maximum of 150 Spoonacular Point Reached"); 
+    }
+}
+searchButton.addEventListener("click", searchQuery);
+searchField.addEventListener("keyup", event => {
+    if(event.code === "Enter"){
+        searchQuery();
+    }
 });
 /* Search Bar Script End */
 
