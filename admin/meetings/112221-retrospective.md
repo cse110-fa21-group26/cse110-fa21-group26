@@ -25,6 +25,21 @@ Zoom, Retrium
 
 ##  Meeting Notes: 
 ![reto pic](https://github.com/cse110-fa21-group26/cse110-fa21-group26/blob/main/admin/misc/retroPic.JPG)
+
+Priorities:
+- Merge branches
+- Clean up Repository
+- Convert into a single page application using shadowDoms
+- Implement spponacular with main branch
+
+CI/CD Pipeline:
+- Unit Testing (Jest)
+- Documentation (JS Docs)
+- Other linting for HTML, CSS, Javascript.
+
+UI/UX Later
+
+12/3 Deadline for Video
   
 ## Action Items:
 - Assign specific tasks so everyone contributes an equal part and work is not placed on one person
