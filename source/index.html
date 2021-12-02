@@ -1,59 +1,58 @@
 <html lang="en">
 
 <head>
-  <style>
-  </style>
-  <title id="id1">Group 26 Project</title>
-  <meta charset="utf-8">
-  <meta name="author" content="Group 26">
-  <meta name="description" content="CSE 110 Project">
-  <link rel="stylesheet" href="style/menustyle.css">
-  <link rel="stylesheet" href="style/sidebarstyle.css">
-  <link rel="stylesheet" href="style/recipestyle.css">
-  <link rel="stylesheet" href="style/recipepage.style.css">
-  <link rel="icon" type="image/png" href="/specs/researchmaterial/veganlogo.png">
+    <style>
+    </style>
+    <title id="id1">Group 26 Project</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Group 26">
+    <meta name="description" content="CSE 110 Project">
+    <link rel="stylesheet" href="style/menustyle.css">
+    <link rel="stylesheet" href="style/sidebarstyle.css">
+    <link rel="stylesheet" href="style/recipestyle.css">
+    <link rel="stylesheet" href="style/recipepage.style.css">
+    <link rel="icon" type="image/png" href="/specs/researchmaterial/veganlogo.png">
 
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab 7 - SPA vs. PWA</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 7 - SPA vs. PWA</title>
 
-  <!-- Web Components -->
-  <script src="scripts/RecipeCard.js" type="module"></script>
+    <!-- Web Components -->
+    <script src="scripts/RecipeCard.js" type="module"></script>
 
-  <!-- Service Worker -->
-  <!-- <script src="scripts/sw.js" type="module"></script> -->
+    <!-- Service Worker -->
+    <!-- <script src="scripts/sw.js" type="module"></script> -->
 
-  <!-- Router -->
-  <script src="scripts/Router.js" type="module"></script>
+    <!-- Router -->
+    <script src="scripts/Router.js" type="module"></script>
 
-  <!-- Main Stylesheet & Scripts -->
-  <link id="main-theme" rel="stylesheet" href="style/menustyle.css" />
-  <link id="theme" rel="stylesheet" type="text/css" href=""/>
+    <!-- Main Stylesheet & Scripts -->
+    <link id="main-theme" rel="stylesheet" href="style/menustyle.css" />
+    <link id="theme" rel="stylesheet" type="text/css" href="" />
 
-  <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
 
 </head>
 
 <body id="body">
-    <header class="side-menu">
-        <div id="mySidebar" class="sidebar" open="true">
-            <a id="home-page">Home</a>
-            <a href="./custom.html">Custom Recipes</a>
-            <a id="create-new-recipe">Create New Recipe</a>
+    <header>
+        <div class='half'>
+            <button class = 'logo'>Brecipi</button><br>
+            <button id='home' class = 'nav'>Home</button>
+                <button id='library' class = 'nav'>Personal Library</button>
+                <button id="create" class = 'nav'>Create New Recipe</button>
         </div>
-        <div id="sidebar-header">
-            <button id="openbtn" class="sidebar-item">☰</button>
-            <h1 class="sidebar-item">Brecipi App</h1>
+        <div class='half'>
+            <label id="search-form" class="sidebar-item" class="search-bar">
+                <!-- <label for="query" class="search-bar">Search:</label> -->
+                <input id="search-field" class="sidebar-item" class="search-bar" type="search">
+                <input id="search-submit" type="button" class="search-bar" value="Strict Search">
+                <input id="search-loose" type="button" class="search-bar" value="Loose Search">
+            </label>
         </div>
     </header>
     <main id="main">
-        <label id="search-form" class="sidebar-item" class="search-bar">
-            <!-- <label for="query" class="search-bar">Search:</label> -->
-            <input id="search-field" class="sidebar-item" class="search-bar" type="search">
-            <input id="search-submit" type="button" class="search-bar" value="Strict Search">
-            <input id="search-loose" type="button" class="search-bar" value="Loose Search">
-        </label>
         <div id="category-wrapper"></div>
         <div class="recipe-cards--wrapper">
             <!-- Categories Added Here -->
@@ -63,4 +62,5 @@
 
 <footer>
 </footer>
+
 </html>
