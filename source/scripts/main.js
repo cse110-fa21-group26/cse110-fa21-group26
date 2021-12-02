@@ -6,6 +6,7 @@ import { RecipeCard } from './RecipeCard.js';
 import { recipeData } from './AllRecipes.js';
 import { RecipeProfile } from './RecipeProfile.js';
 import { CreatePage } from './CreatePage.js';
+import { searchJSON } from './searchJSON.js';
 
 const categories = [
     'All Recipes', 'Popular', 'Healthy', 'Vegetarian', 'Vegan', 'Dairy Free', 'Gluten Free'
@@ -118,7 +119,9 @@ async function init() {
 var searchForm = document.getElementById("search-form"); // NOTE this is note actually a "form" element, but a "label" element
 var searchField = document.getElementById("search-field");
 var searchButton = document.getElementById("search-submit");
-async function searchQuery(){
+var searchLoose = document.getElementById("search-loose");
+
+async function searchQuery(strictSearch = true){
     let query = searchField.value;
     console.log("Search:", query);
     searchField.value = "";
@@ -133,7 +136,9 @@ async function searchQuery(){
         searchFilter(searchResults);
     }
     catch(e){
-       console.log("Error: Daily Maximum of 150 Spoonacular Point Reached"); 
+       console.log("Error: Daily Maximum of 150 Spoonacular Point Reached");
+       console.log(strictSearch);
+       searchFilterAlt(query, strictSearch);
     }
 }
 searchButton.addEventListener("click", searchQuery);
@@ -141,6 +146,9 @@ searchField.addEventListener("keyup", event => {
     if(event.code === "Enter"){
         searchQuery();
     }
+});
+searchLoose.addEventListener("click", looseSearch => {
+    searchQuery(false);
 });
 /* Search Bar Script End */
 
@@ -165,6 +173,31 @@ function searchFilter(searchResults){
         bindRecipeCard(recipeCard, page, json);
         document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
     }
+}
+function searchFilterAlt(query, strictSearch = true){
+    // console.log(strictSearch);
+    let number = 0;
+    for (const [key, value] of Object.entries(recipeData)) {
+        let keywordFound = searchJSON(recipeData[key], query, strictSearch);
+        // console.log(key, query, keywordFound) 
+        if (keywordFound) { // IMPORTED
+            number++;
+            console.log(recipeData[key]);
+            let recipeCard = document.createElement('recipe-card');
+            let json = recipeData[key];
+            recipeCard.data = json; // Note, recipeCard.data is "abstract", use recipe_data
+            const page = key;
+            //console.log(page);
+            router.addPage(page, function () {
+                document.querySelector('.section--recipe-cards').classList.remove('shown');
+                document.querySelector('.section--recipe-expand').classList.add('shown');
+                document.querySelector('recipe-expand').data = recipeData[key];
+            });
+            bindRecipeCard(recipeCard, page, json);
+            document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
+        }
+    }
+    console.log("Count", number);
 }
 
 /* Dropdown Functionality */
