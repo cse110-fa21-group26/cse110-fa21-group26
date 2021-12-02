@@ -63,7 +63,6 @@ async function searchQuery(strictSearch = true){
     }
     catch(e){
        console.log("Error: Daily Maximum of 150 Spoonacular Point Reached");
-       console.log(strictSearch);
        searchFilterAlt(query, strictSearch);
     }
 }
