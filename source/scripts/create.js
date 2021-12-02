@@ -70,6 +70,7 @@ const recipeForm = document.querySelector('.recipe-form');
 recipeForm.addEventListener('submit', (event) => {
     event.preventDefault();
     //console.log("hi");
+    let image = document.querySelector('.recipe-image').checked;
     let name = document.getElementById('recipe-name').value;
     let ingredients = document.getElementById('recipe-ingredients').value;
     let steps = document.getElementById('recipe-steps').value;

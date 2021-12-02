@@ -31,7 +31,13 @@
   <link rel="stylesheet" href="style/menustyle.css" />
   <link rel="stylesheet" href="style/createstyle.css" />
 
-
+  <!-- Check box resizing -->
+  <!-- <title>Set checkbox size</title>
+  <style> input.sizingCheckbox {
+                width: 30px;
+                height: 30px;
+        }
+  </style> -->
 </head>
 <body id="body">
   <header class="side-menu">
@@ -54,6 +60,30 @@
       </div>
         <form class="recipe-form">
           <div>
+            <label for="recipe-image">Recipe Image</label><br>
+            <ul>
+              <li>
+                <input type="checkbox" class="recipe-image" />
+                <label for="myCheckbox1"><img src= "source/images/perry.png" /></label>
+              </li>
+              <li>
+                <input type="checkbox" class="recipe-image" />
+                <label for="myCheckbox2"><img src="source/images/frozen.jpg" /></label>
+              </li>
+              <li>
+                <input type="checkbox" class="recipe-image" />
+                <label for="myCheckbox3"><img src="source/images/simpsons.jpg" /></label>
+              </li>
+              <li>
+                <input type="checkbox" class="recipe-image" />
+                <label for="myCheckbox4"><img src="source/images/spngebob.jpg" /></label>
+              </li>
+              <li>
+            
+                <input type="checkbox" class="recipe-image" />
+                <label for="myCheckbox5"><img src="source/images/webarebear.jpg" /></label>
+              </li>
+            </ul>
             <label for="recipe-name">Recipe Name</label><br>
             <input type="text" id="recipe-name" name="recipe-name"><br>
 
