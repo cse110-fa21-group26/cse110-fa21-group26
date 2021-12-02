@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,7 +11,6 @@
   <link rel="stylesheet" href="style/sidebarstyle.css">
   <link rel="stylesheet" href="style/recipestyle.css">
   <link rel="stylesheet" href="style/recipepage.style.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="icon" type="image/png" href="/specs/researchmaterial/veganlogo.png">
 
   <meta charset="UTF-8" />
@@ -20,57 +18,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lab 7 - SPA vs. PWA</title>
 
+ 
   <!-- Web Components -->
   <script src="scripts/RecipeCard.js" type="module"></script>
 
+  <!-- Service Worker -->
+  <!-- <script src="scripts/sw.js" type="module"></script> -->
 
   <!-- Router -->
   <script src="scripts/Router.js" type="module"></script>
 
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="style/menustyle.css" />
-  <link rel="stylesheet" href="style/createstyle.css" />
-
+  <script src="scripts/custom.js" type="module"></script>
 
 </head>
-<header class="side-menu">
-  <div id="mySidebar" class="sidebar" open="true">
-    <a href="#">Login</a>
-    <a href="./custom.html">Custom Recipes</a>
-    <a href="#">Saved Recipes</a>
-    <button class="dropdown-btn">Dropdown
-      <b class="fa fa-caret-down">&#9660</b>
-    </button>
-    <div class="dropdown-container">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    <a href="#">Contact</a>
-    <a href="./create.html">Create New Recipe</a>
-  </div>
-  <button class="openbtn" onclick="toggleNav()">☰</button>
-  <script src="scripts/custom.js" type="module"></script>
-  <h1>Brecipi App</h1>
-</header>
 
 <body id="body">
-    <div class="placeholder"></div>
-    <main class="container"></main>
-    <main id="main">
-        <section class="section--recipe-cards shown">
-        <div class="recipe-cards--wrapper">
-            <!-- Recipes Added Here -->
+    <header class="side-menu">
+        <div id="mySidebar" class="sidebar" open="true">
+            <a href="./index.html">Home</a>
+            <a href="./custom.html">Custom Recipes</a>
+            <a href = "create.html">Create New Recipe</a>
         </div>
-        </section>
-        <section class="section--recipe-expand">
-        <recipe-expand></recipe-expand>
-        </section>
+        <div id="sidebar-header">
+            <button id="openbtn" class="sidebar-item">☰</button>
+            <h1 class="sidebar-item">Brecipi App</h1>
+        </div>
+    </header>
+    
+    <main id="main">
+        <div id="category-wrapper"></div>
+        <div class="recipe-cards--wrapper">
+            <!-- Categories Added Here -->
+        </div>
     </main>
 </body>
+
 <footer>
 </footer>
-
-</html>
-
 </html>
