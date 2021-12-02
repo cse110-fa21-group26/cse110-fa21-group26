@@ -231,6 +231,7 @@ function openRecipe(jsonData){
     body.removeChild(priorState);
 
     let wrapper = document.createElement("main");
+    wrapper.setAttribute("id", "main");
 
     let backButton = document.createElement("button");
     backButton.setAttribute('class', 'category');
@@ -267,6 +268,13 @@ createNewRecipeNav.addEventListener('click', event => {
     let wrapper = document.createElement("main");
     wrapper.setAttribute("id", "main");
 
+    let homeButton = document.createElement("button");
+    homeButton.setAttribute('class', 'category');
+    homeButton.setAttribute('id', 'home-button');
+    homeButton.innerHTML = "Home";
+    homeButton.onclick = returnHome;
+    wrapper.appendChild(homeButton);
+
     let backButton = document.createElement("button");
     backButton.setAttribute('class', 'category');
     backButton.setAttribute('id', 'back-button');
@@ -294,7 +302,8 @@ createNewRecipeNav.addEventListener('click', event => {
 });
 
 let homePageNav = document.getElementById("home-page");
-homePageNav.addEventListener('click', event => {
+homePageNav.addEventListener('click', returnHome);
+function returnHome(){
 
     document.getElementById("theme").setAttribute("href", "");
     document.body.style.backgroundColor = "white";
@@ -303,12 +312,12 @@ homePageNav.addEventListener('click', event => {
 
     let body = document.getElementById("body");
     let priorState = document.getElementById("main");
+
     // Prune Current Main
     body.removeChild(priorState);
-
+    // Append homeState
     body.appendChild(homeStateMain);
-
-});
+}
 
 function bindEscKey() {
     document.addEventListener("keydown", (event) => {
