@@ -43,6 +43,7 @@ recipeForm.addEventListener('submit', (event) => {
     var array = [];
     array.push(name,ingredients,steps, time, img);
     localStorage.setItem(name, JSON.stringify(array));
-    console.log(localStorage);
     location.reload();
+
+    window.location.href= "./custom.html";
 });

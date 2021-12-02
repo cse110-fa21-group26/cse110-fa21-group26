@@ -129,11 +129,41 @@ function openRecipe(jsonData) {
     };
     wrapper.appendChild(backButton);
 
+    let h1 = document.createElement("h1");
+    h1.innerHTML = jsonData[0];
+    wrapper.appendChild(h1)
+
+
     let recipeProfile = document.createElement("custom-recipe-profile");
     recipeProfile.data = jsonData;
     wrapper.appendChild(recipeProfile);
 
     body.appendChild(wrapper);
+    
+    let deleteButton = document.createElement('button');
+    deleteButton.setAttribute('id', 'delete-button');
+    deleteButton.setAttribute('class', 'category');
+    deleteButton.innerHTML = "Delete";
+    deleteButton.onclick = () => {
+        //body.removeChild(recipePage);
+        //body.appendChild(priorState);
+        //let cardToDelete = document.getElementById(jsonData[0]);
+        //cardToDelete.remove();
+        localStorage.removeItem(jsonData[0]);
+        window.location.href = "./custom.html"
+    };
+    body.appendChild(deleteButton);
+
+    let editButton = document.createElement('a');
+    editButton.setAttribute('id', 'edit-button');
+    editButton.setAttribute('class', 'category');
+    editButton.onclick = () => {
+        localStorage.removeItem(jsonData[0]);
+        window.location.href = "./create.html"
+    }
+    editButton.innerHTML = "Edit";
+
+    body.appendChild(editButton);
 
 }
 
