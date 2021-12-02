@@ -20,7 +20,7 @@ const categoryJson = [
 
 const apiKey = "apiKey=6e66a0ae735e4b0b953d40b95f60eb8c"; //ckl002
 //const apiKey = "apiKey=de2cfc27ba4545b18f4cdd99b0c5cec0"; //caitlinlee2000
-const generic = "https://api.spoonacular.com/recipes/"
+const generic = "https://api.spoonacular.com/recipes/";
 
 // https://api.spoonacular.com/recipes/complexSearch?apiKey=6e66a0ae735e4b0b953d40b95f60eb8c&query=muffin+breakfast&number=100
 // put into function that takes in searchinput
@@ -114,14 +114,66 @@ async function init() {
     bindPopstate();
 }
 
+/* Search Bar Script */
+var searchForm = document.getElementById("search-form");
+var searchField = document.getElementById("search-field");
+var searchButton = document.getElementById("search-submit");
+searchButton.addEventListener("click", async event => {
+    let query = searchField.value;
+    console.log("Search:", query);
+    searchField.value = "";
+    let search = generic + "complexSearch?" + apiKey + "&query=breakfast+" + query + "&number=100";
+    let searchResults = await fetch(search)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        });
+    forceCloseNav();
+    searchFilter(searchResults);
+});
+/* Search Bar Script End */
+
+/* Search by Pruning from recipeData */
+function searchFilter(searchResults){
+    let found = searchResults["results"];
+    while (document.querySelector('.recipe-cards--wrapper').firstChild) {
+        document.querySelector('.recipe-cards--wrapper').removeChild(document.querySelector('.recipe-cards--wrapper').firstChild);
+    }
+    for (let i = 0; i < found.length; i++) { 
+        let key = found[i]["title"];
+        let recipeCard = document.createElement('recipe-card');
+        let json = recipeData[key];
+        recipeCard.data = json; // Note, recipeCard.data is "abstract", use recipe_data
+        const page = key;
+        //console.log(page);
+        router.addPage(page, function () {
+            document.querySelector('.section--recipe-cards').classList.remove('shown');
+            document.querySelector('.section--recipe-expand').classList.add('shown');
+            document.querySelector('recipe-expand').data = recipeData[key];
+        });
+        bindRecipeCard(recipeCard, page, json);
+        document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
+    }
+}
+
 /* Dropdown Functionality */
 function toggleNav() {
     if (document.getElementById("mySidebar").getAttribute("open") == "true") {
+        // Close -> Open
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("body").style.marginLeft = "250px";
         document.getElementById("mySidebar").setAttribute("open", "false")
     }
     else {
+        // Open -> Close
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("body").style.marginLeft = "0";
+        document.getElementById("mySidebar").setAttribute("open", "true")
+    }
+}
+function forceCloseNav() {
+    if (document.getElementById("mySidebar").getAttribute("open") == "false") {
+        // Open -> Close
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("body").style.marginLeft = "0";
         document.getElementById("mySidebar").setAttribute("open", "true")
@@ -167,14 +219,13 @@ for (let i = 0; i < categories.length; i++) {
  */
  function createRecipeCards(category) {
     for (const [key, value] of Object.entries(recipeData)) {
-        console.log(key, recipeData[key]);                // This is Logging undefined
+        //console.log(key, recipeData[key]);              
         if (category == 0 || recipeData[key][categoryJson[category]]) {
             let recipeCard = document.createElement('recipe-card');
             let json = recipeData[key];
             recipeCard.data = json; // Note, recipeCard.data is "abstract", use recipe_data
-
             const page = key;
-            console.log(page);
+            //console.log(page);
             router.addPage(page, function () {
                 document.querySelector('.section--recipe-cards').classList.remove('shown');
                 document.querySelector('.section--recipe-expand').classList.add('shown');
@@ -264,7 +315,7 @@ createNewRecipe.addEventListener('click', event => {
 
     document.body.style.backgroundColor = "thistle";
 
-    toggleNav();
+    forceCloseNav();
 
 });
 
