@@ -129,16 +129,6 @@ function openRecipe(jsonData) {
     };
     wrapper.appendChild(backButton);
 
-    let h1 = document.createElement("h1");
-    h1.innerHTML = jsonData[0];
-    wrapper.appendChild(h1)
-
-
-    let recipeProfile = document.createElement("custom-recipe-profile");
-    recipeProfile.data = jsonData;
-    wrapper.appendChild(recipeProfile);
-
-    body.appendChild(wrapper);
     
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('id', 'delete-button');
@@ -152,7 +142,7 @@ function openRecipe(jsonData) {
         localStorage.removeItem(jsonData[0]);
         window.location.href = "./custom.html"
     };
-    body.appendChild(deleteButton);
+    wrapper.appendChild(deleteButton);
 
     let editButton = document.createElement('a');
     editButton.setAttribute('id', 'edit-button');
@@ -163,7 +153,17 @@ function openRecipe(jsonData) {
     }
     editButton.innerHTML = "Edit";
 
-    body.appendChild(editButton);
+    wrapper.appendChild(editButton);
+
+    let h1 = document.createElement("h1");
+    h1.innerHTML = jsonData[0];
+    wrapper.appendChild(h1)
+
+    let recipeProfile = document.createElement("custom-recipe-profile");
+    recipeProfile.data = jsonData;
+    wrapper.appendChild(recipeProfile);
+
+    body.appendChild(wrapper);
 
 }
 
