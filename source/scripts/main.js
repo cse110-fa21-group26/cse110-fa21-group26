@@ -16,7 +16,18 @@ const categoryJson = [
 ]
 
 //const recipeData = {} // You can access all of the Recipe Data from the JSON files in this variable
+document.getElementById('home').addEventListener('click', (event) => {
+    window.location.href = 'index.html';
+});
 
+document.getElementById('library').addEventListener('click', (event) => {
+    window.location.href = './custom.html';
+});
+
+document.getElementById('create').addEventListener('click', (event) => {
+    window.location.href = 'create.html';
+    console.log("hi");
+});
 
 const apiKey = "apiKey=6e66a0ae735e4b0b953d40b95f60eb8c"; //ckl002
 //const apiKey = "apiKey=de2cfc27ba4545b18f4cdd99b0c5cec0"; //caitlinlee2000
@@ -162,7 +173,7 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
-document.querySelector('#openbtn').onclick = toggleNav;
+//document.querySelector('#openbtn').onclick = toggleNav;
 /* Dropdown Functionality End */
 
 /* Create Category Buttons with functionality to create recipe cards on click */
