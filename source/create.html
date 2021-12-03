@@ -31,21 +31,21 @@
   <link rel="stylesheet" href="style/menustyle.css" />
   <link rel="stylesheet" href="style/createstyle.css" />
 
-
-</head>
-<header class="side-menu">
-  <div id="mySidebar" class="sidebar" open="true">
-    <a href="#">Login</a>
-    <a href="./custom.html">Custom Recipes</a>
-    <a href="./create.html">Create New Recipe</a>
-  </div>
-  <button class="openbtn" onclick="toggleNav()">☰</button>
   <script src="scripts/create.js" type="module"></script>
-  <h1>Brecipi App</h1>
-</header>
+</head>
+
+
 
 <body id="main">
+  <header>
+    <div class='half'>
+        <button class = 'logo'>Brecipi</button><br>
+        <button id='home' class = 'nav'>Home</button>
+            <button id='library' class = 'nav'>Personal Library</button>
+            <button id="create" class = 'nav'>Create New Recipe</button>
+    </div>
 
+</header>
     <main>
       
         <h1> Create Your Own Recipe</h1>
@@ -85,7 +85,7 @@
             <label ><img src="images/webarebear.jpg" width = "100px" height = "100px"/></label><br>
           </div> 
 
-        </form>
+        </form> 
     </main>
 </body>
 <footer>
