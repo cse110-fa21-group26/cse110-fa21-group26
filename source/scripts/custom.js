@@ -11,6 +11,19 @@ const router = new Router(function () {
 });
 
 window.addEventListener('DOMContentLoaded', init);
+document.getElementById('home').addEventListener('click', (event) => {
+    window.location.href = 'index.html';
+});
+
+document.getElementById('library').addEventListener('click', (event) => {
+    window.location.href = './custom.html';
+});
+
+document.getElementById('create').addEventListener('click', (event) => {
+    window.location.href = 'create.html';
+    console.log("hi");
+});
+
 
 // Initialize function, begins all of the JS code in this file
 async function init() {
