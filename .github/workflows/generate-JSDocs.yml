@@ -8,11 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Build
-      uses: codevise/documentation-js-action@v1
-      with:
-        input: ../../source/scripts
-        output: ./docs
+    #- name: Build
+    #  uses: codevise/documentation-js-action@v1
+    #  with:
+    #    input: ../../source/scripts
+    #    output: ./docs
 
     - name: Build 2
         uses: andstor/jsdoc-action@v1.2.0
