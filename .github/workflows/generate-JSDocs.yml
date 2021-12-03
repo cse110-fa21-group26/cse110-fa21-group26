@@ -13,3 +13,10 @@ jobs:
       with:
         input: ../../source/scripts
         output: ./docs
+
+    - name: Build
+        ses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ../../source/scripts
+          recurse: true
+          output_dir: ./out
