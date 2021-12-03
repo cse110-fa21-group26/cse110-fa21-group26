@@ -16,7 +16,10 @@
   "bugs": {
     "url": "https://github.com/ArmanOmmid/cse110-fa21-group26/issues"
   },
-  "homepage": "https://github.com/ArmanOmmid/cse110-fa21-group26#readme"
+  "homepage": "https://github.com/ArmanOmmid/cse110-fa21-group26#readme",
+  "dependencies": {
+    "jest": "^27.3.1"
+  }
 }
 
 
