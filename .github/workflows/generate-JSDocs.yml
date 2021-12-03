@@ -15,7 +15,7 @@ jobs:
         output: ./docs
 
     - name: Build 2
-        ses: andstor/jsdoc-action@v1
+        uses: andstor/jsdoc-action@v1
         with:
           source_dir: ../../source/scripts
           recurse: true
