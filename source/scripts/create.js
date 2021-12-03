@@ -97,7 +97,7 @@ recipeForm.addEventListener('submit', (event) => {
     //console.log(JSON.stringify(data));
     //var array = JSON.parse(localStorage.getItem('Data') || '[]');
     var array = [];
-    array.push(name,ingredients,steps);
+    array.push(image, name,ingredients,steps);
     //console.log(array);
     localStorage.setItem(name, JSON.stringify(array));
     console.log(localStorage);
