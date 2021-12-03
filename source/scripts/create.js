@@ -25,7 +25,7 @@ for (i = 0; i < dropdown.length; i++) {
     });
 }
 
-document.querySelector('.openbtn').onclick = toggleNav;
+
 
 const userRecipes = [];
 
