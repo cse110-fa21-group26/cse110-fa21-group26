@@ -15,7 +15,7 @@ jobs:
         output: ./docs
 
     - name: Install Dependencies
-      run: npm install --save-dev jsdoc
+      run: npm install -g jsdoc
 
     - name: Build 2
       run: jsdoc ~/source/scripts 
