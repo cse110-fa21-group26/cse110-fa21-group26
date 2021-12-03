@@ -35,7 +35,12 @@ for (i = 0; i < dropdown.length; i++) {
 document.querySelector('#openbtn').onclick = toggleNav;
 /* Dropdown Functionality End */
 
-
+// function onlyOne(checkbox) {
+//     var checkboxes = document.getElementsByName('check')
+//     checkboxes.forEach((item) => {
+//         if (item !== checkbox) item.checked = false
+//     })
+//}
 /*
 //window.localStorage.setItem('user-recipes', JSON.stringify(userRecipes));
 
