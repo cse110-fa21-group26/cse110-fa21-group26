@@ -1,0 +1,9 @@
+name: JSDoc Generation
+
+on: [push]
+
+jobs:
+  build:
+    steps:
+      - name: JSDoc Action
+        uses: andstor/jsdoc-action@v1.2.0
