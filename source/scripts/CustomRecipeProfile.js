@@ -99,7 +99,7 @@ class CustomRecipeProfile extends HTMLElement {
         ingredientsButton.innerHTML = "Ingredients";
 
         let img = document.createElement("img");
-        img.setAttribute("src", "icons/krabby-patty-secret-formula.jpg");
+        img.setAttribute("src", data[4]);
         img.setAttribute("id", "recipe-img");
         let ingredients = document.createElement("div");
         ingredients.setAttribute("id", "ingredients");
