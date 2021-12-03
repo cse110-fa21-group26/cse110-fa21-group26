@@ -26,7 +26,6 @@ document.getElementById('library').addEventListener('click', (event) => {
 
 document.getElementById('create').addEventListener('click', (event) => {
     window.location.href = 'create.html';
-    console.log("hi");
 });
 
 const apiKey = "apiKey=6e66a0ae735e4b0b953d40b95f60eb8c"; //ckl002
@@ -68,7 +67,7 @@ async function searchQuery(strictSearch = true){
         .then(data => {
             return data;
         });
-    forceCloseNav();
+
     try{
         searchFilter(searchResults);
     }
@@ -136,43 +135,6 @@ function searchFilterAlt(query, strictSearch = true){
     console.log("Count", number);
 }
 
-/* Dropdown Functionality */
-function toggleNav() {
-    if (document.getElementById("mySidebar").getAttribute("open") == "true") {
-        // Close -> Open
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("body").style.marginLeft = "250px";
-        document.getElementById("mySidebar").setAttribute("open", "false")
-    }
-    else {
-        // Open -> Close
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("body").style.marginLeft = "0";
-        document.getElementById("mySidebar").setAttribute("open", "true")
-    }
-}
-function forceCloseNav() {
-    if (document.getElementById("mySidebar").getAttribute("open") == "false") {
-        // Open -> Close
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("body").style.marginLeft = "0";
-        document.getElementById("mySidebar").setAttribute("open", "true")
-    }
-}
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-        }
-        else {
-            dropdownContent.style.display = "block";
-        }
-    });
-}
 //document.querySelector('#openbtn').onclick = toggleNav;
 /* Dropdown Functionality End */
 
