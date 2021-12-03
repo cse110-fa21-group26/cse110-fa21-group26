@@ -93,7 +93,7 @@ class CustomRecipeCard extends HTMLElement {
  
     // Create/append img element
     let img = document.createElement("img");
-    let imgSrc = "icons/krabby-patty-secret-formula.jpg"//data[4];
+    let imgSrc = data[4];
     let imgAlt = data[0];
     img.setAttribute("src", imgSrc);
     img.setAttribute("alt", imgAlt);
