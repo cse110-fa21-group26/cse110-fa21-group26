@@ -1,11 +1,26 @@
-name: JSDoc Generation
-
-on: push
+name: jsdoc
+on:
+ push:
+   branches:
+     - master
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Build
-        run: jsdoc ../../source/scripts
-  
+    - uses: actions/checkout@v1
+
+    - name: Build
+      uses: codevise/documentation-js-action@v1
+      with:
+        input: ../../source/scripts
+        output: ./docs
+
+    # For example:
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_PAT }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./docs
