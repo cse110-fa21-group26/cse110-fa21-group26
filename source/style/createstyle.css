@@ -17,6 +17,16 @@ html {
     background-color: thistle;
 }
 
+/* ShadowDOMs have Encapsulated Styling 
+ * These are set (and must be set) in the Shadow DOM file
+ * Because they are within the ShadowDOM
+ * See CreatePage.js
+
+    #recipe-name
+    #recipe-ingredients
+    #recipe-steps
+*/
+
 #recipe-name {
     height: 20px;
     width: 300px;
@@ -31,10 +41,4 @@ html {
 #recipe-steps {
     height: 200px;
     width: 300px;
-}
-
-
-main{
-    
-    width: 400px; 
 }
