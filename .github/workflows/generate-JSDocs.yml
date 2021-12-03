@@ -7,9 +7,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+
     - name: Build
-      uses: andstor/jsdoc-action@v1
+      uses: codevise/documentation-js-action@v1
       with:
-        source_dir: ../../source/scripts
-        recurse: true
-        output_dir: ./out
+        input: ../../source/scripts
+        output: ./docs
