@@ -22,7 +22,7 @@ recipeForm.addEventListener('submit', (event) => {
     let ingredients = document.getElementById('recipe-ingredients').value;
     let steps = document.getElementById('recipe-steps').value;
     let time = document.getElementById('recipe-time').value;
-    let img = document.getElementById('img').value;
+    let img = document.getElementById('recipe-image').value;
 
     var array = [];
     array.push(name,ingredients,steps, time, img);
