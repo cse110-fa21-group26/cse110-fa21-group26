@@ -85,7 +85,7 @@ function allStorage() {
 
 function createRecipeCards() {
     let values = allStorage();
-
+}
 
 /**
  * Creates the recipe cards for user entries from the local storage
