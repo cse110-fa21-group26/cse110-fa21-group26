@@ -1,7 +1,6 @@
 
 import { Router } from './Router.js';
 import { initializeServiceWorker } from './ServiceWorker.js';
-import * as json from "./json.js";
 import { RecipeCard } from './RecipeCard.js';
 import { recipeData } from './AllRecipes.js';
 import { RecipeProfile } from './RecipeProfile.js';
@@ -17,87 +16,21 @@ const categoryJson = [
 ]
 
 //const recipeData = {} // You can access all of the Recipe Data from the JSON files in this variable
+document.getElementById('home').addEventListener('click', (event) => {
+    window.location.href = 'index.html';
+});
 
+document.getElementById('library').addEventListener('click', (event) => {
+    window.location.href = './custom.html';
+});
+
+document.getElementById('create').addEventListener('click', (event) => {
+    window.location.href = 'create.html';
+});
 
 const apiKey = "apiKey=6e66a0ae735e4b0b953d40b95f60eb8c"; //ckl002
 //const apiKey = "apiKey=de2cfc27ba4545b18f4cdd99b0c5cec0"; //caitlinlee2000
 const generic = "https://api.spoonacular.com/recipes/";
-
-// https://api.spoonacular.com/recipes/complexSearch?apiKey=6e66a0ae735e4b0b953d40b95f60eb8c&query=muffin+breakfast&number=100
-// put into function that takes in searchinput
-// function search(searchInput){
-//    let search = generic + "complexSearch?" + apiKey + "query=breakfast+" + searchInput + "&number=100";
-//     fetch(search)
-        //.then
-//}
-// let search = generic + "complexSearch?" + apiKey + "query=breakfast+" + searchInput + "&number=100";
-
-
-// let recipes;
-// let recipeData = {};
-
-// async function getAllBreakfastRecipes(){
-//     let search = generic + "complexSearch?" + apiKey + "&type=breakfast&number=100";
-//     let search1 = generic + "complexSearch?" + apiKey + "&type=breakfast&number=100&offset=100";
-//     let search2 = generic + "complexSearch?" + apiKey + "&type=breakfast&number=100&offset=200";
-//     return new Promise((resolve, reject) => {
-//     Promise.all([
-//       fetch(search)
-//         .then((response) => response.json()),
-//       fetch(search1)
-//         .then((response1) => response1.json()),
-//       fetch(search2)
-//       .then((response2) => response2.json())])
-//     .then((data) => {
-//       //console.log(data);
-//       //recipes.concat(data[0]["results"]);
-//       recipes = data[0]["results"].concat(data[1]["results"],data[2]["results"]);
-//       //recipes.concat(data[1]["results"],data[2]["results"]);
-//       console.log(recipes);
-//       resolve(true);
-//       //return recipes;
-//     })
-//     .catch((error) => {
-//       console.log("Error getting all breakfast recipes");
-//       reject(false);
-//     });
-//   });
-//   }
-
-//     async function createRecipeCards() {
-//     console.log("reached here");
-//     //undefined
-//     //console.log(recipes[0]);
-//     for (let i = 0; i < recipes.length; i++){
-//       const card = document.createElement('article');
-//       card.setAttribute('class', 'recipe-card');
-//       //card.innerHTML = recipes[i];
-  
-//       const recipeTitle = document.createElement('h2');
-//       recipeTitle.textContent = recipes[i]['title'];
-  
-//       const recipeImg = document.createElement('img');
-//       recipeImg.setAttribute('src', recipes[i]['image']);
-      
-//       let recipeUrl = generic + recipes[i]['id'] + "/information?" + apiKey + "&includeNutrition=false";
-//        // https://api.spoonacular.com/recipes/716429/information?apiKey=6e66a0ae735e4b0b953d40b95f60eb8c?includeNutrition=false
-//        fetch(recipeUrl)
-//         .then(response => response.json())
-//         .then(data => {
-//           console.log(data);
-//           console.log(recipes[i]['title']);
-//           recipeData[recipes[i]['title']] = data;
-//         });
-  
-//       card.appendChild(recipeTitle);
-//       card.appendChild(recipeImg);
-  
-//       //console.log(recipes[i]);
-      
-      
-//       document.querySelector('.container').appendChild(card);
-//     }
-//   }
 
 
 const router = new Router(function () {
@@ -106,14 +39,19 @@ const router = new Router(function () {
 });
 
 window.addEventListener('DOMContentLoaded', init);
+var homeStateMain;
 
-// Initialize function, begins all of the JS code in this file
+/**
+ * Initialize function, begins all of the JS code in this file
+ */
 async function init() {
     initializeServiceWorker();
     createRecipeCards(0);
     bindEscKey();
     bindPopstate();
+    homeStateMain = document.getElementById("main");
 }
+
 
 /* Search Bar Script */
 var searchForm = document.getElementById("search-form"); // NOTE this is note actually a "form" element, but a "label" element
@@ -132,13 +70,12 @@ async function searchQuery(strictSearch = true){
         .then(data => {
             return data;
         });
-    forceCloseNav();
+
     try{
         searchFilter(searchResults);
     }
     catch(e){
        console.log("Error: Daily Maximum of 150 Spoonacular Point Reached");
-       console.log(strictSearch);
        searchFilterAlt(query, strictSearch);
     }
 }
@@ -201,44 +138,7 @@ function searchFilterAlt(query, strictSearch = true){
     console.log("Count", number);
 }
 
-/* Dropdown Functionality */
-function toggleNav() {
-    if (document.getElementById("mySidebar").getAttribute("open") == "true") {
-        // Close -> Open
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("body").style.marginLeft = "250px";
-        document.getElementById("mySidebar").setAttribute("open", "false")
-    }
-    else {
-        // Open -> Close
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("body").style.marginLeft = "0";
-        document.getElementById("mySidebar").setAttribute("open", "true")
-    }
-}
-function forceCloseNav() {
-    if (document.getElementById("mySidebar").getAttribute("open") == "false") {
-        // Open -> Close
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("body").style.marginLeft = "0";
-        document.getElementById("mySidebar").setAttribute("open", "true")
-    }
-}
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-        }
-        else {
-            dropdownContent.style.display = "block";
-        }
-    });
-}
-document.querySelector('#openbtn').onclick = toggleNav;
+//document.querySelector('#openbtn').onclick = toggleNav;
 /* Dropdown Functionality End */
 
 /* Create Category Buttons with functionality to create recipe cards on click */
@@ -261,6 +161,7 @@ for (let i = 0; i < categories.length; i++) {
 /**
  * Generates the <recipe-card> elements from the fetched recipes and
  * appends them to the page
+ * @param category name of the category to create the card
  */
  function createRecipeCards(category) {
     for (const [key, value] of Object.entries(recipeData)) {
@@ -282,7 +183,9 @@ for (let i = 0; i < categories.length; i++) {
     }
 }
 
-
+/**
+ * specify the navigation for our pages
+ */
 function bindPopstate() {
     window.addEventListener("popstate", (event) => {
         if (event.state != null && event.state.state_page != null) router.navigate(event.state.state_page, true);
@@ -290,6 +193,12 @@ function bindPopstate() {
     })
 }
 
+/**
+ * This function binds the functionality of our recipe cards to open when clicked on
+ * @param {*} recipeCard recipe card html element that represents the recipe on the page
+ * @param {*} pageName name of the page to route to
+ * @param {*} jsonData Json data of the recipe we want to open
+ */
 function bindRecipeCard(recipeCard, pageName, jsonData) {
     recipeCard.addEventListener('click', e => {
         //if (e.path[0].nodeName == 'A') return;
@@ -300,6 +209,10 @@ function bindRecipeCard(recipeCard, pageName, jsonData) {
     });
 }
 
+/**
+ * Displays the content of the opened recipe card 
+ * @param {*} jsonData data of the recipe to display when opened
+ */
 function openRecipe(jsonData){
     let body = document.getElementById("body");
     let priorState = document.getElementById("main");
@@ -307,6 +220,7 @@ function openRecipe(jsonData){
     body.removeChild(priorState);
 
     let wrapper = document.createElement("main");
+    wrapper.setAttribute("id", "main");
 
     let backButton = document.createElement("button");
     backButton.setAttribute('class', 'category');
@@ -328,8 +242,12 @@ function openRecipe(jsonData){
 
 }
 
-let createNewRecipe = document.getElementById("create-new-recipe");
-createNewRecipe.addEventListener('click', event => {
+let createNewRecipeNav = document.getElementById("create-new-recipe");
+createNewRecipeNav.addEventListener('click', event => {
+
+    forceCloseNav();
+
+    document.getElementById("theme").setAttribute("href", "style/createstyle.css");
 
     let body = document.getElementById("body");
     let priorState = document.getElementById("main");
@@ -337,6 +255,14 @@ createNewRecipe.addEventListener('click', event => {
     body.removeChild(priorState);
 
     let wrapper = document.createElement("main");
+    wrapper.setAttribute("id", "main");
+
+    let homeButton = document.createElement("button");
+    homeButton.setAttribute('class', 'category');
+    homeButton.setAttribute('id', 'home-button');
+    homeButton.innerHTML = "Home";
+    homeButton.onclick = returnHome;
+    wrapper.appendChild(homeButton);
 
     let backButton = document.createElement("button");
     backButton.setAttribute('class', 'category');
@@ -348,6 +274,7 @@ createNewRecipe.addEventListener('click', event => {
         // Return to Previous State
         body.appendChild(priorState);
         //Return background color
+        document.getElementById("theme").setAttribute("href", "");
         document.body.style.backgroundColor = "white";
     };
     wrapper.appendChild(backButton);
@@ -359,10 +286,26 @@ createNewRecipe.addEventListener('click', event => {
     body.appendChild(wrapper);
 
     document.body.style.backgroundColor = "thistle";
+    // <link rel="stylesheet" href="style/createstyle.css" />
+
+});
+let homePageNav = document.getElementById("home-page");
+homePageNav.addEventListener('click', returnHome);
+function returnHome(){
+
+    document.getElementById("theme").setAttribute("href", "");
+    document.body.style.backgroundColor = "white";
 
     forceCloseNav();
 
-});
+    let body = document.getElementById("body");
+    let priorState = document.getElementById("main");
+
+    // Prune Current Main
+    body.removeChild(priorState);
+    // Append homeState
+    body.appendChild(homeStateMain);
+}
 
 function bindEscKey() {
     document.addEventListener("keydown", (event) => {
