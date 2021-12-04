@@ -1,17 +1,9 @@
-.category{
-    background-color: grey;
-    margin: 30px;
-    text-align: center;
-    padding: 1%;
-    border-width: 5px;
-    font-size: 24px; 
-}
+
 
 .recipe-cards--wrapper {
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	flex-flow: space-evenly;
     column-gap: 30px;
     row-gap: 30px;
     height: auto;
@@ -26,6 +18,11 @@
 }
 
 .category{
+    margin: 30px;
+    text-align: center;
+    padding: 1%;
+    border-width: 5px;
+    font-size: 24px; 
     background-color: white;
     border-color: teal;
     color: teal;
@@ -52,8 +49,6 @@ header{
     background-color: orange;
     border: none;
     padding: 10px 32px;
-    
-    font-size: 16px;
     color: teal;
     font-weight: 500; 
     font-size: 20px;
@@ -61,15 +56,10 @@ header{
 
 .logo{
     background-color: teal;
+    color: orange;
     border: none;
     padding: 15px 32px; 
-    font-size: 16px;
-    color: teal;
-    font-weight: 500; 
-    font-size: 20px;
-    color: orange;
     font-weight: 1000; 
     font-size: 50px; 
     margin-left: -10px; 
-}
 }
