@@ -2,13 +2,13 @@
 
 ## Create Theme for our app
 ### Context and Problem Statement
-As recommended by the professor during office hours, we wanted to discuss if we should create our app based on a niche. This narrows range that our website covers which could make it simpler. 
+As recommended by the professor during office hours, we wanted to discuss if we should create our app based on a niche. This narrows range that our site covers which could make it simpler. 
 ### Considered Options 
 1. Vegetarian Application
 2. Breakfast Application 
 3. No Theme
 ### Decision Outcome 
-Firstly, we decided we wanted a theme since we were informed by the professor that this will make it easier to make a good application since it narrows the scope of our website. We initially wanted to design a vegetarian recipe app, but we pivoted to a breakfast recipes app. We felt that it was an easier scope to cover, as the ingredients of breakfast recipes are simpler and more consistent. It would allow for us to have easier defined categories and more consistent recipe formatting. Overall: exchanging reduced scope of user domain to reduced scope of service domain.
+Firstly, we decided we wanted a theme since we were informed by the professor that this will make it easier to make a good application since it narrows the scope of our site. We initially wanted to design a vegetarian recipe app, but we pivoted to a breakfast recipes app. We felt that it was an easier scope to cover, as the ingredients of breakfast recipes are simpler and more consistent. It would allow for us to have easier defined categories and more consistent recipe formatting. Overall: exchanging reduced scope of user domain to reduced scope of service domain.
 
 ## Get recipes from Spoonacular
 ### Context and Problem Statement 
@@ -26,8 +26,8 @@ After looking at all three options, we decided to use spoonacular API since it s
 ### Context and Problem Statement 
 Since this is a C.R.U.D. application, users have the ability to create and update recipies into their local library, so we needed to decide where to store this local library 
 ### Considered Options 
-1. Server Side
-2. Client Side
+1. Server-side
+2. Client-side
 ### Decision Outcome 
 To fulfill the CRUD features of this app we allow users to create, edit, and delete local recipes that are only available to the user with local access. We want to maintain simplicity by keeping local data offline and have these recipes only available to the user.
 
