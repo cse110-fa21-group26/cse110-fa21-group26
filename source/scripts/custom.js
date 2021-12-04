@@ -37,7 +37,7 @@ document.querySelector('.openbtn').onclick = toggleNav;
 
 /**
  * function to return the content of local storage as an array
- * @returns
+ * @returns array of the contents of the local storage
  */
 function allStorage() {
 
@@ -53,6 +53,9 @@ function allStorage() {
 }
 
 
+/**
+ * Creates the recipe cards for user entries from the local storage
+ */
 function createCustomRecipeCards() {
 
     console.log("creating custom recipe card...");
@@ -83,6 +86,12 @@ function createCustomRecipeCards() {
     }
 }
 
+/**
+ * Open the recipe card by displaying the recipe data on the page
+ * @param {*} name name of the recipe to open 
+ * @param {*} ingredients ingredient content of the recipe 
+ * @param {*} steps  steps content of the recipe
+ */
 function openCustomRecipe(name, ingredients, steps){
 
     let body = document.getElementById("body");

@@ -1,0 +1,15 @@
+name: jsdoc
+on: push
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build
+      uses: codevise/documentation-js-action@v1
+      with:
+        input: ../../source/scripts
+        output: ./docs 

@@ -24,7 +24,6 @@ const router = new Router(function () {
 
 window.addEventListener('DOMContentLoaded', init);
 
-// Initialize function, begins all of the JS code in this file
 /**
  * Initialize function, begins all of the JS code in this file
  */
@@ -35,7 +34,6 @@ async function init() {
     bindPopstate();
 }
 
-/* Dropdown Functionality */
 /**
  * Enable functionality of the dropdown menu
  */
