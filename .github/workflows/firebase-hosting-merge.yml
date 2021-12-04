@@ -18,3 +18,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GROUP26_CSE110F21 }}'
           channelId: live
           projectId: group26-cse110f21
+      - run: exit 0
