@@ -13,6 +13,5 @@ jobs:
       with:
         input: ../../source/scripts
         output: ./docs
-        
     - name: JSDoc Action
       uses: andstor/jsdoc-action@v1.2.0
