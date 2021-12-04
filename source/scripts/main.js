@@ -41,7 +41,9 @@ const router = new Router(function () {
 window.addEventListener('DOMContentLoaded', init);
 var homeStateMain;
 
-// Initialize function, begins all of the JS code in this file
+/**
+ * Initialize function, begins all of the JS code in this file
+ */
 async function init() {
     initializeServiceWorker();
     createRecipeCards(0);
@@ -49,6 +51,7 @@ async function init() {
     bindPopstate();
     homeStateMain = document.getElementById("main");
 }
+
 
 /* Search Bar Script */
 var searchForm = document.getElementById("search-form"); // NOTE this is note actually a "form" element, but a "label" element
@@ -158,6 +161,7 @@ for (let i = 0; i < categories.length; i++) {
 /**
  * Generates the <recipe-card> elements from the fetched recipes and
  * appends them to the page
+ * @param category name of the category to create the card
  */
  function createRecipeCards(category) {
     for (const [key, value] of Object.entries(recipeData)) {
@@ -179,7 +183,9 @@ for (let i = 0; i < categories.length; i++) {
     }
 }
 
-
+/**
+ * specify the navigation for our pages
+ */
 function bindPopstate() {
     window.addEventListener("popstate", (event) => {
         if (event.state != null && event.state.state_page != null) router.navigate(event.state.state_page, true);
@@ -187,6 +193,12 @@ function bindPopstate() {
     })
 }
 
+/**
+ * This function binds the functionality of our recipe cards to open when clicked on
+ * @param {*} recipeCard recipe card html element that represents the recipe on the page
+ * @param {*} pageName name of the page to route to
+ * @param {*} jsonData Json data of the recipe we want to open
+ */
 function bindRecipeCard(recipeCard, pageName, jsonData) {
     recipeCard.addEventListener('click', e => {
         //if (e.path[0].nodeName == 'A') return;
@@ -197,6 +209,10 @@ function bindRecipeCard(recipeCard, pageName, jsonData) {
     });
 }
 
+/**
+ * Displays the content of the opened recipe card 
+ * @param {*} jsonData data of the recipe to display when opened
+ */
 function openRecipe(jsonData){
     let body = document.getElementById("body");
     let priorState = document.getElementById("main");
@@ -273,7 +289,6 @@ createNewRecipeNav.addEventListener('click', event => {
     // <link rel="stylesheet" href="style/createstyle.css" />
 
 });
-
 let homePageNav = document.getElementById("home-page");
 homePageNav.addEventListener('click', returnHome);
 function returnHome(){

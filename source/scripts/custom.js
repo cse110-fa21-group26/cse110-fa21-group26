@@ -66,8 +66,8 @@ document.querySelector('#openbtn').onclick = toggleNav;
 /**/
 
 /**
- * Generates the <recipe-card> elements from the fetched recipes and
- * appends them to the page
+ * function to return the content of local storage as an array
+ * @returns array of the contents of the local storage
  */
 
 function allStorage() {
@@ -85,6 +85,12 @@ function allStorage() {
 
 function createRecipeCards() {
     let values = allStorage();
+}
+
+/**
+ * Creates the recipe cards for user entries from the local storage
+ */
+function createCustomRecipeCards() {
 
     for (let i = 0; i < values.length; i++) {
 
@@ -122,7 +128,12 @@ function bindRecipeCard(recipeCard, pageName, jsonData) {
     });
 }
 
+/**
+ * Open the recipe card by displaying the recipe data on the page
+ * @param {*} jsonDataa  content of the recipe
+ */
 function openRecipe(jsonData) {
+
     let body = document.getElementById("body");
     let priorState = document.getElementById("main");
     // Prune Current Main
