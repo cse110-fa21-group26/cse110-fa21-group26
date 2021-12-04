@@ -13,9 +13,3 @@ jobs:
       with:
         input: ../../source/scripts
         output: ./docs
-
-    - name: Install Dependencies
-      run: npm install -g jsdoc
-
-    - name: Build 2
-      run: jsdoc ../../source/scripts 
