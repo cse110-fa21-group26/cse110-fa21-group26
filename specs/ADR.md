@@ -19,8 +19,8 @@ We need to populate our app with recipies, so we needed to decide the location f
 2. Spoonacular API
 3. Fill ourselves
 ### Outcome
-After looking at all three options, we decided to use spoonacular API since it seemed like the easiest to use and automate while also providing the gratest amount of 
-information on our recipies and letting us filter by tags. We want to try using the Spoonacular API to collect and scrape recipes for us to display on our homepage. 
+After looking at all three options, we decided to use spoonacular API since it seemed like the easiest to use and automate while also providing the gratest amount of
+information on our recipies and letting us filter by tags. We want to try using the Spoonacular API to collect and scrape recipes for us to display on our homepage.
 This API will hopefully make it easy for us to display many recipes on our page in an automated fashion.
 ### Links
 [Spoonacular API](https://spoonacular.com)
@@ -28,7 +28,7 @@ This API will hopefully make it easy for us to display many recipes on our page 
 ## Users' local library
 ### Context and Problem
 Since this is a C.R.U.D. application, users have the ability to create and update recipies into their local library, so we needed to decide where to store this local library
-### Considered Options
+### Options for Problem
 1. Server-side
 2. Client-side
 ### Outcomes
@@ -68,7 +68,7 @@ We chose a stylecguide to base our code off of so that our group has something t
 1. Google
 2. Airbnb
 3. StandardJS
-### Decision made
+### Option Decided
 We chose to go with google because they have easy to read rules on formatting and are widley used by other platforms
 
 ## Using local storage for Create New Recipe
