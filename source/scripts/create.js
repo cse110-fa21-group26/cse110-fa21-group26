@@ -27,12 +27,10 @@ for (i = 0; i < dropdown.length; i++) {
 
 document.querySelector('.openbtn').onclick = toggleNav;
 
-const userRecipes = [];
-
 const recipeForm = document.querySelector('.recipe-form');
 
 
-recipeForm.addEventListener('submit', (event) => {
+recipeForm.addEventListener('submit', () => {
     event.preventDefault();
     let name = document.getElementById('recipe-name').value;
     let ingredients = document.getElementById('recipe-ingredients').value;
