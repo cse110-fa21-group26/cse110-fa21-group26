@@ -1,17 +1,17 @@
 //const recipeData = {} // You can access all of the Recipe Data from the JSON files in this variable
-document.getElementById('home').addEventListener('click', (event) => {
+document.getElementById('home').addEventListener('click', () => {
     window.location.href = 'index.html';
 });
 
-document.getElementById('library').addEventListener('click', (event) => {
+document.getElementById('library').addEventListener('click', () => {
     window.location.href = './custom.html';
 });
 
-document.getElementById('create').addEventListener('click', (event) => {
+document.getElementById('create').addEventListener('click', () => {
     window.location.href = 'create.html';
 });
 
-const userRecipes = [];
+//const userRecipes = [];
 
 const recipeForm = document.querySelector('.recipe-form');
 
