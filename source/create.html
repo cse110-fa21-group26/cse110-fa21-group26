@@ -31,27 +31,24 @@
   <link rel="stylesheet" href="style/menustyle.css" />
   <link rel="stylesheet" href="style/createstyle.css" />
 
-
+  <script src="scripts/create.js" type="module"></script>
 </head>
-<body id="body">
-  <header class="side-menu">
-      <div id="mySidebar" class="sidebar" open="true">
-          <a href="./index.html">Home</a>
-          <a href="./library.html">Custom Recipes</a>
-          <a href="">Saved Recipes</a>
-          <a href="./create.html">Create New Recipe</a>
-      </div>
-      <div id="sidebar-header">
-          <button id="openbtn" class="sidebar-item">☰</button>
-          <h1 class="sidebar-item">Brecipi App</h1>
-          <h3>Custom Recipe Creator</h3>
-      </div>
-  </header>
-  <main id="main">
-      <div id="category-wrapper"></div>
-      <div class="recipe-cards--wrapper">
-          <!-- Categories Added Here -->
-      </div>
+
+
+
+<body id="main">
+  <header>
+    <div class='half'>
+        <button class = 'logo'>Brecipi</button><br>
+        <button id='home' class = 'nav'>Home</button>
+            <button id='library' class = 'nav'>Personal Library</button>
+            <button id="create" class = 'nav'>Create New Recipe</button>
+    </div>
+
+</header>
+    <main>
+      
+        <h1> Create Your Own Recipe</h1>
         <form class="recipe-form">
           <div>
             <label for="recipe-name">Recipe Name</label><br>
@@ -60,18 +57,40 @@
             <label for="recipe-ingredients">Ingredients</label><br>
             <input type="text" id="recipe-ingredients" name="recipe-ingredients" multiple ><br>
             <!--<button class="ingredients-submit" type="submit1">Add Ingredients</button><br> -->
+            
+            <label for="recipe-time">Total prep time</label><br>
+            <input type="text" id="recipe-time" name="recipe-time" multiple><br>
 
             <label for="recipe-steps"> Steps </label><br>
             <input type="text" id="recipe-steps" name="recipe-steps" multiple><br>
-            
+
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="img" accept="image/*"><br>    
+
             <button class="steps-submit" type="submit">Save</button><br>
-            <!--<label for="recipe-steps">Recipe Steps</label><br>
-            <input type="text" id="recipe-steps" name="recipe-steps"><br> -->
+
+            <label for="recipe-image">Recipe Image</label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label>
+            <img src= "images/perry.png" width= "100px" height= "100px" />
+            </label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label ><img src="images/frozen.jpg" width="100px" height = "100px"/>
+            </label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label ><img src="images/simpsons.jpeg" width="100px" height = "100px"/></label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label><img src="images/spongebob.jpg" width="100px" height = "100px"/></label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label ><img src="images/webarebear.jpg" width = "100px" height = "100px"/></label><br>
           </div> 
-        </form>
+
+        </form> 
     </main>
 </body>
-
 <footer>
 </footer>
+
+</html>
+
 </html>

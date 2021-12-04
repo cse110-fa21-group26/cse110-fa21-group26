@@ -14,28 +14,10 @@ class CreatePage extends HTMLElement {
 
     }
 
-    setup(data){
+    setup(){
         // This is the CSS that you'll use for your recipe cards
         const styleElem = document.createElement('style');
         const styles = `
-        body main{
-            background-color: white; 
-            margin: auto;
-            width: 325px;
-            border: 5px solid purple;
-            padding: 50px;
-        
-        }
-        
-        .openbtn{
-            margin: 10px; 
-            font-size: 36px;
-            color: purple
-        }
-        
-        html {
-            background-color: thistle;
-        }
         
         #recipe-name {
             height: 20px;
@@ -53,18 +35,18 @@ class CreatePage extends HTMLElement {
             width: 300px;
         }
         
-        main{
-            width: 400px; 
-        }
-        
       `;
         styleElem.innerHTML = styles;
 
-        let form = document.createElement("form");
-        form.setAttribute("class", "recipe-form");
+        let header = document.createElement("h1");
+        header.innerHTML = "Create Your Own Recipe";
+        this.shadowRoot.appendChild(header);
+
+        let recipeForm = document.createElement("form");
+        recipeForm.setAttribute("class", "recipe-form");
         
         let wrapper = document.createElement("div");
-        form.appendChild(wrapper);
+        recipeForm.appendChild(wrapper);
 
         let labelName = document.createElement("label");
         labelName.setAttribute("for", "recipe-name");
@@ -93,6 +75,20 @@ class CreatePage extends HTMLElement {
         wrapper.appendChild(inputIngredients);
         wrapper.appendChild(document.createElement("br"));
 
+        let labelTime = document.createElement("label");
+        labelTime.setAttribute("for", "recipe-time");
+        labelTime.innerHTML = "Total prep time";
+        wrapper.appendChild(labelTime);
+        wrapper.appendChild(document.createElement("br"));
+
+        let inputTime = document.createElement("input");
+        inputTime.setAttribute("type", "text");
+        inputTime.setAttribute("id", "recipe-time");
+        inputTime.setAttribute("name", "recipe-time");
+        inputTime.setAttribute("multiple", "");
+        wrapper.appendChild(inputTime);
+        wrapper.appendChild(document.createElement("br"));
+
         let labelSteps = document.createElement("label");
         labelSteps.setAttribute("for", "recipe-steps");
         labelSteps.innerHTML = "Steps";
@@ -107,6 +103,20 @@ class CreatePage extends HTMLElement {
         wrapper.appendChild(inputSteps);
         wrapper.appendChild(document.createElement("br"));
 
+        let labelImage = document.createElement("label");
+        labelImage.setAttribute("for", "img");
+        labelImage.innerHTML = "Select Image:";
+        wrapper.appendChild(labelImage);
+        wrapper.appendChild(document.createElement("br"));
+
+        let inputImage = document.createElement("input");
+        inputImage.setAttribute("type", "file");
+        inputImage.setAttribute("id", "img");
+        inputImage.setAttribute("name", "img");
+        inputImage.setAttribute("accept", "image/*");
+        wrapper.appendChild(inputImage);
+        wrapper.appendChild(document.createElement("br"));
+
         let saveButton = document.createElement("button");
         saveButton.setAttribute("class", "steps-submit");
         saveButton.setAttribute("type", "submit");
@@ -115,50 +125,22 @@ class CreatePage extends HTMLElement {
         wrapper.appendChild(document.createElement("br"));
 
         this.shadowRoot.appendChild(styleElem);
-        this.shadowRoot.appendChild(wrapper);
+        this.shadowRoot.appendChild(recipeForm);
 
-        this.shadowRoot.appendChild(document.createElement("div"));
-
-        saveButton.addEventListener('click', (event) => {
+        recipeForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            //console.log("hi");
             let name = inputName.value;
             let ingredients = inputIngredients.value;
             let steps = inputSteps.value;
+            let time = inputTime.value;
+            let img = inputImage.value;
         
-            let newRecipe = new customRecipe(name, ingredients, steps);
-            //console.log(newRecipe);
-            //let localRecipes = localStorage.getItem('user-recipes');
-            //localRecipes.push(newRecipe);
-            //localStorage.setItem('user-recipes', userRecipes);
-            var data = {name: name, ingredients: ingredients, steps: steps};
-            
-            // var getData =
-            // {
-            //     "firstdata":name,
-            //     "seconddata":ingredients,
-            //     "thirddata":steps
-            // }
-            //localStorage.setItem(name, newRecipe);
-        
-            //localStorage.setItem('Data', JSON.stringify(data));
-        
-            //var result = localStorage.getItem('getData');
-        
-            //console.log(JSON.stringify(data));
-            //var array = JSON.parse(localStorage.getItem('Data') || '[]');
             var array = [];
-            array.push(name,ingredients,steps);
-            //console.log(array);
+            array.push(name,ingredients,steps, time, img);
             localStorage.setItem(name, JSON.stringify(array));
-            console.log(localStorage);
-            //console.log('Name: ', name, 'Ingredients: ', ingredients, 'Steps: ', steps);
-            //form.submit();
-
-            inputName.value = "";
-            inputIngredients.value  = "";
-            inputSteps.value  = "";
+            location.reload();
         
+            window.location.href= "./custom.html";
         });
 
         // FUNCTIONS GO HERE
