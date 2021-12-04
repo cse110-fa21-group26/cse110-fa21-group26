@@ -56,8 +56,8 @@ Again, to allow accessibilty for new cooks... but the toggle being very accessib
 ## Filter / Categories based on Personas
 Because we want to be able to make certain recipes instantly accessible to our personas (whom are our target users generally), we want to make filtering for them instantly accessible. For example, filter by: vegetarian, vegan, quick time, high protein, difficulty level, nutrition level.
 
-## Firebase Hosting instead of GitHub Pages...
-TBD
+## Firebase Hosting instead of GitHub Pages
+We decided to use Firebase hosting instead of GitHub pages to hold our main app because we wanted to have a place for our completed work, and another for our work in progress. Using our CI pipeline we were able to keep the two pages seperate and only official changes would be deployed to Firbase hosting when necessary. 
 
 ## Using google style guide
 ### Context and Problem Statement 
@@ -69,4 +69,9 @@ We chose a stylecguide to base our code off of so that our group has something t
 ### Decision Outcome 
 We chose to go with google because they have easy to read rules on formatting and are widley used by other platforms
 
+## Using local storage for Create New Recipe
+We decided we would use local storage to add the recipes the user created on their own. The app would create their own personal library where they can look at the recipes they added.
+
+## Using Jest for Testing
+To test our recipe application, Jest was the tool that we decided to use becuase it was more familiar to us and would be faster to implement for our testing. 
 
