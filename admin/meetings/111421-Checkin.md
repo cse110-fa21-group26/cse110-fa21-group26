@@ -17,6 +17,7 @@ Zoom
 - Lucas
 - Harry
 - Perry
+- Arman
 
 
 ##  Agenda:
