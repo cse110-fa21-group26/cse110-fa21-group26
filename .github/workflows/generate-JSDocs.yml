@@ -1,4 +1,4 @@
-name: jsdoc
+name: Generate JSDocs
 on: push
 
 jobs:
@@ -13,3 +13,10 @@ jobs:
         output: ./docs
     - name: JSDoc Action
       uses: andstor/jsdoc-action@v1.2.0
+
+    - name: Build Documentation
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ../../source
+          recurse: true
+          output_dir: ./docs
