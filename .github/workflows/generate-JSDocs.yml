@@ -10,8 +10,5 @@ jobs:
     - name: Install JSDocs
       run: npm install -g jsdoc
 
-    - name: check
-      run: pwd
-
     - name: Build JSDocs
-      run: jsdoc /home/runner/work/cse110-fa21-group26/source/scripts
+      run: jsdoc source/scripts
