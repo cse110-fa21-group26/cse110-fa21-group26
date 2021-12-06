@@ -1,14 +1,24 @@
 name: Generate JSDocs
-on: push
+
+on:
+  push:
 
 jobs:
-  publish:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      uses: andstor/jsdoc-action@v1
-      with:
-        source_dir: ./source/scripts
-        recurse: true
-        output_dir: ./docs
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./source/scripts
+          output_dir: ./out
+          front_page: README.md
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
