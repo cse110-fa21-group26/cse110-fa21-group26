@@ -1,4 +1,4 @@
-name: Generate JSDOc
+name: Generate JSDocs
 
 on:
   push:
@@ -11,6 +11,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-        uses: brunokrauss/jsdoc-action@1
+        uses: andstor/jsdoc-action@v1
         with:
-          jsdoc-path: ./source/scripts
+          source_dir: ./source/scripts
+          output_dir: ./out
+          front_page: README.md
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./out
