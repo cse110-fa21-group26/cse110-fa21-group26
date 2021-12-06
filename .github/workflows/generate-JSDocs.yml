@@ -15,8 +15,8 @@ jobs:
       uses: andstor/jsdoc-action@v1.2.0
 
     - name: Build Documentation
-        uses: andstor/jsdoc-action@v1
-        with:
-          source_dir: ../../source
-          recurse: true
-          output_dir: ./docs
+      uses: andstor/jsdoc-action@v1
+      with:
+        source_dir: ../../source
+        recurse: true
+        output_dir: ./docs
