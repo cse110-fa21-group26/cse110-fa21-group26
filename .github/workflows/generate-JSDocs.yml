@@ -5,18 +5,15 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Build
-      uses: codevise/documentation-js-action@v1
-      with:
-        input: ../../source/scripts
-        output: ./docs
-    - name: JSDoc Action
-      uses: andstor/jsdoc-action@v1.2.0
+    - name: Installing better-docs
+        run: npm i --save-dev@latest better-docs
+      - name: Building JSDoc
+        run: npm run docs
+      - name: Deploying to Github Page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
 
     - name: Build Documentation
       uses: andstor/jsdoc-action@v1
-      with:
-        source_dir: ../../source/scripts
-        recurse: true
-        output_dir: ./docs
