@@ -1,15 +1,14 @@
-name: jsdoc
+name: Generate JSDocs
 on: push
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Build
-      uses: codevise/documentation-js-action@v1
+      uses: andstor/jsdoc-action@v1
       with:
-        input: ../../source/scripts
-        output: ./docs
-    - name: JSDoc Action
-      uses: andstor/jsdoc-action@v1.2.0
+        source_dir: ./source/scripts
+        recurse: true
+        output_dir: ./docs
