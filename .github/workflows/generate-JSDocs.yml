@@ -1,4 +1,4 @@
-name: Generate JSDocs
+name: Generate JSDOc
 
 on:
   push:
@@ -13,4 +13,4 @@ jobs:
       - name: Build
         uses: brunokrauss/jsdoc-action@1
         with:
-          jsdoc-path: './source/scripts'
+          jsdoc-path: ./source/scripts
