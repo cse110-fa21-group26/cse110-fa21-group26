@@ -1,4 +1,3 @@
-//hi
 export class Router {
   static routes = {};
 
