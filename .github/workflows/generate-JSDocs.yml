@@ -12,3 +12,10 @@ jobs:
 
     - name: Build JSDocs
       run: jsdoc source/scripts
+
+    - name: Build
+      uses: andstor/jsdoc-action@v1
+      with:
+        source_dir: ./source/scripts
+        recurse: true
+        output_dir: ./out
