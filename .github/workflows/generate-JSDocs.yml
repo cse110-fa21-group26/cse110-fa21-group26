@@ -2,8 +2,6 @@ name: Generate JSDocs
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   deploy:
