@@ -1,6 +1,5 @@
 export class Router {
-  static routes = {};
-
+  
   constructor(homeFunc) {
     this['home'] = homeFunc;
   }
