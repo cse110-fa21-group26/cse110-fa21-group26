@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+  </style>
+  <title id="id1">Group 26 Project</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Group 26">
+  <meta name="description" content="CSE 110 Project">
+  <link rel="stylesheet" href="style/menustyle.css">
+  <link rel="stylesheet" href="style/sidebarstyle.css">
+  <link rel="stylesheet" href="style/recipestyle.css">
+  <link rel="stylesheet" href="style/recipepage.style.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="icon" type="image/png" href="/specs/researchmaterial/veganlogo.png">
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 7 - SPA vs. PWA</title>
+
+  <!-- Web Components -->
+  <script src="scripts/RecipeCard.js" type="module"></script>
+
+
+  <!-- Router -->
+  <script src="scripts/Router.js" type="module"></script>
+
+  <!-- Main Stylesheet & Scripts -->
+  <link rel="stylesheet" href="style/menustyle.css" />
+  <link rel="stylesheet" href="style/createstyle.css" />
+
+  <script src="scripts/create.js" type="module"></script>
+</head>
+
+
+
+<body id="main">
+  <header>
+    <div class='half'>
+        <button class = 'logo'>Brecipi</button><br>
+        <button id='home' class = 'nav'>Home</button>
+            <button id='library' class = 'nav'>Personal Library</button>
+            <button id="create" class = 'nav'>Create New Recipe</button>
+    </div>
+
+</header>
+    <main>
+      
+        <h1> Create Your Own Recipe</h1>
+        <form class="recipe-form">
+          <div>
+            <label for="recipe-name">Recipe Name</label><br>
+            <input type="text" id="recipe-name" name="recipe-name"><br>
+
+            <label for="recipe-ingredients">Ingredients</label><br>
+            <input type="text" id="recipe-ingredients" name="recipe-ingredients" multiple ><br>
+            <!--<button class="ingredients-submit" type="submit1">Add Ingredients</button><br> -->
+            
+            <label for="recipe-time">Total prep time</label><br>
+            <input type="text" id="recipe-time" name="recipe-time" multiple><br>
+
+            <label for="recipe-steps"> Steps </label><br>
+            <input type="text" id="recipe-steps" name="recipe-steps" multiple><br>
+
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="img" accept="image/*"><br>    
+
+            <button class="steps-submit" type="submit">Save</button><br>
+
+            <label for="recipe-image">Recipe Image</label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label>
+            <img src= "images/perry.png" width= "100px" height= "100px" />
+            </label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label ><img src="images/frozen.jpg" width="100px" height = "100px"/>
+            </label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label ><img src="images/simpsons.jpeg" width="100px" height = "100px"/></label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label><img src="images/spongebob.jpg" width="100px" height = "100px"/></label><br>
+            <input type="radio" name="check" class="recipe-image" >
+            <label ><img src="images/webarebear.jpg" width = "100px" height = "100px"/></label><br>
+          </div> 
+
+        </form> 
+    </main>
+</body>
+<footer>
+</footer>
+
+</html>
+
+</html>

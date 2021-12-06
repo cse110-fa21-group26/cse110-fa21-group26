@@ -1,0 +1,44 @@
+body main{
+    background-color: white; 
+    margin: auto;
+    width: 325px;
+    border: 5px solid purple;
+    padding: 50px;
+
+}
+
+.openbtn{
+    margin: 10px; 
+    font-size: 36px;
+    color: purple
+}
+
+html {
+    background-color: thistle;
+}
+
+/* ShadowDOMs have Encapsulated Styling 
+ * These are set (and must be set) in the Shadow DOM file
+ * Because they are within the ShadowDOM
+ * See CreatePage.js
+
+    #recipe-name
+    #recipe-ingredients
+    #recipe-steps
+*/
+
+#recipe-name {
+    height: 20px;
+    width: 300px;
+}
+
+#recipe-ingredients {
+    height: 20px;
+    width: 300px;
+}
+
+
+#recipe-steps {
+    height: 200px;
+    width: 300px;
+}

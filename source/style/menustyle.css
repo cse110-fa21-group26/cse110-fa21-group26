@@ -1,154 +1,65 @@
-.recipes{
-    background-color: lightgrey;
+
+
+.recipe-cards--wrapper {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+    height: auto;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#category-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.category{
     margin: 30px;
-    width: 10%; 
     text-align: center;
     padding: 1%;
     border-width: 5px;
     font-size: 24px; 
-}
-
-.container{
-    display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	flex-flow: space-evenly;
+    background-color: white;
+    border-color: teal;
+    color: teal;
+    font-weight: 500;
     
 }
 
-/* Style the sidenav links and the dropdown button */
-.sidebar a, .dropdown-btn {
-    font-family: "Lato", sans-serif;
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: teal;
+    margin-bottom: 20px;
+}
+
+.half{
+    border-color: teal;
+    color: teal;
+    font-weight: 500;
+    margin: 10px; 
+}
+
+.nav{
+    background-color: orange;
     border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-}  
-
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-  
-/* .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-} */
-
-.sidebar a:hover {
-    color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.openbtn {
+    padding: 10px 32px;
+    color: teal;
+    font-weight: 500; 
     font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
+}
+
+.logo{
+    background-color: teal;
+    color: orange;
     border: none;
-}
-
-.openbtn:hover {
-    background-color: #444;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-/* Add an active class to the active dropdown button */
-.active {
-    background-color: green;
-    color: white;
-}
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-    display: none;
-    background-color: #262626;
-    padding-left: 8px;
-}
-
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-    float: right;
-    padding-right: 8px;
-}
-
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-}
-
-.float-container {
-    border: 3px solid #fff;
-    padding: 20px;
-    background-color: gray;
-    width: 75%;
-    margin: auto;
-    height: 500px;
-}
-
-.float-child {
-    float: left;
-    height: 500px;
-    width: 49%;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-#left-child {
-    background-color: ivory;
-}
-
-#right-child {
-    background-color: ivory;
-    margin-left: 15px;
-}
-
-#image-button {
-    float: left;
-    width: 50%;
-}
-
-#ingredients-button {
-    width: 50%;
-}
-
-#ingredients {
-    display: none;
-}
-
-#recipe-img {
-    max-width: 99%;
-    max-height: 99%;
+    padding: 15px 32px; 
+    font-weight: 1000; 
+    font-size: 50px; 
+    margin-left: -10px; 
 }
