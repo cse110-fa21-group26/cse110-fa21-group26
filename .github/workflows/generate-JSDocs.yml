@@ -6,16 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    - name: Install JSDocs
-      run: npm install -g jsdoc
-
-    - name: Build JSDocs
-      run: jsdoc source/scripts
-
     - name: Build
       uses: andstor/jsdoc-action@v1
       with:
         source_dir: ./source/scripts
         recurse: true
-        output_dir: ./out
+        output_dir: ./docs
