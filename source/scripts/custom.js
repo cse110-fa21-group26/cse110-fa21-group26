@@ -1,6 +1,6 @@
 
-import { CustomRecipeCard } from './CustomRecipeCard.js';
-import { CustomRecipeProfile } from './CustomRecipeProfile.js';
+import { CustomRecipeCard } from './objects/CustomRecipeCard.js';
+import { CustomRecipeProfile } from './objects/CustomRecipeProfile.js';
 import { CreatePage } from '../../admin/archives/CreatePage.js';
 
 

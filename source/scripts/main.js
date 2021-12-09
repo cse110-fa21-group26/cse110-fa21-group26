@@ -1,7 +1,7 @@
 
-import { RecipeCard } from './RecipeCard.js';
+import { RecipeCard } from './objects/RecipeCard.js';
 import { recipeData } from '../recipes/AllRecipes.js';
-import { RecipeProfile } from './RecipeProfile.js';
+import { RecipeProfile } from './objects/RecipeProfile.js';
 import { CreatePage } from '../../admin/archives/CreatePage.js';
 import { searchJSON } from './searchJSON.js';
 
