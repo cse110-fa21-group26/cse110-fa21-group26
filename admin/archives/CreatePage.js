@@ -1,5 +1,3 @@
-import { customRecipe } from './customRecipe.js';
-
 export { CreatePage }
 
 class CreatePage extends HTMLElement {

@@ -27,12 +27,15 @@ recipeForm.addEventListener('submit', () => {
     let ingredients = document.getElementById('recipe-ingredients').value;
     let steps = document.getElementById('recipe-steps').value;
     let time = document.getElementById('recipe-time').value;
-    let img = document.getElementById('recipe-image').value;
+    let img;
+    if(document.querySelector('input[name="check"]:checked') != null)    
+        img = document.querySelector('input[name="check"]:checked').value;
+   else
+        img = "images/generic.jpg"
     var array = [];
     array.push(name,ingredients,steps, time, img);
     localStorage.setItem(name, JSON.stringify(array));
     location.reload();
-
     window.location.href= "./custom.html";
 });
 

@@ -9,9 +9,7 @@
   <meta name="author" content="Group 26">
   <meta name="description" content="CSE 110 Project">
   <link rel="stylesheet" href="style/menustyle.css">
-  <link rel="stylesheet" href="style/sidebarstyle.css">
   <link rel="stylesheet" href="style/recipestyle.css">
-  <link rel="stylesheet" href="style/recipepage.style.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="icon" type="image/png" href="/specs/researchmaterial/veganlogo.png">
 
@@ -23,9 +21,6 @@
   <!-- Web Components -->
   <script src="scripts/RecipeCard.js" type="module"></script>
 
-
-  <!-- Router -->
-  <script src="scripts/Router.js" type="module"></script>
 
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="style/menustyle.css" />
@@ -39,58 +34,60 @@
 <body id="main">
   <header>
     <div class='half'>
-        <button class = 'logo'>Brecipi</button><br>
-        <button id='home' class = 'nav'>Home</button>
-            <button id='library' class = 'nav'>Personal Library</button>
-            <button id="create" class = 'nav'>Create New Recipe</button>
+      <button class='logo'>Brecipi</button><br>
+      <button id='home' class='nav'>Home</button>
+      <button id='library' class='nav'>Personal Library</button>
+      <button id="create" class='nav'>Create New Recipe</button>
     </div>
 
-</header>
-    <main>
-      
-        <h1> Create Your Own Recipe</h1>
-        <form class="recipe-form">
-          <div>
-            <label for="recipe-name">Recipe Name</label><br>
-            <input type="text" id="recipe-name" name="recipe-name"><br>
+  </header>
+  <main>
 
-            <label for="recipe-ingredients">Ingredients</label><br>
-            <input type="text" id="recipe-ingredients" name="recipe-ingredients" multiple ><br>
-            <!--<button class="ingredients-submit" type="submit1">Add Ingredients</button><br> -->
-            
-            <label for="recipe-time">Total prep time</label><br>
-            <input type="text" id="recipe-time" name="recipe-time" multiple><br>
+    <h1> Create Your Own Recipe</h1>
+    <form class="recipe-form">
+      <div>
+        <label for="recipe-name">Recipe Name</label><br>
+        <input type="text" id="recipe-name" name="recipe-name"><br><br>
 
-            <label for="recipe-steps"> Steps </label><br>
-            <input type="text" id="recipe-steps" name="recipe-steps" multiple><br>
+        <label for="recipe-ingredients">Ingredients</label><br>
+        <input type="text" id="recipe-ingredients" name="recipe-ingredients" multiple><br><br>
+        <!--<button class="ingredients-submit" type="submit1">Add Ingredients</button><br> -->
 
-            <label for="img">Select image:</label>
-            <input type="file" id="img" name="img" accept="image/*"><br>    
+        <label for="recipe-time">Total prep time</label><br>
+        <input type="text" id="recipe-time" name="recipe-time" multiple><br><br>
 
-            <button class="steps-submit" type="submit">Save</button><br>
+        <label for="recipe-steps"> Steps </label><br>
+        <input type="text" id="recipe-steps" name="recipe-steps" multiple><br><br>
 
-            <label for="recipe-image">Recipe Image</label><br>
-            <input type="radio" name="check" class="recipe-image" >
-            <label>
-            <img src= "images/perry.png" width= "100px" height= "100px" />
-            </label><br>
-            <input type="radio" name="check" class="recipe-image" >
-            <label ><img src="images/frozen.jpg" width="100px" height = "100px"/>
-            </label><br>
-            <input type="radio" name="check" class="recipe-image" >
-            <label ><img src="images/simpsons.jpeg" width="100px" height = "100px"/></label><br>
-            <input type="radio" name="check" class="recipe-image" >
-            <label><img src="images/spongebob.jpg" width="100px" height = "100px"/></label><br>
-            <input type="radio" name="check" class="recipe-image" >
-            <label ><img src="images/webarebear.jpg" width = "100px" height = "100px"/></label><br>
-          </div> 
+        <label for="recipe-image">Personalize Recipe Image:</label><br>
+        <input type="radio" name="check" class="recipe-image" value="images/perry.png">
+        <label>
+          <img src="images/perry.png" width="100px" height="100px" />
+        </label><br>
+        <input type="radio" name="check" class="recipe-image" value="images/frozen.jpg">
+        <label>
+          <img src="images/frozen.jpg" width="100px" height="100px" />
+        </label><br>
+        <input type="radio" name="check" class="recipe-image" value="images/simpsons.jpeg">
+        <label>
+          <img src="images/simpsons.jpeg" width="100px" height="100px" />
+        </label><br>
+        <input type="radio" name="check" class="recipe-image" value="images/spongebob.jpg">
+        <label>
+          <img src="images/spongebob.jpg" width="100px" height="100px" />
+        </label><br>
+        
+        <input type="radio" name="check" class="recipe-image" value="images/webarebear.jpg">
+        <label>
+          <img src="images/webarebear.jpg" width="100px" height="100px" />
+        </label><br><br>
 
-        </form> 
-    </main>
+        <button class="steps-submit" type="submit">Save</button><br>
+
+      </div>
+
+    </form>
+  </main>
 </body>
-<footer>
-</footer>
-
-</html>
 
 </html>
