@@ -2,8 +2,8 @@ import { RecipeCard } from './objects/RecipeCard.js';
 import { recipeData } from '../recipes/AllRecipes.js';
 import { RecipeProfile } from './objects/RecipeProfile.js';
 import { CreatePage } from '../../admin/archives/CreatePage.js';
-import { searchJSON } from './searchJSON.js';
 import { bindRecipeCard } from './main.js'
+    
 const apiKey = "apiKey=6e66a0ae735e4b0b953d40b95f60eb8c"; //ckl002
 //const apiKey = "apiKey=de2cfc27ba4545b18f4cdd99b0c5cec0"; //caitlinlee2000
 const generic = "https://api.spoonacular.com/recipes/";
