@@ -1,3 +1,4 @@
+
 //adds event listeners when page is loaded
 window.addEventListener('DOMContentLoaded', (event) => {
     configButtons();
@@ -26,9 +27,12 @@ function configButtons() {
  * When clicked, data in form is read in and saved as a string to local storage
  */
 
-function addCreateFunc() {
-    const recipeForm = document.querySelector('.recipe-form');
-    document.querySelector('.recipe-form').addEventListener('submit', () => {
+export function addCreateFunc() {
+
+    let submitButton = document.querySelector('.steps-submit');
+    let cancelButton = document.querySelector('.steps-cancel');
+
+    submitButton.addEventListener('click', () => {
         event.preventDefault();
         //gets data from form element
         let name = document.getElementById('recipe-name').value;
@@ -44,8 +48,15 @@ function addCreateFunc() {
         var array = [];
         array.push(name, ingredients, steps, time, img);
         //stringify and push array to local storage
+        localStorage.removeItem(sessionStorage.getItem('toDelete'));
         localStorage.setItem(name, JSON.stringify(array));
         location.reload();
         window.location.href = "./custom.html";
     });
+
+    cancelButton.addEventListener('click', () => {
+        event.preventDefault();
+        window.location.href = "./custom.html";
+    });
+   
 }
