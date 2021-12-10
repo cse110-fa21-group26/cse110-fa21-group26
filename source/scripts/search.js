@@ -1,7 +1,6 @@
 import { RecipeCard } from './objects/RecipeCard.js';
 import { recipeData } from '../recipes/AllRecipes.js';
 import { RecipeProfile } from './objects/RecipeProfile.js';
-import { CreatePage } from '../../admin/archives/CreatePage.js';
 import { bindRecipeCard } from './main.js'
     
 const apiKey = "apiKey=6e66a0ae735e4b0b953d40b95f60eb8c"; //ckl002

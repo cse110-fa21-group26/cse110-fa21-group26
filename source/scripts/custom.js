@@ -1,7 +1,6 @@
 
 import { CustomRecipeCard } from './objects/CustomRecipeCard.js';
 import { CustomRecipeProfile } from './objects/CustomRecipeProfile.js';
-import { CreatePage } from '../../admin/archives/CreatePage.js';
 import { RecipeCard } from './objects/RecipeCard.js';
 import { addCreateFunc } from "./update.js";
 
