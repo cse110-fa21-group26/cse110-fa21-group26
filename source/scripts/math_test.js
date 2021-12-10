@@ -1,3 +1,5 @@
+const { searchJSON } = require("./searchJSON");
+
 /**
  * Simple addition.
  *
@@ -25,8 +27,39 @@
   */
  const multiply = (x, y) => x * y;
 
+   /**
+  * Spoonacular Search
+  *
+  * @param {JSONObject} jsonObj JSON object to query within
+  * @param {string} query string to query in the JSON
+  * @returns {boolean} true if query string was found in JSON
+  */
+  const spoonacularSearch = (jsonObj, query) => true;
+
+   /**
+  * Strict Search
+  *
+  * @param {JSONObject} jsonObj JSON object to query within
+  * @param {string} query string to query in the JSON
+  * @returns {boolean} true if query string was found in JSON
+  */
+  const strictSearch = (jsonObj, query) => searchJSON(jsonObj, query, true);
+
+   /**
+  * Loose Search
+  *
+  * @param {JSONObject} jsonObj JSON object to query within
+  * @param {string} query string to query in the JSON
+  * @returns {boolean} true if query string was found in JSON
+  */
+  const looseSearch = (jsonObj, query) => searchJSON(jsonObj, query, false);
+
+
  module.exports = {
    add,
    subtract,
    multiply,
+   spoonacularSearch,
+   strictSearch,
+   looseSearch
  }; 

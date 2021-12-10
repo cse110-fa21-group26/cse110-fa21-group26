@@ -1,3 +1,5 @@
+import { searchJSON } from "./searchJSON";
+
 const { add, subtract, multiply } = require("./math_test");
 
 describe("simple arithmetic", () => {
@@ -18,4 +20,27 @@ describe("simple arithmetic", () => {
       expect(multiply(2, 3)).toEqual(6);
     });
   });
-}); 
+});
+
+describe("Search Functions", () => {
+  /* Spoonacular Search */
+  describe("Spoonacular Search", () => {
+    test("test", () => {
+      expect(true);
+    })
+  });
+
+  /* Strict Search */
+  describe("Strict Search", () => {
+    test("test", () => {
+      expect(true);
+    })
+  });
+
+  /* Loose Search */
+  describe("Loose Search", () => {
+    test("test", () => {
+      expect(true);
+    })
+  });
+})
