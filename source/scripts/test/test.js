@@ -20,7 +20,7 @@ describe("simple arithmetic", () => {
   });
 }); 
 
-const allStorage = require("./custom");
+const allStorage = require("./customtest");
 
 describe("allStorage", () => {
   test("expect same size of array and local storage", () => {
