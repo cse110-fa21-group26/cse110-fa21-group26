@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: math_test.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,43 +17,49 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: math_test.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>Project Description</h1>
-<p>For the fall 2021 quarter of CSE 110, Team 26, Dijkstra's Alcoholism, is creating a C.R.U.D. web applications for recipies. This application will allow users to find, add, edit, or remove recipies in an easy and user-friendly manner.</p>
-<h1>Dijkstra's Alcoholism Team Page Link</h1>
-<p>https://github.com/cse110-fa21-group26/cse110-fa21-group26/blob/main/admin/team.md</p>
-<h1>Website Link</h1>
-<p>https://group26-cse110f21.web.app</p>
-<h1>JSDocs GitHub Pages</h1>
-<p>https://cse110-fa21-group26.github.io/cse110-fa21-group26/</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Simple addition.
+ *
+ * @param {number} x First number.
+ * @param {number} y second number.
+ * @returns Addition of both arguments.
+ */
+ const add = (x, y) => x + y;
+
+ /**
+  * Simple subtraction.
+  *
+  * @param {number} x First number.
+  * @param {number} y second number.
+  * @returns Subtraction of second argument from the first.
+  */
+ const subtract = (x, y) => x - y;
+
+ /**
+  * Simple multiplication.
+  *
+  * @param {number} x First number.
+  * @param {number} y second number.
+  * @returns Multiplication of both arguments.
+  */
+ const multiply = (x, y) => x * y;
+
+ module.exports = {
+   add,
+   subtract,
+   multiply,
+ }; </code></pre>
+        </article>
     </section>
-
-
 
 
 
