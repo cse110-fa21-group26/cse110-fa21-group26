@@ -21,6 +21,7 @@ describe("simple arithmetic", () => {
 }); 
 
 const allStorage = require("./customtest");
+jest.spyOn(window.localStorage.__proto__, 'setItem');
 
 describe("allStorage", () => {
   test("expect same size of array and local storage", () => {
