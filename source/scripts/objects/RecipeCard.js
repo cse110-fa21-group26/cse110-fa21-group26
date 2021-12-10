@@ -28,8 +28,7 @@ class RecipeCard extends HTMLElement {
     
     article {
       align-items: center;
-      border: 1px solid rgb(223, 225, 229);
-      border-radius: 8px;
+      border: 10px solid teal; 
       display: grid;
       grid-template-rows: 118px 56px 14px -10px 15px 36px;
       height: auto;
@@ -52,8 +51,6 @@ class RecipeCard extends HTMLElement {
     }
 
     article > img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
       height: 118px;
       object-fit: cover;
       margin-left: -16px;
@@ -79,6 +76,8 @@ class RecipeCard extends HTMLElement {
       overflow: hidden;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+      text-align: center;
+      color: teal; 
     }
 
     p:not(.title), span, time {
