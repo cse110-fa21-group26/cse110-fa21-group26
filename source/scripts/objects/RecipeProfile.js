@@ -16,7 +16,7 @@ class RecipeProfile extends HTMLElement {
         .float-container {
             border-radius: 8px;
             padding: 20px;
-            background-color: gray;
+            background-color: #BBBBBB;
             width: 70%;
             margin: auto;
             height: 500px;
@@ -46,18 +46,21 @@ class RecipeProfile extends HTMLElement {
         }
         
         #image-button {
-            border-radius: 4px;
+            border-radius: 5px;
             float: left;
             width: 50%;
+            color: teal;
+            border: none;
             background-color: orange;
             font-weight: bold;
         }
         
         #ingredients-button {
-            border-radius: 4px;
+            border-radius: 5px;
             width: 50%;
+            border: none;
             background-color: teal;
-            color: white;
+            color: orange;
             font-weight: bold;
         }
         

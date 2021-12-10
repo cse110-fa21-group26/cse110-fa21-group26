@@ -25,6 +25,7 @@
     font-size: 24px; 
     background-color: white;
     border-color: teal;
+    border-radius: 5px;
     color: teal;
     font-weight: 500;
     
@@ -36,6 +37,7 @@ header{
     justify-content: space-between;
     background-color: teal;
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 .half{
@@ -48,6 +50,7 @@ header{
 .nav{
     background-color: orange;
     border: none;
+    border-radius: 5px;
     padding: 10px 32px;
     color: teal;
     font-weight: 500; 
