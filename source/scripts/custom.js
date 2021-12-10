@@ -2,25 +2,32 @@
 import { CustomRecipeCard } from './objects/CustomRecipeCard.js';
 import { CustomRecipeProfile } from './objects/CustomRecipeProfile.js';
 import { CreatePage } from '../../admin/archives/CreatePage.js';
+import { RecipeCard } from './objects/RecipeCard.js';
+import { addCreateFunc } from "./update.js";
 
 
-window.addEventListener('DOMContentLoaded', init);
-document.getElementById('home').addEventListener('click', (event) => {
-    window.location.href = 'index.html';
-});
-
-document.getElementById('library').addEventListener('click', (event) => {
-    window.location.href = './custom.html';
-});
-
-document.getElementById('create').addEventListener('click', (event) => {
-    window.location.href = 'create.html';
-});
-
-
-// Initialize function, begins all of the JS code in this file
-async function init() {
+//adds event listeners when page is loaded and shows recipes saved in local storage
+window.addEventListener('DOMContentLoaded', (event) => {
+    configButtons();
     createCustomRecipeCards();
+});
+
+/**
+ * Adds event listeners to buttons at the top of the create page: Home, custom library, and create new recipe
+ */
+function configButtons() {
+    //config home button
+    document.getElementById('home').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+    //config library button
+    document.getElementById('library').addEventListener('click', () => {
+        window.location.href = './custom.html';
+    });
+    //config create new button
+    document.getElementById('create').addEventListener('click', () => {
+        window.location.href = 'create.html';
+    });
 }
 
 /**
@@ -43,44 +50,47 @@ function allStorage() {
 
 
 /**
- * Creates the recipe cards for user entries from the local storage
+ * Creates the recipe cards for user entries from the local storage, binds recipe card to event listener to open on click, and appends card to create.html
  */
 function createCustomRecipeCards() {
+    //gets all objects stored in local storage
     let values = allStorage();
     for (let i = 0; i < values.length; i++) {
-        console.log("hi")
         let recipeCard = document.createElement('custom-recipe-card');
+        //get array from values stored as strings in local storage
         let array =JSON.parse(values[i]);
-        recipeCard.data = array; // Note, recipeCard.data is "abstract", use recipe_data
+        recipeCard.data = array; 
         bindRecipeCard(recipeCard, array);
+        //append to create.html
         document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
 
     }
 }
 
-function bindRecipeCard(recipeCard  , jsonData) {
+/**
+ * add event listener to card so that card opens when clicked on
+ * @param {RecipeCard} recipeCard 
+ * @param {String[]} data 
+ */
+function bindRecipeCard(recipeCard  , data) {
     recipeCard.addEventListener('click', e => {
-        //if (e.path[0].nodeName == 'A') return;
-        //router.navigate(pageName, false);
-
-        openRecipe(jsonData);
-
+        openRecipe(data);
     });
 }
 
 /**
  * Open the recipe card by displaying the recipe data on the page
- * @param {*} jsonDataa  content of the recipe
+ * @param {*} data  content of the recipe
  */
-function openRecipe(jsonData) {
-
+function openRecipe(data) {
+    // Prune Current Main
     let body = document.getElementById("body");
     let priorState = document.getElementById("main");
-    // Prune Current Main
     body.removeChild(priorState);
 
     let wrapper = document.createElement("main");
 
+    //create back button
     let backButton = document.createElement("button");
     backButton.setAttribute('class', 'category');
     backButton.setAttribute('id', 'back-button');
@@ -93,38 +103,35 @@ function openRecipe(jsonData) {
     };
     wrapper.appendChild(backButton);
 
-    
+    //create delete button
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('id', 'delete-button');
     deleteButton.setAttribute('class', 'category');
     deleteButton.innerHTML = "Delete";
     deleteButton.onclick = () => {
-        //body.removeChild(recipePage);
-        //body.appendChild(priorState);
-        //let cardToDelete = document.getElementById(jsonData[0]);
-        //cardToDelete.remove();
-        localStorage.removeItem(jsonData[0]);
+        localStorage.removeItem(data[0]);
         window.location.href = "./custom.html"
     };
     wrapper.appendChild(deleteButton);
 
+    //create edit button
     let editButton = document.createElement('a');
     editButton.setAttribute('id', 'edit-button');
     editButton.setAttribute('class', 'category');
     editButton.onclick = () => {
-        localStorage.removeItem(jsonData[0]);
-        window.location.href = "./create.html"
+        sessionStorage.setItem('toDelete', data[0]);
+        window.location.href = "./update.html"
     }
     editButton.innerHTML = "Edit";
 
     wrapper.appendChild(editButton);
 
     let h1 = document.createElement("h1");
-    h1.innerHTML = jsonData[0];
+    h1.innerHTML = data[0];
     wrapper.appendChild(h1)
 
     let recipeProfile = document.createElement("custom-recipe-profile");
-    recipeProfile.data = jsonData;
+    recipeProfile.data = data;
     wrapper.appendChild(recipeProfile);
 
     body.appendChild(wrapper);
