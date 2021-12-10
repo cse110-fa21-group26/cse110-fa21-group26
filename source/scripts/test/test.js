@@ -19,3 +19,11 @@ describe("simple arithmetic", () => {
     });
   });
 }); 
+
+const allStorage = require("../custom");
+
+describe("allStorage", () => {
+  test("expect same size of array and local storage", () => {
+    expect(allStorage().length).toEqual(localStorage.length);
+  });
+});
