@@ -25,57 +25,65 @@
 ## Meet Our Roster of Fervently Alcoholic Zealots
 
 ### Caitline Lee
+Role: Backend Developer \
 Year: Senior \
 Major: Math - CS \
 GitHub: [https://github.com/Caitlin-Lee](https://github.com/Caitlin-Lee) \
 Interests/Hobbies: I enjoy digital art and figure skating! \
-![caitlin](/admin/misc/team-images/caitlin.jpg)
+![caitlin](/admin/misc/team-media/caitlin.jpg)
 
 ### Jungwook "Harry" Hur
+Role: Frontend Developer \
 Year: Senior \
 Major: Computer Science \
 GitHub: [https://github.com/HarryHur](https://github.com/HarryHur) \
 Interests/Hobbies: I really like watching Europe soccer! \
-![harry](/admin/misc/team-images/harry.jpeg)
+![harry](/admin/misc/team-media/harry.jpeg)
 
 ### Anahi Ayala
+Role: Backend Developer \
 Year: Junior \
 Major: Computer Engineering \
 GitHub: [https://github.com/agayala](https://github.com/agayala) \
 Interests/Hobbies: I really enjoy baking, reading and watching soccer/baseball games with my mom, not that I know much about it lol but its fun! \
-![anahi](/admin/misc/team-images/anahi.jpg)
+![anahi](/admin/misc/team-media/anahi.jpg)
 
 ### Kyle Nakai
+Role: Team Leader \ 
 Year: Junior \
 Major: Computer Science \
 GitHub: [https://github.com/kylenakai](https://github.com/kylenakai) \
 Interests/Hobbies: video games, the beach, asian food \
-![kyle](/admin/misc/team-images/kyle.JPG)
+![kyle](/admin/misc/team-media/kyle.JPG)
 
 ### Maryam Dehaini
+Role: Team Leader \
 Year: Junior \
 Major: Computer Engineering \
 GitHub: [https://github.com/mdehaini](https://github.com/mdehaini) \
 Interests/Hobbies: Hiking, biking \
-![maryam](/admin/misc/team-images/maryam.jpg)
+![maryam](/admin/misc/team-media/maryam.jpg)
 
 ### Arman Ommid
+Role: Backend Developer \
 Year: Senior \
 Major: Computer Science / Minor: Cognitive Science \
 GitHub: [https://github.com/ArmanOmmid](https://github.com/ArmanOmmid) \
 Interests/Hobbies: Video games, basketball, hiking, and starting arbitrary cults that make no sense \
-![arman](/admin/misc/team-images/arman.png)
+![arman](/admin/misc/team-media/arman.png)
 
 ### Lucas Horwitz
+Role: Frontend Developer \
 Year: Junior \
 Major: Math-CS \
 GitHub: [https://github.com/Glossen](https://github.com/Glossen) \
 Interests/Hobbies: I like to read (sci-fi/fantasy), do amateur math sometimes, and play board games. \
-![lucas](/admin/misc/team-images/lucas.jpg)
+![lucas](/admin/misc/team-media/lucas.jpg)
 
 ### Perry Wang
+Role: Frontend Developer \ 
 Year: Junior \
 Major: Computer Science \
 GitHub: [https://github.com/perrywang32](https://github.com/perrywang32) \
 Interests/Hobbies: Valorant, fashion, basketball, baseball, music  \
-![perry](/admin/misc/team-images/perry.JPG)
+![perry](/admin/misc/team-media/perry.JPG)
