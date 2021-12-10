@@ -1,4 +1,4 @@
-# Welcome to Dijkstra's Alcoholism
+# Welcome to Dijkstra's Alcoholism - Group 26
 > *IN DIJKSTRA, WE TRUST. IN ALCOHOLISM, WE (responsibly) TRUST.*
 
 ### Branding Information
