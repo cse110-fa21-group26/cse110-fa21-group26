@@ -136,5 +136,3 @@ function openRecipe(data) {
     body.appendChild(wrapper);
 
 }
-
-module.exports = allStorage;
