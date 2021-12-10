@@ -16,4 +16,4 @@ Chosen option: export the JSONs, because
 * Exporting it once and saving it in another file allows us more flexibility in running and testing our code. 
 * Exporting it is much easier as we are able to control which API key is used and substitute it as necessary when the quota is reached. Not only that, we would only need to run everything at once and save it. 
 * We save the code used to get all these files for future use or maintenance.
-* A pro would be we would not have to pay for a higher quota and we can save the quotas for other API calls (searching, filtering, etc.).  
+* A pro would be we would not have to pay for a higher quota and we can save the quotas for other API calls (searching, filtering, etc.) 
