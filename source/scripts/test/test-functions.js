@@ -95,7 +95,8 @@
   else if(jsonObj instanceof Array){
       let found = false;
       for(let i = 0; i < jsonObj.length; i++){
-          found ||= searchJSON(jsonObj[i], query, strictSearch);
+          local = searchJSON(jsonObj[i], query, strictSearch);
+          found = (found || local)
       }
       return found;
   }
@@ -104,10 +105,11 @@
       for (const [key, value] of Object.entries(jsonObj)) {
           //If they key is a boolean for true / false for the key like -> Vegan : True
           if(searchJSON(key, query)){
-              if(typeof(value) == "boolean") found ||= value;
+              if(typeof(value) == "boolean") found = found || value;
           }
           else{
-              found ||= searchJSON(jsonObj[key], query, strictSearch);
+              local ||= searchJSON(jsonObj[key], query, strictSearch);
+              found = (found || local)
           }
       }
       return found;
