@@ -35,7 +35,7 @@
   * @returns {boolean} true if query string was found in JSON
   */
   function spoonacularSearch(jsonObj, query){
-    searchJSON(jsonObj, query, true);
+    return searchJSON(jsonObj, query, true);
   }
    /**
   * Strict Search
@@ -45,7 +45,7 @@
   * @returns {boolean} true if query string was found in JSON
   */
   function strictSearch(jsonObj, query){
-    searchJSON(jsonObj, query, true);
+    return searchJSON(jsonObj, query, true);
   }
 
    /**
@@ -56,7 +56,7 @@
   * @returns {boolean} true if query string was found in JSON
   */
   function looseSearch(jsonObj, query){
-    searchJSON(jsonObj, query, false);
+    return searchJSON(jsonObj, query, false);
   }
 
 module.exports = {
