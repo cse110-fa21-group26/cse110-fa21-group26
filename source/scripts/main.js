@@ -2,7 +2,6 @@
 import { RecipeCard } from './objects/RecipeCard.js';
 import { recipeData } from '../recipes/AllRecipes.js';
 import { RecipeProfile } from './objects/RecipeProfile.js';
-import { searchJSON } from './searchJSON.js';
 
 const categories = [
     'All Recipes', 'Popular', 'Healthy', 'Vegetarian', 'Vegan', 'Dairy Free', 'Gluten Free'

@@ -18,14 +18,6 @@ class RecipeCard extends HTMLElement {
       padding: 0;
     }
     
-    a {
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-    
     article {
       align-items: center;
       border: 10px solid teal; 
@@ -55,17 +47,6 @@ class RecipeCard extends HTMLElement {
       object-fit: cover;
       margin-left: -16px;
       width: calc(100% + 32px);
-    }
-
-    p.ingredients {
-      height: 32px;
-      line-height: 16px;
-      padding-top: 4px;
-      overflow: hidden;
-    }
-    
-    p.organization {
-      color: black !important;
     }
 
     p.title {
@@ -104,6 +85,7 @@ class RecipeCard extends HTMLElement {
     title.innerHTML = imgAlt;
     card.appendChild(title);
 
+    //set rating
     let rating = document.createElement('div');
     rating.setAttribute('class', 'rating');
     let span = document.createElement('span');
@@ -129,7 +111,7 @@ class RecipeCard extends HTMLElement {
     time.innerHTML = timeContent + "  Minutes"; 
     card.appendChild(time);
 
-    
+    //append card
     this.shadowRoot.appendChild(styleElem);
     this.shadowRoot.appendChild(card);
     
