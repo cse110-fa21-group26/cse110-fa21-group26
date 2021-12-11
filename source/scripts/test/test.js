@@ -2,6 +2,8 @@
 const { recipeData } = require('./AllRecipes.js');
 const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, searchJSON} = require("./test-functions");
 
+console.log("TEST", spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "vegan"));
+
 describe("Search Functions Success", () => {
   /* Spoonacular Search */
   describe("Spoonacular Search", () => {
