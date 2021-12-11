@@ -2,27 +2,9 @@
 const { recipeData } = require('./AllRecipes.js');
 const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, searchJSON} = require("./test-functions");
 
-describe("simple arithmetic", () => {
-  describe("addition", () => {
-    test("expect 2 + 3 = 5", () => {
-      expect(add(2, 3)).toEqual(5);
-    });
-  });
-
-  describe("subtract", () => {
-    test("expect 5 - 2 = 3", () => {
-      expect(subtract(5, 2)).toEqual(3);
-    });
-  });
-
-  describe("multiply", () => {
-    test("expect 2 * 3 = 6", () => {
-      expect(multiply(2, 3)).toEqual(6);
-    });
-  });
-});
-
 describe("Search Functions Success", () => {
+
+  print(recipeData);
   /* Spoonacular Search */
   describe("Spoonacular Search", () => {
     test("Berry Banana Breakfast Smoothie, Vegan == True", () => {
@@ -56,3 +38,29 @@ describe("Search Functions Success", () => {
 
   });
 })
+
+
+
+
+
+/* Baseline Tests */
+
+describe("simple arithmetic", () => {
+  describe("addition", () => {
+    test("expect 2 + 3 = 5", () => {
+      expect(add(2, 3)).toEqual(5);
+    });
+  });
+
+  describe("subtract", () => {
+    test("expect 5 - 2 = 3", () => {
+      expect(subtract(5, 2)).toEqual(3);
+    });
+  });
+
+  describe("multiply", () => {
+    test("expect 2 * 3 = 6", () => {
+      expect(multiply(2, 3)).toEqual(6);
+    });
+  });
+});
