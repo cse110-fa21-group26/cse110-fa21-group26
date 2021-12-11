@@ -108,7 +108,7 @@
               if(typeof(value) == "boolean") found = found || value;
           }
           else{
-              local ||= searchJSON(jsonObj[key], query, strictSearch);
+              local = searchJSON(jsonObj[key], query, strictSearch);
               found = (found || local)
           }
       }
