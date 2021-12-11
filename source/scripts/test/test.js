@@ -1,5 +1,5 @@
 import { searchJSON } from "./searchJSON";
-import { recipeData } from '../recipes/AllRecipes.js';
+import { recipeData } from './AllRecipes.js';
 
 const { add, subtract, multiply, strictSearch } = require("./test-functions");
 
