@@ -6,7 +6,7 @@ describe("Search Functions Success", () => {
   /* Spoonacular Search */
   describe("Spoonacular Search", () => {
     test("Berry Banana Breakfast Smoothie, Vegan == True", () => {
-      console.log("TEST", spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "vegan"));
+      console.log("TEST", spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "vegan"));
       expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "vegan")).toEqual(true)
     })
     test("Berry Banana Breakfast Smoothie, Smoothie == True", () => {
