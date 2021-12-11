@@ -25,21 +25,30 @@ describe("simple arithmetic", () => {
 describe("Search Functions Success", () => {
   /* Spoonacular Search */
   describe("Spoonacular Search", () => {
-    test("Recipe[0], Vegan == True", () => {
+    test("Recipe[1], Vegan == True", () => {
+      expect(spoonacularSearch(recipeData[1], "vegan")).toEqual(true)
+    })
+    test("Recipe[0], Vegan == False", () => {
       expect(spoonacularSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
 
   /* Strict Search */
   describe("Strict Search", () => {
-    test("Recipe[0], Vegan == True", () => {
+    test("Recipe[1], Vegan == True", () => {
+      expect(strictSearch(recipeData[1], "vegan")).toEqual(true)
+    })
+    test("Recipe[0], Vegan == False", () => {
       expect(strictSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
 
   /* Loose Search */
   describe("Loose Search", () => {
-    test("Recipe[0], Vegan == True", () => {
+    test("Recipe[1], Vegan == True", () => {
+      expect(looseSearch(recipeData[1], "vegan")).toEqual(true)
+    })
+    test("Recipe[0], Vegan == False", () => {
       expect(looseSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
