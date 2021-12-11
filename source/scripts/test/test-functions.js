@@ -43,8 +43,9 @@
   * @param {string} query string to query in the JSON
   * @returns {boolean} true if query string was found in JSON
   */
-  const spoonacularSearch = (jsonObj, query) => true;
-
+  function spoonacularSearch(jsonObj, query){
+    searchJSON(jsonObj, query, true);
+  }
    /**
   * Strict Search
   *
@@ -52,7 +53,9 @@
   * @param {string} query string to query in the JSON
   * @returns {boolean} true if query string was found in JSON
   */
-  const strictSearch = (jsonObj, query) => searchJSON(jsonObj, query, true);
+  function strictSearch(jsonObj, query){
+    searchJSON(jsonObj, query, true);
+  }
 
    /**
   * Loose Search
@@ -61,7 +64,9 @@
   * @param {string} query string to query in the JSON
   * @returns {boolean} true if query string was found in JSON
   */
-  const looseSearch = (jsonObj, query) => searchJSON(jsonObj, query, false);
+  function looseSearch(jsonObj, query){
+    searchJSON(jsonObj, query, false);
+  }
 
  function searchJSON(jsonObj, query, strictSearch = true){
 
