@@ -72,10 +72,8 @@ module.exports = {
 
  function searchJSON(jsonObj, query, strictSearch = true){
 
-  // Determines if we want a tight contraint for searching strings
-  //if(strictSearch || !strictSearch) return true;
-  let constrainStrings = strictSearch;
-  let maxLength = query.length;       // Strict Constraint constrains read strings to the same lenggth of the expected string 
+  let constrainStrings = strictSearch;  // Determines if we want a tight contraint for searching strings
+  let maxLength = query.length;         // Strict Constraint constrains read strings to the same lenggth of the expected string 
   if(query == "" || typeof(query) != "string"){
       return false;
   }
