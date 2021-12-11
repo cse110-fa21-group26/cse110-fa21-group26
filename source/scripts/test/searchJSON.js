@@ -1,4 +1,4 @@
-const function searchJSON(jsonObj, query, strictSearch = true){
+const searchJSON = (jsonObj, query, strictSearch = true) => {
 
     // Determines if we want a tight contraint for searching strings
     let constrainStrings = strictSearch;
