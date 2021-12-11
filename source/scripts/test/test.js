@@ -1,6 +1,6 @@
 
 const { recipeData } = require('./AllRecipes.js');
-const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, searchJSON} = require("./test-functions");
+const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch} = require("./test-functions");
 
 var item1 = "Easy Sheet Pan Pancakes";
 var item1vegan = item1 + ": vegan";
