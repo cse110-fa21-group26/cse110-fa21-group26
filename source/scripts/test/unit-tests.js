@@ -1,6 +1,7 @@
 import { searchJSON } from "./searchJSON";
+import { recipeData } from '../recipes/AllRecipes.js';
 
-const { add, subtract, multiply } = require("./math_test");
+const { add, subtract, multiply, strictSearch } = require("./test-functions");
 
 describe("simple arithmetic", () => {
   describe("addition", () => {
@@ -22,25 +23,25 @@ describe("simple arithmetic", () => {
   });
 });
 
-describe("Search Functions", () => {
+describe("Search Functions Success", () => {
   /* Spoonacular Search */
   describe("Spoonacular Search", () => {
-    test("test", () => {
-      expect(true);
+    test("Recipe[0], Vegan == True", () => {
+      expect(strictSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
 
   /* Strict Search */
   describe("Strict Search", () => {
-    test("test", () => {
-      expect(true);
+    test("Recipe[0], Vegan == True", () => {
+      expect(strictSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
 
   /* Loose Search */
   describe("Loose Search", () => {
-    test("test", () => {
-      expect(true);
+    test("Recipe[0], Vegan == True", () => {
+      expect(strictSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
 })
