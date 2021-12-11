@@ -26,6 +26,14 @@ var item3bread = item3 + ": bread == false";
 var item3egg = item3 + ": egg == false";
 var item3potato = item3 + ": potato == false";
 
+var item4 = "Crushed Lentil Soup- Granola Style";
+var item4vegan = item4 + ": vegan == false";
+var item4smoothie = item4 + ": smoothie == false";
+var item4pancake = item4 + ": pancake == false";
+var item4bread = item4 + ": bread == false";
+var item4egg = item4 + ": egg == false";
+var item4potato = item4 + ": potato == false";
+
 describe("Search Functions Success", () => {
   /* Spoonacular Search */
 
@@ -86,6 +94,25 @@ describe("Search Functions Success", () => {
     })
     test(item3potato, () => {
       expect(spoonacularSearch(recipeData[item3], "potato")).toEqual(false)
+    })
+
+    test(item4vegan, () => {
+      expect(spoonacularSearch(recipeData[item4], "vegan")).toEqual(false)
+    })
+    test(item4smoothie, () => {
+      expect(spoonacularSearch(recipeData[item4], "smoothie")).toEqual(false)
+    })
+    test(item4pancake, () => {
+      expect(spoonacularSearch(recipeData[item4], "pancake")).toEqual(true)
+    })
+    test(item4bread, () => {
+      expect(spoonacularSearch(recipeData[item4], "bread")).toEqual(false)
+    })
+    test(item4egg, () => {
+      expect(spoonacularSearch(recipeData[item4], "egg")).toEqual(true)
+    })
+    test(item4potato, () => {
+      expect(spoonacularSearch(recipeData[item4], "potato")).toEqual(false)
     })
 
   });
