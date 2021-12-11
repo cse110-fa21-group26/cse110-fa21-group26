@@ -8,4 +8,4 @@ https://github.com/cse110-fa21-group26/cse110-fa21-group26/blob/main/admin/team.
 https://group26-cse110f21.web.app
 
 # JSDocs GitHub Pages
-https://cse110-fa21-group26.github.io/cse110-fa21-group26/
+https://cse110-fa21-group26.github.io/cse110-fa21-group26/index.html
