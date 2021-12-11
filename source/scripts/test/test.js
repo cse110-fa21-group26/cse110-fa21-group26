@@ -231,7 +231,7 @@ describe("Search Functions Success", () => {
       expect(looseSearch(recipeData[item2], "egg")).toEqual(true)
     })
     test(item2potato, () => {
-      expect(looseSearch(recipeData[item2], "potato")).toEqual(false)
+      expect(looseSearch(recipeData[item2], "potato")).toEqual(true)
     })
 
     test(item3vegan, () => {
