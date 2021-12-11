@@ -62,7 +62,7 @@
   */
   const looseSearch = (jsonObj, query) => searchJSON(jsonObj, query, false);
 
- searchJSON = (jsonObj, query, strictSearch = true) => {
+ function searchJSON(jsonObj, query, strictSearch = true){
 
   // Determines if we want a tight contraint for searching strings
   let constrainStrings = strictSearch;
