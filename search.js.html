@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: search.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: search.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { RecipeCard } from './objects/RecipeCard.js';
+import { recipeData } from '../recipes/AllRecipes.js';
+import { RecipeProfile } from './objects/RecipeProfile.js';
+import { bindRecipeCard } from './main.js'
+import { searchJSON } from './searchJSON.js';
+    
+const apiKey = "apiKey=6e66a0ae735e4b0b953d40b95f60eb8c"; //ckl002
+//const apiKey = "apiKey=de2cfc27ba4545b18f4cdd99b0c5cec0"; //caitlinlee2000
+const generic = "https://api.spoonacular.com/recipes/";
+
+/* Search Bar Script */
+var searchForm = document.getElementById("search-form"); // NOTE this is note actually a "form" element, but a "label" element
+var searchField = document.getElementById("search-field");
+var searchButton = document.getElementById("search-submit");
+var searchLoose = document.getElementById("search-loose");
+
+/**
+ * Add functionality to search bar
+ */
+async function searchQuery(strictSearch = true) {
+    let query = searchField.value;
+    searchField.value = "";
+    if (query == "") return;
+    let search = generic + "complexSearch?" + apiKey + "&amp;query=breakfast+" + query + "&amp;number=100";
+    let searchResults = await fetch(search)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        });
+
+    try {
+        searchFilter(searchResults);
+    }
+    catch (e) {
+        console.log("Error: Daily Maximum of 150 Spoonacular Point Reached");
+        searchFilterAlt(query, strictSearch);
+    }
+}
+searchButton.addEventListener("click", searchQuery);
+searchField.addEventListener("keyup", event => {
+    if (event.code === "Enter") {
+        searchQuery();
+    }
+});
+searchLoose.addEventListener("click", looseSearch => {
+    searchQuery(false);
+});
+
+/**
+ * helper function for search functionality
+ * @param {*} searchResults 
+ */
+function searchFilter(searchResults) {
+    let found = searchResults["results"];
+    while (document.querySelector('.recipe-cards--wrapper').firstChild) {
+        document.querySelector('.recipe-cards--wrapper').removeChild(document.querySelector('.recipe-cards--wrapper').firstChild);
+    }
+    for (let i = 0; i &lt; found.length; i++) {
+        let key = found[i]["title"];
+        let recipeCard = document.createElement('recipe-card');
+        let json = recipeData[key];
+        recipeCard.data = json; // Note, recipeCard.data is "abstract", use recipe_data
+        const page = key;
+        router.addPage(page, function () {
+            document.querySelector('.section--recipe-cards').classList.remove('shown');
+            document.querySelector('.section--recipe-expand').classList.add('shown');
+            document.querySelector('recipe-expand').data = recipeData[key];
+        });
+        bindRecipeCard(recipeCard, page, json);
+        document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
+    }
+}
+/**
+ * helper function for search functionality
+ * @param {} query 
+ * @param {*} strictSearch 
+ */
+function searchFilterAlt(query, strictSearch = true) {
+    // console.log(strictSearch);
+    let number = 0;
+    for (const [key, value] of Object.entries(recipeData)) {
+        let keywordFound = searchJSON(recipeData[key], query, strictSearch);
+        // console.log(key, query, keywordFound) 
+        if (keywordFound) { // IMPORTED
+            number++;
+            console.log(recipeData[key]);
+            let recipeCard = document.createElement('recipe-card');
+            let json = recipeData[key];
+            recipeCard.data = json; // Note, recipeCard.data is "abstract", use recipe_data
+            const page = key;
+            //console.log(page);
+            bindRecipeCard(recipeCard, json);
+            document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
+        }
+    }
+    console.log("Count", number);
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addCreateFunc">addCreateFunc</a></li><li><a href="global.html#allStorage">allStorage</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#configButtons">configButtons</a></li><li><a href="global.html#createCustomRecipeCards">createCustomRecipeCards</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#openRecipe">openRecipe</a></li><li><a href="global.html#searchFilter">searchFilter</a></li><li><a href="global.html#searchFilterAlt">searchFilterAlt</a></li><li><a href="global.html#searchJSON">searchJSON</a></li><li><a href="global.html#searchQuery">searchQuery</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat Dec 11 2021 18:16:05 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
