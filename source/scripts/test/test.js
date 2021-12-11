@@ -5,7 +5,7 @@ const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, s
 describe("Search Functions Success", (recipeData) => {
 
   const data = recipeData;
-  console.log(data);
+  console.log("TEST", recipeData);
   /* Spoonacular Search */
   describe("Spoonacular Search", (data) => {
     test("Berry Banana Breakfast Smoothie, Vegan == True", () => {
