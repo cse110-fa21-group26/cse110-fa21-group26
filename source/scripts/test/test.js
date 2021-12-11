@@ -1,6 +1,5 @@
 
 const { recipeData } = require('./AllRecipes.js');
-
 const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch } = require("./test-functions");
 
 describe("simple arithmetic", () => {
