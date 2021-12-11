@@ -1,5 +1,5 @@
 
-import { recipeData } from './AllRecipes.js';
+const { recipeData } = require('./AllRecipes.js');
 
 const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch } = require("./test-functions");
 
