@@ -1,13 +1,4 @@
 
- module.exports = {
-  add,
-  subtract,
-  multiply,
-  spoonacularSearch,
-  strictSearch,
-  looseSearch,
-  searchJSON
-}; 
 
 /**
  * Simple addition.
@@ -67,6 +58,17 @@
   function looseSearch(jsonObj, query){
     searchJSON(jsonObj, query, false);
   }
+
+module.exports = {
+  add,
+  subtract,
+  multiply,
+  spoonacularSearch,
+  strictSearch,
+  looseSearch,
+  searchJSON
+}; 
+
 
  function searchJSON(jsonObj, query, strictSearch = true){
 
