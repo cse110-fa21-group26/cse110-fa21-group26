@@ -1,6 +1,6 @@
 /**
  * helper function for search functionality 
- * @param {} jsonObj 
+ * @param {*} jsonObj 
  * @param {*} query 
  * @param {*} strictSearch 
  * @returns 
