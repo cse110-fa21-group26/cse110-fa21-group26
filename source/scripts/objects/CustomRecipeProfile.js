@@ -83,10 +83,12 @@ class CustomRecipeProfile extends HTMLElement {
       `;
         styleElem.innerHTML = styles;
         
+        //create container
         let container = document.createElement("div");
         container.setAttribute("class", "float-container");
         container.setAttribute("id", "recipe-template");
 
+        //set image button
         let leftChild = document.createElement("div");
         leftChild.setAttribute("class", "float-child");
         leftChild.setAttribute("id", "left-child");
@@ -94,10 +96,12 @@ class CustomRecipeProfile extends HTMLElement {
         imgButton.setAttribute("id", "image-button");
         imgButton.innerHTML = "Image";
 
+        //set ingredients button
         let ingredientsButton = document.createElement("button");
         ingredientsButton.setAttribute("id", "ingredients-button");
         ingredientsButton.innerHTML = "Ingredients";
 
+        //set image
         let img = document.createElement("img");
         img.setAttribute("src", data[4]);
         img.setAttribute("id", "recipe-img");
@@ -105,7 +109,7 @@ class CustomRecipeProfile extends HTMLElement {
         ingredients.setAttribute("id", "ingredients");
         ingredients.innerHTML = data[1];
         
-
+        //append all
         leftChild.appendChild(imgButton);
         leftChild.appendChild(ingredientsButton);
         leftChild.appendChild(img);

@@ -1,3 +1,10 @@
+/**
+ * helper function for search functionality 
+ * @param {*} jsonObj 
+ * @param {*} query 
+ * @param {*} strictSearch 
+ * @returns found recipes
+ */
 export function searchJSON(jsonObj, query, strictSearch = true){
 
     // Determines if we want a tight contraint for searching strings

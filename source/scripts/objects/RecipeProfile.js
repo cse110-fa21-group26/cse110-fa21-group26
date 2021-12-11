@@ -87,6 +87,8 @@ class RecipeProfile extends HTMLElement {
         container.setAttribute("class", "float-container");
         container.setAttribute("id", "recipe-template");
 
+
+        //set image button
         let leftChild = document.createElement("div");
         leftChild.setAttribute("class", "float-child");
         leftChild.setAttribute("id", "left-child");
@@ -94,10 +96,12 @@ class RecipeProfile extends HTMLElement {
         imgButton.setAttribute("id", "image-button");
         imgButton.innerHTML = "Image";
 
+        //set ingredients button
         let ingredientsButton = document.createElement("button");
         ingredientsButton.setAttribute("id", "ingredients-button");
         ingredientsButton.innerHTML = "Ingredients";
 
+        //swt image
         let img = document.createElement("img");
         img.setAttribute("src", jsonData['image']);
         img.setAttribute("id", "recipe-img");
@@ -107,7 +111,7 @@ class RecipeProfile extends HTMLElement {
             ingredients.innerHTML += (i+1) + ". " + jsonData['extendedIngredients'][i]['name'] + "<br />";
         }
         
-
+        //append alll elements
         leftChild.appendChild(imgButton);
         leftChild.appendChild(ingredientsButton);
         leftChild.appendChild(img);
@@ -122,6 +126,7 @@ class RecipeProfile extends HTMLElement {
         this.shadowRoot.appendChild(styleElem);
         this.shadowRoot.appendChild(container);
 
+        //add butttons and slide on profile card
         imgButton.onclick = function () {
             if (ingredients.style.display !== 'none') {
                 ingredients.style.display = 'none';
