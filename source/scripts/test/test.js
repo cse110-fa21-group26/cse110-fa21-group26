@@ -38,7 +38,6 @@ describe("Search Functions Success", () => {
   /* Spoonacular Search */
 
   describe("Spoonacular Search", () => {
-
     test(item1vegan, () => {
       expect(spoonacularSearch(recipeData[item1], "vegan")).toEqual(false)
     })
@@ -114,17 +113,164 @@ describe("Search Functions Success", () => {
     test(item4potato, () => {
       expect(spoonacularSearch(recipeData[item4], "potato")).toEqual(false)
     })
-
   });
 
   /* Strict Search */
   describe("Strict Search", () => {
+    test(item1vegan, () => {
+      expect(strictSearch(recipeData[item1], "vegan")).toEqual(false)
+    })
+    test(item1smoothie, () => {
+      expect(strictSearch(recipeData[item1], "smoothie")).toEqual(false)
+    })
+    test(item1pancake, () => {
+      expect(strictSearch(recipeData[item1], "pancake")).toEqual(true)
+    })
+    test(item1bread, () => {
+      expect(strictSearch(recipeData[item1], "bread")).toEqual(false)
+    })
+    test(item1egg, () => {
+      expect(strictSearch(recipeData[item1], "egg")).toEqual(true)
+    })
+    test(item1potato, () => {
+      expect(strictSearch(recipeData[item1], "potato")).toEqual(false)
+    })
 
+    test(item2vegan, () => {
+      expect(strictSearch(recipeData[item2], "vegan")).toEqual(false)
+    })
+    test(item2smoothie, () => {
+      expect(strictSearch(recipeData[item2], "smoothie")).toEqual(false)
+    })
+    test(item2pancake, () => {
+      expect(strictSearch(recipeData[item2], "pancake")).toEqual(true)
+    })
+    test(item2bread, () => {
+      expect(strictSearch(recipeData[item2], "bread")).toEqual(false)
+    })
+    test(item2egg, () => {
+      expect(strictSearch(recipeData[item2], "egg")).toEqual(true)
+    })
+    test(item2potato, () => {
+      expect(strictSearch(recipeData[item2], "potato")).toEqual(false)
+    })
+
+    test(item3vegan, () => {
+      expect(strictSearch(recipeData[item3], "vegan")).toEqual(false)
+    })
+    test(item3smoothie, () => {
+      expect(strictSearch(recipeData[item3], "smoothie")).toEqual(false)
+    })
+    test(item3pancake, () => {
+      expect(strictSearch(recipeData[item3], "pancake")).toEqual(true)
+    })
+    test(item3bread, () => {
+      expect(strictSearch(recipeData[item3], "bread")).toEqual(false)
+    })
+    test(item3egg, () => {
+      expect(strictSearch(recipeData[item3], "egg")).toEqual(true)
+    })
+    test(item3potato, () => {
+      expect(strictSearch(recipeData[item3], "potato")).toEqual(false)
+    })
+
+    test(item4vegan, () => {
+      expect(strictSearch(recipeData[item4], "vegan")).toEqual(false)
+    })
+    test(item4smoothie, () => {
+      expect(strictSearch(recipeData[item4], "smoothie")).toEqual(false)
+    })
+    test(item4pancake, () => {
+      expect(strictSearch(recipeData[item4], "pancake")).toEqual(true)
+    })
+    test(item4bread, () => {
+      expect(strictSearch(recipeData[item4], "bread")).toEqual(false)
+    })
+    test(item4egg, () => {
+      expect(strictSearch(recipeData[item4], "egg")).toEqual(true)
+    })
+    test(item4potato, () => {
+      expect(strictSearch(recipeData[item4], "potato")).toEqual(false)
+    })
   });
 
   /* Loose Search */
   describe("Loose Search", () => {
+    test(item1vegan, () => {
+      expect(looseSearch(recipeData[item1], "vegan")).toEqual(false)
+    })
+    test(item1smoothie, () => {
+      expect(looseSearch(recipeData[item1], "smoothie")).toEqual(false)
+    })
+    test(item1pancake, () => {
+      expect(looseSearch(recipeData[item1], "pancake")).toEqual(true)
+    })
+    test(item1bread, () => {
+      expect(looseSearch(recipeData[item1], "bread")).toEqual(false)
+    })
+    test(item1egg, () => {
+      expect(looseSearch(recipeData[item1], "egg")).toEqual(true)
+    })
+    test(item1potato, () => {
+      expect(looseSearch(recipeData[item1], "potato")).toEqual(false)
+    })
 
+    test(item2vegan, () => {
+      expect(looseSearch(recipeData[item2], "vegan")).toEqual(false)
+    })
+    test(item2smoothie, () => {
+      expect(looseSearch(recipeData[item2], "smoothie")).toEqual(false)
+    })
+    test(item2pancake, () => {
+      expect(looseSearch(recipeData[item2], "pancake")).toEqual(true)
+    })
+    test(item2bread, () => {
+      expect(looseSearch(recipeData[item2], "bread")).toEqual(false)
+    })
+    test(item2egg, () => {
+      expect(looseSearch(recipeData[item2], "egg")).toEqual(true)
+    })
+    test(item2potato, () => {
+      expect(looseSearch(recipeData[item2], "potato")).toEqual(false)
+    })
+
+    test(item3vegan, () => {
+      expect(looseSearch(recipeData[item3], "vegan")).toEqual(false)
+    })
+    test(item3smoothie, () => {
+      expect(looseSearch(recipeData[item3], "smoothie")).toEqual(false)
+    })
+    test(item3pancake, () => {
+      expect(looseSearch(recipeData[item3], "pancake")).toEqual(true)
+    })
+    test(item3bread, () => {
+      expect(looseSearch(recipeData[item3], "bread")).toEqual(false)
+    })
+    test(item3egg, () => {
+      expect(looseSearch(recipeData[item3], "egg")).toEqual(true)
+    })
+    test(item3potato, () => {
+      expect(looseSearch(recipeData[item3], "potato")).toEqual(false)
+    })
+
+    test(item4vegan, () => {
+      expect(looseSearch(recipeData[item4], "vegan")).toEqual(false)
+    })
+    test(item4smoothie, () => {
+      expect(looseSearch(recipeData[item4], "smoothie")).toEqual(false)
+    })
+    test(item4pancake, () => {
+      expect(looseSearch(recipeData[item4], "pancake")).toEqual(true)
+    })
+    test(item4bread, () => {
+      expect(looseSearch(recipeData[item4], "bread")).toEqual(false)
+    })
+    test(item4egg, () => {
+      expect(looseSearch(recipeData[item4], "egg")).toEqual(true)
+    })
+    test(item4potato, () => {
+      expect(looseSearch(recipeData[item4], "potato")).toEqual(false)
+    })
   });
 })
 
