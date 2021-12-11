@@ -4,24 +4,26 @@ const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, s
 
 describe("Search Functions Success", () => {
   /* Spoonacular Search */
+  
+  var item1 = "Strawberry Shortcake Pancakes";
   describe("Spoonacular Search", () => {
-    test("Berry Banana Breakfast Smoothie, Vegan == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "vegan")).toEqual(true)
+    test("Strawberry Shortcake Pancakes, Vegan == True", () => {
+      expect(spoonacularSearch(recipeData[item1], "vegan")).toEqual(true)
     })
-    test("Berry Banana Breakfast Smoothie, Smoothie == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "smoothie")).toEqual(true)
+    test("Strawberry Shortcake Pancakes, Smoothie == True", () => {
+      expect(spoonacularSearch(recipeData[item1], "smoothie")).toEqual(true)
     })
-    test("Berry Banana Breakfast Smoothie, Pancake == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "pancake")).toEqual(true)
+    test("Strawberry Shortcake Pancakes, Pancake == True", () => {
+      expect(spoonacularSearch(recipeData[item1], "pancake")).toEqual(true)
     })
-    test("Berry Banana Breakfast Smoothie, Bread == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "bread")).toEqual(true)
+    test("Strawberry Shortcake Pancakes, Bread == True", () => {
+      expect(spoonacularSearch(recipeData[item1], "bread")).toEqual(true)
     })
-    test("Berry Banana Breakfast Smoothie, Egg == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "egg")).toEqual(true)
+    test("Strawberry Shortcake Pancakes, Egg == True", () => {
+      expect(spoonacularSearch(recipeData[item1], "egg")).toEqual(true)
     })
-    test("Berry Banana Breakfast Smoothie, Potato == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "potato")).toEqual(true)
+    test("Strawberry Shortcake Pancakes, Potato == True", () => {
+      expect(spoonacularSearch(recipeData[item1], "potato")).toEqual(true)
     })
 
   });
