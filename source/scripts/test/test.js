@@ -25,26 +25,16 @@ describe("simple arithmetic", () => {
 describe("Search Functions Success", () => {
   /* Spoonacular Search */
   describe("Spoonacular Search", () => {
-    test("Recipe[0], Vegan == True", () => {
-      expect(spoonacularSearch(recipeData[0], "vegan")).toEqual(true)
+    test("Berry Banana Breakfast Smoothie, Vegan == True", () => {
+      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "vegan")).toEqual(true)
     })
-    test("Recipe[1], Vegan == False", () => {
-      expect(spoonacularSearch(recipeData[1], "vegan")).toEqual(true)
+    test("Berry Banana Breakfast Smoothie, Smoothie == True", () => {
+      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "smoothie")).toEqual(true)
     })
-
-    test("Recipe[1], Smoothie == True", () => {
-      expect(spoonacularSearch(recipeData[0], "berry")).toEqual(true)
-    })
-    test("Recipe[0], Smoothie == False", () => {
-      expect(spoonacularSearch(recipeData[1], "berry")).toEqual(false)
+    test("Berry Banana Breakfast Smoothie, Pancake == True", () => {
+      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "pancake")).toEqual(true)
     })
 
-    test("Recipe[1], Pancake == True", () => {
-      expect(spoonacularSearch(recipeData[6], "pancake")).toEqual(true)
-    })
-    test("Recipe[0], Pancake == False", () => {
-      expect(spoonacularSearch(recipeData[1], "pancake")).toEqual(false)
-    })
   });
 
   /* Strict Search */
