@@ -34,6 +34,15 @@ describe("Search Functions Success", () => {
     test("Berry Banana Breakfast Smoothie, Pancake == True", () => {
       expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "pancake")).toEqual(true)
     })
+    test("Berry Banana Breakfast Smoothie, Bread == True", () => {
+      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "bread")).toEqual(true)
+    })
+    test("Berry Banana Breakfast Smoothie, Egg == True", () => {
+      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "egg")).toEqual(true)
+    })
+    test("Berry Banana Breakfast Smoothie, Potato == True", () => {
+      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "potato")).toEqual(true)
+    })
 
   });
 
