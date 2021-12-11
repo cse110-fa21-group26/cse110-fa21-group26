@@ -4,27 +4,26 @@ const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, s
 
 describe("Search Functions Success", () => {
 
-  console.log(recipeData["Berry Banana Breakfast Smoothie"]);
+  const data = recipeData;
   /* Spoonacular Search */
-  describe("Spoonacular Search", () => {
+  describe("Spoonacular Search", (data) => {
     test("Berry Banana Breakfast Smoothie, Vegan == True", () => {
-      console.log("TEST", spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "vegan"));
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "vegan")).toEqual(true)
+      expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "vegan")).toEqual(true)
     })
     test("Berry Banana Breakfast Smoothie, Smoothie == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "smoothie")).toEqual(true)
+      expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "smoothie")).toEqual(true)
     })
     test("Berry Banana Breakfast Smoothie, Pancake == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "pancake")).toEqual(true)
+      expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "pancake")).toEqual(true)
     })
     test("Berry Banana Breakfast Smoothie, Bread == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "bread")).toEqual(true)
+      expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "bread")).toEqual(true)
     })
     test("Berry Banana Breakfast Smoothie, Egg == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "egg")).toEqual(true)
+      expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "egg")).toEqual(true)
     })
     test("Berry Banana Breakfast Smoothie, Potato == True", () => {
-      expect(spoonacularSearch(recipeData["Berry Banana Breakfast Smoothie"], "potato")).toEqual(true)
+      expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "potato")).toEqual(true)
     })
 
   });
