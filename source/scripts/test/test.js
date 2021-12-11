@@ -1,7 +1,7 @@
-import { searchJSON } from "./searchJSON";
+
 import { recipeData } from './AllRecipes.js';
 
-const { add, subtract, multiply, strictSearch } = require("./test-functions");
+const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch } = require("./test-functions");
 
 describe("simple arithmetic", () => {
   describe("addition", () => {
