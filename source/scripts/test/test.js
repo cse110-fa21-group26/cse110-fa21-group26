@@ -4,8 +4,8 @@ const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, s
 
 describe("Search Functions Success", () => {
   /* Spoonacular Search */
-  describe("Spoonacular Search", (data) => {
-    console.log("TEST", recipeData);
+  describe("Spoonacular Search", () => {
+    console.log("TEST", recipeData["Berry Banana Breakfast Smoothie"]);
     test("Berry Banana Breakfast Smoothie, Vegan == True", () => {
       expect(spoonacularSearch(data["Berry Banana Breakfast Smoothie"], "vegan")).toEqual(true)
     })
