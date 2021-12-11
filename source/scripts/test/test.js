@@ -5,25 +5,32 @@ const { add, subtract, multiply, spoonacularSearch, strictSearch, looseSearch, s
 describe("Search Functions Success", () => {
   /* Spoonacular Search */
   
-  var item1 = "Strawberry Shortcake Pancakes";
+  var item1 = "Easy Sheet Pan Pancakes";
+  var item1vegan = item1 + ": vegan == false";
+  var item1smoothie = item1 + ": smoothie == false";
+  var item1pancake = item1 + ": pancake == false";
+  var item1bread = item1 + ": bread == false";
+  var item1egg = item1 + ": egg == false";
+  var item1potato = item1 + ": potato == false";
+
   describe("Spoonacular Search", () => {
-    test("Strawberry Shortcake Pancakes, Vegan == True", () => {
-      expect(spoonacularSearch(recipeData[item1], "vegan")).toEqual(true)
+    test(item1vegan, () => {
+      expect(spoonacularSearch(recipeData[item1], "vegan")).toEqual(false)
     })
-    test("Strawberry Shortcake Pancakes, Smoothie == True", () => {
-      expect(spoonacularSearch(recipeData[item1], "smoothie")).toEqual(true)
+    test(item1smoothie, () => {
+      expect(spoonacularSearch(recipeData[item1], "smoothie")).toEqual(false)
     })
-    test("Strawberry Shortcake Pancakes, Pancake == True", () => {
-      expect(spoonacularSearch(recipeData[item1], "pancake")).toEqual(true)
+    test(item1pancake, () => {
+      expect(spoonacularSearch(recipeData[item1], "pancake")).toEqual(false)
     })
-    test("Strawberry Shortcake Pancakes, Bread == True", () => {
-      expect(spoonacularSearch(recipeData[item1], "bread")).toEqual(true)
+    test(item1bread, () => {
+      expect(spoonacularSearch(recipeData[item1], "bread")).toEqual(false)
     })
-    test("Strawberry Shortcake Pancakes, Egg == True", () => {
+    test(item1egg, () => {
       expect(spoonacularSearch(recipeData[item1], "egg")).toEqual(true)
     })
-    test("Strawberry Shortcake Pancakes, Potato == True", () => {
-      expect(spoonacularSearch(recipeData[item1], "potato")).toEqual(true)
+    test(item1potato, () => {
+      expect(spoonacularSearch(recipeData[item1], "potato")).toEqual(false)
     })
 
   });
