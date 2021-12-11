@@ -18,7 +18,7 @@ var item2bread = item2 + ": bread == false";
 var item2egg = item2 + ": egg == false";
 var item2potato = item2 + ": potato == false";
 
-var item3 = "Delicious Limeade Triple Berry Smoothies";
+var item3 = "Cheesy Potato Corn Scones";
 var item3vegan = item3 + ": vegan == false";
 var item3smoothie = item3 + ": smoothie == false";
 var item3pancake = item3 + ": pancake == false";
