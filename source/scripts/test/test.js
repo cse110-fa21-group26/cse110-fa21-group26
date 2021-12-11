@@ -33,17 +33,17 @@ describe("Search Functions Success", () => {
     })
 
     test("Recipe[1], Smoothie == True", () => {
-      expect(spoonacularSearch(recipeData[0], "smoothie")).toEqual(true)
+      expect(spoonacularSearch(recipeData[0], "berry")).toEqual(true)
     })
     test("Recipe[0], Smoothie == False", () => {
-      expect(spoonacularSearch(recipeData[1], "smoothie")).toEqual(true)
+      expect(spoonacularSearch(recipeData[1], "berry")).toEqual(false)
     })
 
     test("Recipe[1], Pancake == True", () => {
-      expect(spoonacularSearch(recipeData[0], "pancake")).toEqual(true)
+      expect(spoonacularSearch(recipeData[6], "pancake")).toEqual(true)
     })
     test("Recipe[0], Pancake == False", () => {
-      expect(spoonacularSearch(recipeData[1], "pancake")).toEqual(true)
+      expect(spoonacularSearch(recipeData[1], "pancake")).toEqual(false)
     })
   });
 
