@@ -5,7 +5,8 @@
   multiply,
   spoonacularSearch,
   strictSearch,
-  looseSearch
+  looseSearch,
+  searchJSON
 }; 
 
 /**
