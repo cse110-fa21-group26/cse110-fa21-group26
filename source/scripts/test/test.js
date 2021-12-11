@@ -27,7 +27,7 @@ describe("Search Functions Success", () => {
   /* Spoonacular Search */
   describe("Spoonacular Search", () => {
     test("Recipe[0], Vegan == True", () => {
-      expect(strictSearch(recipeData[0], "vegan")).toEqual(true)
+      expect(spoonacularSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
 
@@ -41,7 +41,7 @@ describe("Search Functions Success", () => {
   /* Loose Search */
   describe("Loose Search", () => {
     test("Recipe[0], Vegan == True", () => {
-      expect(strictSearch(recipeData[0], "vegan")).toEqual(true)
+      expect(looseSearch(recipeData[0], "vegan")).toEqual(true)
     })
   });
 })
