@@ -3,7 +3,7 @@
  * @param {*} jsonObj 
  * @param {*} query 
  * @param {*} strictSearch 
- * @returns 
+ * @returns found recipes
  */
 export function searchJSON(jsonObj, query, strictSearch = true){
 
